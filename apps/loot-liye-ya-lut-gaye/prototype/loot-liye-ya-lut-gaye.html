@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="hi-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Loot Liye Ya Lut Gaye? 🛒</title>
+<meta name="description" content="₹10,000. 12 deals. 6 seconds each. Can you spot the real loot and dodge the sale traps?">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF1C9; --ink:#24114F; --muted:#6A5A93; --line:rgba(36,17,79,.14);
+  --marigold:#FFB000; --rani:#E0156F; --leaf:#0B9A68; --tag:#FFFDF6; --tag-ink:#24114F;
+  --btn-skip:#FFFFFF;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){ --bg:#170E33; --ink:#FFF3D6; --muted:#B4A8D8; --line:rgba(255,243,214,.16); --btn-skip:#2A1D55; }
+}
+:root[data-theme="dark"]{ --bg:#170E33; --ink:#FFF3D6; --muted:#B4A8D8; --line:rgba(255,243,214,.16); --btn-skip:#2A1D55; }
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0;height:100%;background:var(--bg);color:var(--ink);
+  font-family:"Baloo 2",ui-rounded,"Segoe UI",system-ui,sans-serif;
+  -webkit-tap-highlight-color:transparent;
+}
+/* toran: festive flag string along the top */
+body::before{
+  content:"";position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:22px;z-index:0;pointer-events:none;
+  background:
+    linear-gradient(var(--marigold),var(--marigold)) top/100% 2px no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='22'%3E%3Cpath d='M2 2h20L12 20z' fill='%23FFB000'/%3E%3Cpath d='M26 2h20L36 20z' fill='%23E0156F'/%3E%3C/svg%3E") top left/48px 22px repeat-x;
+}
+.app{position:relative;z-index:1;max-width:440px;height:100%;margin:0 auto;padding:34px 18px 16px;display:flex;flex-direction:column}
+.screen{flex:1;display:flex;flex-direction:column;min-height:0}
+[hidden]{display:none!important}
+button{font:inherit;cursor:pointer;border:0}
+button:focus-visible,a:focus-visible{outline:3px solid var(--rani);outline-offset:3px}
+
+/* start */
+.start{justify-content:center;gap:18px}
+.title{margin:0;line-height:.86;font-weight:800;letter-spacing:-.02em}
+.title span{display:block}
+.title .l1{font-size:clamp(58px,19vw,86px);color:var(--leaf)}
+.title .l2{font-size:clamp(30px,10vw,42px);color:var(--muted);margin:6px 0 2px;font-weight:700}
+.title .l3{font-size:clamp(58px,19vw,86px);color:var(--rani)}
+.lede{margin:0;font-size:19px;line-height:1.4;font-weight:500;max-width:30ch}
+.rules{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:16px;line-height:1.35;color:var(--muted)}
+.rules li::before{content:"🪔 "}
+.cta{
+  background:var(--ink);color:var(--bg);font-size:22px;font-weight:800;padding:16px 22px;border-radius:16px;
+  box-shadow:0 5px 0 var(--marigold);transition:transform .08s
+}
+.cta:active{transform:translateY(3px);box-shadow:0 2px 0 var(--marigold)}
+.best{margin:0;font-size:15px;color:var(--muted);text-align:center}
+
+/* hud */
+.hud{display:flex;justify-content:space-between;align-items:flex-end;font-size:15px;color:var(--muted)}
+.hud b{display:block;font-size:26px;line-height:1;color:var(--ink);font-weight:800}
+.hud .right{text-align:right}
+.timer{height:8px;border-radius:8px;background:var(--line);margin:10px 0 0;overflow:hidden}
+.timer i{display:block;height:100%;width:100%;background:var(--marigold);transform-origin:left;border-radius:8px}
+.timer i.hurry{background:var(--rani)}
+
+/* the price tag */
+.stage{flex:1;display:flex;align-items:center;justify-content:center;min-height:0;padding:22px 0 10px}
+.string{position:absolute;top:-34px;left:50%;width:2px;height:40px;background:var(--muted);opacity:.6}
+.tag{
+  position:relative;width:100%;max-width:360px;background:var(--tag);color:var(--tag-ink);
+  border-radius:22px 22px 26px 26px;padding:34px 22px 22px;
+  box-shadow:0 2px 0 rgba(0,0,0,.06),0 18px 40px -18px rgba(36,17,79,.45);
+  transform-origin:50% -30px;
+}
+.tag.enter{animation:swing .7s cubic-bezier(.3,1.6,.5,1)}
+@keyframes swing{0%{transform:rotate(-14deg) translateY(-20px);opacity:0}100%{transform:none;opacity:1}}
+.hole{position:absolute;top:12px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--bg);box-shadow:inset 0 1px 2px rgba(0,0,0,.25)}
+.emoji{font-size:64px;line-height:1;text-align:center;margin:4px 0 6px}
+.pname{margin:0;font-size:22px;font-weight:700;line-height:1.15;text-align:center}
+.badge{display:table;margin:10px auto 0;background:#FFE7A3;color:#5A3A00;font-size:15px;font-weight:700;padding:3px 12px;border-radius:999px}
+.prices{display:flex;align-items:baseline;justify-content:center;gap:10px;margin-top:14px}
+.price{font-size:42px;font-weight:800;line-height:1}
+.mrp{font-size:18px;color:#8B7FA8;text-decoration:line-through}
+.off{
+  position:absolute;top:-14px;right:-10px;width:78px;height:78px;border-radius:50%;
+  background:var(--rani);color:#fff;display:grid;place-items:center;text-align:center;
+  font-weight:800;font-size:22px;line-height:.85;transform:rotate(12deg);
+  box-shadow:0 6px 14px -6px rgba(224,21,111,.7)
+}
+.off small{display:block;font-size:14px;font-weight:700}
+
+/* reveal over the tag */
+.reveal{
+  position:absolute;inset:0;border-radius:inherit;background:rgba(255,253,246,.97);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:8px;padding:22px;cursor:pointer
+}
+.stamp{
+  font-weight:800;font-size:28px;line-height:1;padding:8px 16px;border:4px solid currentColor;border-radius:12px;
+  transform:rotate(-6deg);animation:stamp .25s ease-out
+}
+@keyframes stamp{from{transform:rotate(-6deg) scale(1.6);opacity:0}to{transform:rotate(-6deg) scale(1);opacity:1}}
+.stamp.good{color:var(--leaf)} .stamp.bad{color:var(--rani)} .stamp.meh{color:#C27C00}
+.why{margin:6px 0 0;font-size:17px;line-height:1.4;max-width:30ch}
+.delta{font-size:22px;font-weight:800}
+.delta.good{color:var(--leaf)} .delta.bad{color:var(--rani)}
+.tapnext{font-size:14px;color:#8B7FA8}
+
+/* buttons */
+.actions{display:grid;grid-template-columns:1fr 1.4fr;gap:12px}
+.act{font-size:24px;font-weight:800;padding:16px 10px;border-radius:16px;transition:transform .08s}
+.act:active{transform:translateY(3px)}
+.skip{background:var(--btn-skip);color:var(--ink);box-shadow:0 5px 0 var(--line), inset 0 0 0 2px var(--line)}
+.buy{background:var(--leaf);color:#fff;box-shadow:0 5px 0 #06603F}
+.buy:disabled{background:#9A93AE;box-shadow:0 5px 0 #6F6887;cursor:not-allowed;font-size:18px}
+.keys{margin:10px 0 0;text-align:center;font-size:13px;color:var(--muted)}
+@media (hover:none){.keys{display:none}}
+
+/* result */
+.result{overflow-y:auto;gap:14px;padding-bottom:8px}
+.verdict{
+  align-self:center;margin:14px 0 4px;font-size:clamp(46px,15vw,66px);font-weight:800;line-height:.95;text-align:center;
+  padding:10px 18px;border:6px solid currentColor;border-radius:18px;transform:rotate(-5deg);
+  animation:stamp .35s ease-out
+}
+.verdict.win{color:var(--leaf)} .verdict.lose{color:var(--rani)}
+.rank{margin:0;text-align:center;font-size:24px;font-weight:700}
+.ledger{background:var(--tag);color:var(--tag-ink);border-radius:18px;padding:16px 18px;display:grid;gap:8px}
+.row{display:flex;justify-content:space-between;gap:12px;font-size:17px;align-items:baseline}
+.row b{font-size:20px;white-space:nowrap}
+.row.big{border-top:2px dashed rgba(36,17,79,.2);padding-top:10px;font-weight:700}
+.row.big b{font-size:28px}
+.pos{color:var(--leaf)} .neg{color:var(--rani)}
+.fell{margin:0;font-size:16px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{background:var(--rani);color:#fff;border-radius:999px;padding:2px 12px;font-size:15px;font-weight:700}
+.btns{display:grid;gap:10px;margin-top:4px}
+.wa{display:block;text-align:center;text-decoration:none;background:#1FA855;color:#fff;font-size:20px;font-weight:800;padding:14px;border-radius:16px;box-shadow:0 5px 0 #137A3C}
+.again{background:transparent;color:var(--ink);font-size:18px;font-weight:700;padding:10px;text-decoration:underline;text-underline-offset:4px}
+.toast{text-align:center;font-size:15px;color:var(--leaf);min-height:1.2em;margin:0}
+.fine{margin:6px 0 0;text-align:center;font-size:13px;color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){
+  .tag.enter,.stamp,.verdict{animation:none}
+}
+</style>
+</head>
+<body>
+<main class="app">
+
+  <!-- START -->
+  <section id="start" class="screen start">
+    <h1 class="title"><span class="l1">Loot Liye</span><span class="l2">ya</span><span class="l3">Lut Gaye?</span></h1>
+    <p class="lede">Sale shuru ho gayi hai. Asli loot pakdo, jaal se bacho.</p>
+    <ul class="rules">
+      <li>Wallet mein ₹10,000</li>
+      <li>12 deals, har deal pe 6 second</li>
+      <li>Buy ya Skip. Kuch deals asli hain, kuch jaal.</li>
+    </ul>
+    <button class="cta" id="startBtn">Sale shuru karo 🛒</button>
+    <p class="best" id="bestStart"></p>
+  </section>
+
+  <!-- GAME -->
+  <section id="game" class="screen" hidden>
+    <header class="hud">
+      <div>Wallet<b id="wallet">₹10,000</b></div>
+      <div class="right">Deal<b id="count">1/12</b></div>
+    </header>
+    <div class="timer" aria-hidden="true"><i id="bar"></i></div>
+    <div class="stage">
+      <article class="tag" id="card" aria-live="polite">
+        <div class="hole"></div>
+        <div class="off" id="off"></div>
+        <div class="emoji" id="emoji"></div>
+        <h2 class="pname" id="pname"></h2>
+        <span class="badge" id="badge"></span>
+        <div class="prices"><span class="price" id="price"></span><span class="mrp" id="mrp"></span></div>
+        <div class="reveal" id="reveal" hidden>
+          <div class="stamp" id="stamp"></div>
+          <p class="why" id="why"></p>
+          <div class="delta" id="delta"></div>
+          <div class="tapnext">Tap karo, agla deal</div>
+        </div>
+      </article>
+    </div>
+    <div class="actions">
+      <button class="act skip" id="skipBtn">Skip ✋</button>
+      <button class="act buy" id="buyBtn">Buy 🛒</button>
+    </div>
+    <p class="keys">Keyboard: ← skip, → buy</p>
+  </section>
+
+  <!-- RESULT -->
+  <section id="result" class="screen result" hidden>
+    <div class="verdict" id="verdict"></div>
+    <p class="rank" id="rank"></p>
+    <div class="ledger">
+      <div class="row"><span>Sale ke hisaab se bachat</span><b id="claimed"></b></div>
+      <div class="row"><span>Jaal mein fase</span><b id="trapCount"></b></div>
+      <div class="row"><span>Asli deals chhoote</span><b id="missed"></b></div>
+      <div class="row big"><span>Asli bachat</span><b id="real"></b></div>
+    </div>
+    <div id="fellWrap">
+      <p class="fell">Tum in tricks mein fase:</p>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="btns">
+      <button class="cta" id="shareBtn">Score share karo 📣</button>
+      <a class="wa" id="waBtn" target="_blank" rel="noopener">WhatsApp pe challenge bhejo</a>
+      <button class="again" id="againBtn">Phir se khelo</button>
+    </div>
+    <p class="toast" id="toast"></p>
+    <p class="fine" id="bestEnd"></p>
+    <p class="fine">Sab products aur brands kaalpanik hain. Tricks bilkul asli hain.</p>
+  </section>
+
+</main>
+
+<script>
+// Paste the public link here after publishing so shares include it.
+const SHARE_URL = "https://claude.ai/artifact/AdKfMKA7H7FLjhUgACM7zJ";
+
+const DUR = 6000, BUDGET = 10000, REVEAL_MS = 3400;
+
+// p = sale price, m = "MRP", v = what it's really worth / normal price, fee = hidden extra
+const GOOD = [
+  {e:"🫙",n:"Mixer grinder 750W",p:2499,m:3999,b:"Sab cards pe ₹250 off",v:3399,why:"Pichle 3 mahine ₹3,399 se neeche nahi gaya. Asli loot!"},
+  {e:"🍲",n:"Pressure cooker 5L",p:1099,m:1800,b:"Diwali special",v:1650,why:"Normally ₹1,650. Mummy proud hongi."},
+  {e:"🔋",n:"Power bank 20000mAh",p:899,m:1999,b:"Top rated",v:1399,why:"Saal bhar ₹1,399 rehta hai. Sahi pakda."},
+  {e:"✂️",n:"Beard trimmer",p:1199,m:2499,b:"Limited deal",v:1599,why:"Normal price ₹1,599. Genuine discount."},
+  {e:"🛏️",n:"Double bedsheet set",p:499,m:1499,b:"Combo of 2 pillow covers",v:799,why:"Usually ₹799. Ghar ke kaam ki cheez, smart buy."},
+  {e:"🎒",n:"Laptop backpack",p:699,m:2199,b:"Water resistant",v:1099,why:"Ye ₹1,099 se kam pehli baar aaya hai."},
+  {e:"🖱️",n:"Gaming mouse",p:549,m:1499,b:"Deal of the day",v:899,why:"Normal price ₹899. Badiya loot."},
+  {e:"☕",n:"Instant coffee, pack of 3",p:449,m:690,b:"Daily essentials",v:630,why:"Roz ka saman sale mein stock karna = asli bachat."},
+  {e:"🫖",n:"Electric kettle 1.5L",p:699,m:1495,b:"Bestseller",v:999,why:"Usually ₹999. Real discount hai."},
+  {e:"👟",n:"Running shoes",p:1799,m:4999,b:"Your size available",v:2799,why:"Isi model ka normal price ₹2,799. Seedha ₹1,000 bache."}
+];
+const TRAPS = [
+  {e:"🎧",n:"BassBoom Pro earbuds",p:1299,m:4999,b:"Lowest price ever!",v:999,trick:"Fake MRP",why:"Pichle mahine ₹999 tha. ₹4,999 MRP sirf drama hai."},
+  {e:"⌚",n:"FitPulse smartwatch",p:1999,m:6999,b:"No Cost EMI",v:1799,fee:236,trick:"No Cost EMI",why:"₹199 processing fee + GST alag lagta hai. Aur normal price ₹1,799 hai."},
+  {e:"📱",n:"Phone covers, buy 3 get 2 free",p:599,m:2495,b:"5 covers!",v:150,trick:"Combo trap",why:"5 covers? Phone toh ek hi hai. Kaam ka sirf ek, ₹150 ka."},
+  {e:"🍟",n:"Air fryer 4L",p:3999,m:9999,b:"Sirf 2 bache hain!",v:3299,trick:"Fake urgency",why:"'2 left' 3 din se dikha raha hai. Diwali sale mein ₹3,299 hoga."},
+  {e:"👗",n:"Cotton kurta set",p:799,m:2999,b:"Extra 10% off on cards*",v:599,trick:"Fine print",why:"*Min order ₹5,000. Extra discount mila hi nahi. Normal price ₹599."},
+  {e:"🌈",n:"RGB LED strip 5m",p:1499,m:3999,b:"FREE gift worth ₹999!",v:1099,trick:"Fake free gift",why:"'Gift' ek ₹49 ka keychain hai. Strip akeli ₹1,099 ki milti hai."},
+  {e:"💡",n:"Smart bulb, pack of 4",p:1299,m:3196,b:"Lowest price of the year",v:999,trick:"Fake 'lowest'",why:"Pichli sale mein ₹999 tha. 'Year' matlab sirf January se."},
+  {e:"💧",n:"RO water purifier",p:6999,m:15999,b:"No Cost EMI + Protection",v:6499,fee:799,trick:"Pre-ticked extras",why:"Cart mein ₹799 ka extended warranty pehle se tick tha. Dekha hi nahi."},
+  {e:"🤳",n:"Ring light 18 inch",p:799,m:2999,b:"#1 Bestseller (Sponsored)",v:449,trick:"Sponsored #1",why:"'#1' ad ka paisa dekar bana. Same light ₹449 mein milti hai."},
+  {e:"🔊",n:"Party speaker 40W",p:2499,m:7999,b:"Price badhega in 00:59!",v:1999,trick:"Fake countdown",why:"Ye timer har refresh pe 00:59 se shuru hota hai. Normal price ₹1,999."}
+];
+
+const $ = id => document.getElementById(id);
+const inr = n => "₹" + Math.abs(Math.round(n)).toLocaleString("en-IN");
+const signed = n => (n < 0 ? "−" : n > 0 ? "+" : "") + inr(n);
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const buzz = ms => { try { navigator.vibrate && navigator.vibrate(ms); } catch(e){} };
+
+let deck, idx, wallet, score, traps, claimed, bought, missedGood, fell, raf, t0, locked, advTimer, advanced;
+
+function show(id){ ["start","game","result"].forEach(s => $(s).hidden = s !== id); }
+
+function getBest(){ try { const v = localStorage.getItem("lylg-best"); return v === null ? null : Number(v); } catch(e){ return null; } }
+function setBest(v){ try { localStorage.setItem("lylg-best", String(v)); } catch(e){} }
+function paintBest(){
+  const b = getBest();
+  $("bestStart").textContent = b === null ? "" : "Tumhara best: " + signed(b) + " asli bachat";
+}
+
+function startGame(){
+  deck = shuffle(shuffle(GOOD).slice(0,6).map(d => ({...d, good:true})).concat(shuffle(TRAPS).slice(0,6).map(d => ({...d, good:false}))));
+  idx = 0; wallet = BUDGET; score = 0; traps = 0; claimed = 0; bought = 0; missedGood = 0; fell = [];
+  show("game");
+  nextDeal();
+}
+
+function nextDeal(){
+  if (idx >= deck.length) return finish();
+  const d = deck[idx];
+  locked = false; advanced = false;
+  $("wallet").textContent = inr(wallet);
+  $("count").textContent = (idx + 1) + "/" + deck.length;
+  $("emoji").textContent = d.e;
+  $("pname").textContent = d.n;
+  $("badge").textContent = d.b;
+  $("price").textContent = inr(d.p);
+  $("mrp").textContent = inr(d.m);
+  const pct = Math.round((1 - d.p / d.m) * 100);
+  $("off").innerHTML = pct + "%<small>OFF</small>";
+  $("reveal").hidden = true;
+  const cost = d.p + (d.fee || 0);
+  const canBuy = cost <= wallet;
+  $("buyBtn").disabled = !canBuy;
+  $("buyBtn").textContent = canBuy ? "Buy 🛒" : "Paise kam hain";
+  $("skipBtn").disabled = false;
+  const card = $("card");
+  card.classList.remove("enter"); void card.offsetWidth; card.classList.add("enter");
+  t0 = performance.now();
+  cancelAnimationFrame(raf);
+  raf = requestAnimationFrame(tick);
+}
+
+function tick(now){
+  const left = Math.max(0, 1 - (now - t0) / DUR);
+  const bar = $("bar");
+  bar.style.transform = "scaleX(" + left + ")";
+  bar.classList.toggle("hurry", left < .35);
+  if (left <= 0) return decide("timeout");
+  raf = requestAnimationFrame(tick);
+}
+
+function decide(action){
+  if (locked) return;
+  if (action === "buy" && $("buyBtn").disabled) return;
+  locked = true;
+  cancelAnimationFrame(raf);
+  $("buyBtn").disabled = true; $("skipBtn").disabled = true;
+  const d = deck[idx];
+  const stamp = $("stamp"), why = $("why"), delta = $("delta");
+  delta.className = "delta"; delta.textContent = "";
+
+  if (action === "buy"){
+    const cost = d.p + (d.fee || 0);
+    const gain = d.v - cost;
+    wallet -= cost; score += gain; claimed += d.m - d.p; bought++;
+    $("wallet").textContent = inr(wallet);
+    if (d.good){
+      stamp.className = "stamp good"; stamp.textContent = "Asli loot ✅";
+      why.textContent = d.why;
+      delta.classList.add("good"); delta.textContent = signed(gain) + " asli bachat";
+      buzz(20);
+    } else {
+      traps++; fell.push(d.trick);
+      stamp.className = "stamp bad"; stamp.textContent = "Jaal 🪤 " + d.trick;
+      why.textContent = d.why;
+      delta.classList.add("bad"); delta.textContent = signed(gain) + " nuksaan";
+      buzz([40,60,40]);
+    }
+  } else {
+    const prefix = action === "timeout" ? "Time khatam ⏰ " : "";
+    if (d.good){
+      missedGood++;
+      stamp.className = "stamp meh"; stamp.textContent = action === "timeout" ? "Time khatam ⏰" : "Chhoot gaya 😩";
+      why.textContent = "Ye asli deal thi. " + d.why;
+    } else {
+      stamp.className = "stamp good"; stamp.textContent = action === "timeout" ? "Time khatam, bach gaye 😅" : "Bach gaye 🙌";
+      why.textContent = "Ye " + d.trick + " tha. " + d.why;
+    }
+  }
+  $("reveal").hidden = false;
+  clearTimeout(advTimer);
+  advTimer = setTimeout(advance, REVEAL_MS);
+}
+
+function advance(){
+  if (advanced) return;
+  advanced = true;
+  clearTimeout(advTimer);
+  idx++;
+  nextDeal();
+}
+
+function finish(){
+  cancelAnimationFrame(raf);
+  const win = score >= 1000 && traps <= 1;
+  let rank;
+  if (win) rank = score >= 2000 ? "Deal Ka Don 👑" : "Smart Shopper 🧠";
+  else if (bought === 0) rank = "Darpok Customer 🙈 Kuch liya hi nahi";
+  else if (traps >= 4) rank = "Sale Ka Shikaar 🎯";
+  else rank = "Thoda thoda lut gaye 😬";
+
+  const v = $("verdict");
+  v.className = "verdict " + (win ? "win" : "lose");
+  v.textContent = win ? "LOOT LIYE 😎" : "LUT GAYE 💀";
+  $("rank").textContent = rank;
+  $("claimed").textContent = inr(claimed);
+  $("trapCount").textContent = traps;
+  $("missed").textContent = missedGood;
+  const r = $("real");
+  r.textContent = signed(score);
+  r.className = score >= 0 ? "pos" : "neg";
+
+  const uniq = [...new Set(fell)];
+  $("fellWrap").hidden = uniq.length === 0;
+  $("chips").innerHTML = "";
+  uniq.forEach(t => { const s = document.createElement("span"); s.className = "chip"; s.textContent = t; $("chips").appendChild(s); });
+
+  const best = getBest();
+  if (best === null || score > best){ setBest(score); $("bestEnd").textContent = "Naya personal best! 🎉"; }
+  else $("bestEnd").textContent = "Tumhara best: " + signed(best);
+
+  const text = shareText(win, rank);
+  $("waBtn").href = "https://wa.me/?text=" + encodeURIComponent(text);
+  $("toast").textContent = "";
+  show("result");
+  buzz(win ? [30,40,30,40,80] : 120);
+}
+
+function link(){
+  if (SHARE_URL) return SHARE_URL;
+  try { if (window.top === window) return location.href; } catch(e){}
+  return "";
+}
+
+function shareText(win, rank){
+  const l = link();
+  return (win ? "LOOT LIYE 😎" : "LUT GAYE 💀") + " | Loot Liye Ya Lut Gaye? 🛒\n" +
+    "Sale ne bola maine " + inr(claimed) + " bachaye. Asli bachat: " + signed(score) + "\n" +
+    "Jaal mein fasa: " + traps + " baar. Rank: " + rank + "\n" +
+    "Tum mujhe beat karke dikhao 👇" + (l ? "\n" + l : "");
+}
+
+async function share(){
+  const win = $("verdict").classList.contains("win");
+  const text = shareText(win, $("rank").textContent);
+  try {
+    if (navigator.share){ await navigator.share({ text }); return; }
+  } catch(e){ if (e && e.name === "AbortError") return; }
+  try { await navigator.clipboard.writeText(text); $("toast").textContent = "Score copy ho gaya. Kahin bhi paste karo!"; }
+  catch(e){ $("toast").textContent = "Share nahi ho paya. WhatsApp button try karo."; }
+}
+
+$("startBtn").onclick = startGame;
+$("againBtn").onclick = startGame;
+$("buyBtn").onclick = () => decide("buy");
+$("skipBtn").onclick = () => decide("skip");
+$("reveal").onclick = advance;
+$("shareBtn").onclick = share;
+document.addEventListener("keydown", e => {
+  if ($("game").hidden) return;
+  if (e.key === "ArrowRight") decide("buy");
+  else if (e.key === "ArrowLeft") decide("skip");
+  else if ((e.key === "Enter" || e.key === " ") && locked){ e.preventDefault(); advance(); }
+});
+paintBest();
+</script>
+</body>
+</html>

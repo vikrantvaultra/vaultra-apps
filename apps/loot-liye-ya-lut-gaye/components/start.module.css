@@ -1,0 +1,459 @@
+.start {
+  max-width: 480px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: var(--safe-t) 16px calc(var(--safe-b) + 18px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-x: clip;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -2px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--line-2);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-dim);
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pink);
+  box-shadow: 0 0 0 0 rgba(255, 61, 127, 0.6);
+  animation: live 1.6s infinite;
+}
+@keyframes live {
+  0% { box-shadow: 0 0 0 0 rgba(255, 61, 127, 0.6); }
+  100% { box-shadow: 0 0 0 10px rgba(255, 61, 127, 0); }
+}
+
+/* ── hero ─────────────────────────────────────────── */
+.hero {
+  --t: clamp(66px, 23vw, 112px);
+  position: relative;
+  padding-top: 4px;
+}
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.8;
+  letter-spacing: -0.01em;
+  font-size: var(--t);
+}
+.title > span {
+  display: block;
+  /* no opacity fade here: the title is the LCP element and must paint immediately */
+  animation: title-in 0.55s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+@keyframes title-in {
+  from { transform: scale(1.18) rotate(-3deg); }
+  to { transform: none; }
+}
+.loot {
+  color: var(--lime);
+  text-shadow: 0 0 40px rgba(198, 255, 61, 0.25);
+}
+.ya {
+  display: block !important;
+  width: fit-content;
+  margin: 0.1em 0 0.12em 0.06em;
+  padding: 0.14em 0.5em 0.18em;
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--font-text);
+  font-size: 0.26em;
+  font-weight: 800;
+  text-transform: lowercase;
+  letter-spacing: 0;
+  line-height: 1;
+  transform: rotate(-6deg);
+  animation-delay: 0.12s !important;
+}
+.lut {
+  color: var(--pink);
+  text-shadow: 0 0 40px rgba(255, 61, 127, 0.3);
+  animation-delay: 0.22s !important;
+}
+@media (prefers-color-scheme: light) {
+  .loot {
+    color: var(--good);
+    text-shadow: none;
+  }
+  .lut {
+    color: var(--ink-bad);
+    text-shadow: none;
+  }
+}
+@keyframes slam {
+  from { transform: scale(1.6) rotate(-4deg); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+.badge {
+  position: absolute;
+  right: 0;
+  top: calc(var(--t) * 0.6);
+  width: min(80px, 21vw);
+  height: min(80px, 21vw);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #2a1a00;
+  box-shadow: 0 10px 30px -10px rgba(255, 199, 56, 0.6);
+  transform: rotate(10deg);
+}
+.badge svg {
+  position: absolute;
+  inset: 0;
+  animation: spin 14s linear infinite;
+}
+.badge text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  fill: currentColor;
+}
+.badge span {
+  font-size: 26px;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.lede {
+  margin: 14px 0 0;
+  max-width: 30ch;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--text-dim);
+}
+.lede b {
+  color: var(--text);
+  font-weight: 800;
+}
+
+/* ── decorative fanned cards ──────────────────────── */
+.fan {
+  position: relative;
+  height: 168px;
+  margin: 2px 0 -6px;
+}
+.mini {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 112px;
+  height: 148px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  animation: float 4s ease-in-out infinite;
+}
+.mini:nth-child(1) {
+  transform: translateX(-150%) rotate(-12deg);
+  --r: -12deg;
+  --x: -150%;
+  animation-delay: -1s;
+}
+.mini:nth-child(2) {
+  transform: translateX(-50%) translateY(-10px);
+  --r: 0deg;
+  --x: -50%;
+  z-index: 2;
+}
+.mini:nth-child(3) {
+  transform: translateX(50%) rotate(12deg);
+  --r: 12deg;
+  --x: 50%;
+  animation-delay: -2s;
+}
+@keyframes float {
+  0%, 100% { transform: translateX(var(--x)) rotate(var(--r)) translateY(0); }
+  50% { transform: translateX(var(--x)) rotate(var(--r)) translateY(-8px); }
+}
+.miniShot {
+  position: relative;
+  flex: 1;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 38%, var(--g1), var(--g2));
+  font-size: 46px;
+}
+.miniBurst {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 40px;
+  height: 40px;
+}
+.miniBurst svg {
+  position: absolute;
+  inset: 0;
+  fill: var(--gold);
+}
+.miniBurst span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font-family: var(--font-display);
+  line-height: 0.85;
+  color: #2a1a00;
+}
+.miniBurst b {
+  font-size: 12px;
+}
+.miniBurst small {
+  font-size: 7px;
+  font-weight: 800;
+}
+.miniInfo {
+  padding: 8px 10px 10px;
+  display: grid;
+  gap: 5px;
+}
+.miniInfo i {
+  height: 6px;
+  width: 70%;
+  border-radius: 6px;
+  background: var(--line-2);
+}
+.miniInfo b {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1;
+}
+.miniStamp {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-14deg);
+  padding: 2px 10px;
+  border: 4px solid currentColor;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: rgba(255, 252, 243, 0.92);
+}
+.miniStamp[data-tone="bad"] {
+  color: var(--ink-bad);
+}
+.miniStamp[data-tone="good"] {
+  color: var(--ink-good);
+}
+
+/* ── ticker ───────────────────────────────────────── */
+.ticker {
+  margin: 4px -16px 0;
+  background: var(--pink);
+  color: #fff;
+  transform: rotate(-2.5deg);
+  overflow: hidden;
+  padding: 9px 0;
+  box-shadow: 0 10px 30px -14px rgba(255, 61, 127, 0.7);
+}
+.track {
+  display: flex;
+  width: max-content;
+  animation: marquee 26s linear infinite;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 19px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.track > span {
+  padding-right: 6px;
+}
+.track s {
+  text-decoration-color: var(--lime);
+  text-decoration-thickness: 3px;
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* ── actions ──────────────────────────────────────── */
+.actions {
+  display: grid;
+  gap: 14px;
+  margin-top: 10px;
+}
+.cta {
+  width: 100%;
+  min-height: 68px;
+  font-size: 26px;
+  overflow: hidden;
+  animation: breathe 2.4s ease-in-out 1.2s infinite;
+}
+.cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.65) 50%, transparent 65%);
+  transform: translateX(-120%);
+  animation: shine 3.2s ease-in-out 1.5s infinite;
+}
+@keyframes breathe {
+  0%, 100% { scale: 1; }
+  50% { scale: 1.025; }
+}
+@keyframes shine {
+  0%, 60% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+.how {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.how kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 24px;
+  height: 24px;
+  margin-right: 4px;
+  padding: 0 5px;
+  border-radius: 7px;
+  background: var(--surface-2);
+  box-shadow: inset 0 -2px 0 var(--line-2);
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: 13px;
+}
+.stats {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.stats div {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 10px 12px;
+  box-shadow: inset 0 0 0 1px var(--line);
+  text-align: center;
+}
+.stats dt {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.stats dd {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* ── challenge ticket ─────────────────────────────── */
+.ticket {
+  padding: 18px 18px 20px;
+  transform: rotate(-1.5deg);
+  animation: slam 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+.ticket p {
+  margin: 0;
+}
+.ticketKicker {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-bad);
+}
+.ticketLine {
+  margin-top: 4px !important;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.02;
+  text-transform: uppercase;
+}
+.ticketLine mark {
+  background: var(--lime);
+  color: var(--on-lime);
+  padding: 0 0.15em;
+  border-radius: 4px;
+}
+.ticketSub {
+  margin-top: 6px !important;
+  font-size: 13px;
+  color: var(--paper-dim);
+}
+
+.fine {
+  margin: auto 0 0;
+  padding-top: 8px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+@media (max-height: 760px) {
+  .fan {
+    display: none;
+  }
+  .hero {
+    --t: clamp(58px, 19vw, 96px);
+  }
+}
+@media (max-width: 374px) {
+  .fan {
+    scale: 0.82;
+    height: 140px;
+    margin: -10px 0 -14px;
+  }
+  .lede {
+    font-size: 16px;
+  }
+  .badge text {
+    font-size: 13.5px;
+  }
+  .stats dd {
+    font-size: 19px;
+  }
+}
+/* tablets / desktop: a bit more air */
+@media (min-width: 700px) and (min-height: 820px) {
+  .start {
+    justify-content: center;
+    gap: 18px;
+  }
+}
