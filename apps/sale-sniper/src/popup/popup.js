@@ -73,7 +73,7 @@ $('micBtn').addEventListener('click', () => chrome.tabs.create({ url: chrome.run
 $('openDash').addEventListener('click', () => chrome.runtime.openOptionsPage());
 $('startAll').addEventListener('click', () => send('run:start', {}));
 $('stopAll').addEventListener('click', () => send('run:stop', {}));
-if (PUBLIC_BUILD) $('autoPlace').closest('label').hidden = true;
+if (PUBLIC_BUILD) $('autoPlace').closest('label').style.display = 'none'; // .switch sets display, so [hidden] alone loses
 $('autoPlace').addEventListener('change', (e) => send('settings:save', { patch: { autoPlaceOrder: e.target.checked } }));
 
 bindItemActions($('items'));

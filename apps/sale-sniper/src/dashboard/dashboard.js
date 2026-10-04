@@ -126,7 +126,7 @@ $('startAll').addEventListener('click', () => send('run:start', {}));
 $('stopAll').addEventListener('click', () => send('run:stop', {}));
 $('clearDone').addEventListener('click', () => send('items:clearDone'));
 $('clearLogs').addEventListener('click', () => send('logs:clear'));
-if (PUBLIC_BUILD) $('autoPlace').closest('label').hidden = true;
+if (PUBLIC_BUILD) $('autoPlace').closest('label').style.display = 'none'; // .switch sets display, so [hidden] alone loses
 $('autoPlace').addEventListener('change', (e) => {
   if (e.target.checked && !confirm('Auto place order ON: Sale Sniper will click the final Place Order button by itself when the total is within your max price. Continue?')) {
     e.target.checked = false;
