@@ -9,6 +9,8 @@
     "check": "node scripts/check.mjs",
     "test": "node --test test/*.test.js",
     "zip": "npm run check && rm -f sale-sniper.zip && zip -r sale-sniper.zip manifest.json icons src -x '*.DS_Store'",
-    "e2e": "node test/e2e/server.mjs 4317"
+    "e2e": "node test/e2e/server.mjs 4317",
+    "package": "node scripts/package-extension.mjs",
+    "build": "node scripts/package-extension.mjs && node scripts/build-site.mjs"
   }
 }

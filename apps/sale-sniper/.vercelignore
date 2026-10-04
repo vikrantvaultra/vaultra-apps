@@ -1,0 +1,8 @@
+# Vercel only needs what `npm run build` reads: manifest.json, icons/, src/, scripts/, site/, package.json.
+test
+dist
+public
+node_modules
+sale-sniper.zip
+*.log
+.DS_Store
