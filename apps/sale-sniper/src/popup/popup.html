@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sale Sniper</title>
+  <link rel="stylesheet" href="../ui/theme.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <div class="brand-mark">⚡</div>
+      <div>
+        <div class="brand-name">Sale Sniper</div>
+        <div class="brand-sub">Auto-buys the second it’s live</div>
+      </div>
+    </div>
+    <label class="switch small" title="When on, Sale Sniper clicks the final Place Order button itself (only within your max price)">
+      <input type="checkbox" id="autoPlace"> Auto-pay
+    </label>
+  </header>
+
+  <section id="pageCard" class="card page hidden">
+    <div class="row">
+      <div class="item-img" id="pageImg">🛍️</div>
+      <div class="grow">
+        <div class="row small"><span class="site" id="pageSite"></span><span class="muted" id="pagePrice"></span></div>
+        <div class="page-title" id="pageTitle"></div>
+      </div>
+    </div>
+    <form id="pageForm" class="page-form">
+      <label class="field"><span>Max ₹</span><input class="input" name="maxPrice" type="number" min="1" required></label>
+      <label class="field qty"><span>Qty</span><input class="input" name="quantity" type="number" min="1" max="10" value="1"></label>
+      <label class="field when"><span>Sale starts (optional)</span><input class="input" name="scheduleAt" type="datetime-local"></label>
+      <button class="btn primary add" type="submit">＋ Add to sale list</button>
+    </form>
+  </section>
+
+  <form id="quickForm" class="quick">
+    <input class="input grow" id="quickText" placeholder="e.g. boAt Airdopes 141 under 1200 on amazon" autocomplete="off">
+    <button class="btn icon" type="button" id="micBtn" title="Record your list by voice">🎙</button>
+    <button class="btn primary" type="submit">Add</button>
+  </form>
+  <div class="hint small muted" id="quickHint"></div>
+
+  <div class="bar">
+    <button class="btn sm primary" id="startAll">▶ Start all</button>
+    <button class="btn sm" id="stopAll">■ Stop all</button>
+    <span class="grow"></span>
+    <button class="btn sm ghost" id="openDash">Dashboard ↗</button>
+  </div>
+
+  <main id="items" class="items"></main>
+
+  <footer class="foot small muted" id="foot"></footer>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
