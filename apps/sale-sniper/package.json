@@ -1,0 +1,16 @@
+{
+  "name": "sale-sniper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome extension: record your sale wishlist, auto-buy on Amazon.in & Flipkart the moment Buy Now goes live.",
+  "type": "module",
+  "scripts": {
+    "icons": "node scripts/make-icons.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test test/*.test.js",
+    "zip": "npm run check && rm -f sale-sniper.zip && zip -r sale-sniper.zip manifest.json icons src -x '*.DS_Store'",
+    "e2e": "node test/e2e/server.mjs 4317",
+    "package": "node scripts/package-extension.mjs",
+    "build": "node scripts/package-extension.mjs && node scripts/build-site.mjs"
+  }
+}

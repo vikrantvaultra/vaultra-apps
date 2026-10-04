@@ -23,6 +23,7 @@ vaultra-apps/
 | App | What | Stack | Live |
 |---|---|---|---|
 | [loot-liye-ya-lut-gaye](apps/loot-liye-ya-lut-gaye) | 60-second festive-sale trap game (Hinglish) | Next.js 16, TypeScript | lootyalut.in |
+| [sale-sniper](apps/sale-sniper) | Chrome extension: record a sale wishlist, auto-buy on Amazon.in & Flipkart | Manifest V3, vanilla JS | load unpacked |
 
 ## Adding a new app
 

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sale Sniper Dashboard</title>
+  <link rel="stylesheet" href="../ui/theme.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <div class="brand-mark">⚡</div>
+      <div>
+        <div class="brand-name">Sale Sniper</div>
+        <div class="brand-sub">Bol do kya chahiye — sale khulte hi snipe kar lenge.</div>
+      </div>
+    </div>
+    <div class="row wrap">
+      <label class="switch" title="When on, Sale Sniper clicks the final Place Order button itself (only within your max price and daily budget)">
+        <input type="checkbox" id="autoPlace"> Auto place order
+      </label>
+      <button class="btn primary" id="startAll">▶ Start all</button>
+      <button class="btn" id="stopAll">■ Stop all</button>
+    </div>
+  </header>
+
+  <div id="welcome" class="card banner hidden">
+    <b>Welcome! Three things before the sale:</b>
+    <ol>
+      <li>Log in to <a href="https://www.amazon.in" target="_blank">Amazon.in</a> and <a href="https://www.flipkart.com" target="_blank">Flipkart</a> in this browser, with a default address and saved payment method (or Cash on Delivery).</li>
+      <li>Record your list below — say a product with a max price, e.g. <i>“iPhone 15 128GB under 65000 on Flipkart”</i>, or paste product links.</li>
+      <li>Do a dry run with <b>Auto place order off</b>: Sale Sniper goes all the way to the final button and stops for you.</li>
+    </ol>
+  </div>
+
+  <main class="grid">
+    <section class="card pad" id="recordCard">
+      <div class="section-head">
+        <h2>🎙 Record your list</h2>
+        <span class="muted small">One item per line · English or Hinglish · links work too</span>
+      </div>
+      <div class="record">
+        <button class="mic" id="mic" title="Hold a sentence like “boAt Airdopes 141 under 1200 amazon”">
+          <span class="mic-dot"></span><span id="micLabel">Tap to record</span>
+        </button>
+        <textarea class="input" id="recordText" rows="5" placeholder="iPhone 15 128GB under 65k on flipkart&#10;boat airdopes 141 1200 tak amazon se 2 piece&#10;https://www.amazon.in/dp/B0CHX1W1XY max 999"></textarea>
+      </div>
+      <div class="draft-head row">
+        <label class="field"><span>Sale starts (applies to all below)</span><input class="input" id="draftWhen" type="datetime-local"></label>
+        <span class="grow"></span>
+        <button class="btn primary" id="addDrafts" disabled>Add to sale list</button>
+      </div>
+      <div id="drafts" class="drafts"></div>
+    </section>
+
+    <section class="card pad">
+      <div class="section-head">
+        <h2>🛒 Sale list</h2>
+        <span class="grow"></span>
+        <button class="btn sm ghost" id="clearDone">Clear ordered</button>
+      </div>
+      <div id="items" class="items"></div>
+    </section>
+
+    <section class="card pad">
+      <div class="section-head"><h2>⚙️ Settings</h2></div>
+      <form id="settings" class="settings">
+        <label class="field"><span>Payment on auto-order</span>
+          <select class="input" name="paymentPreference">
+            <option value="default">Keep site’s saved/default method</option>
+            <option value="cod">Cash / Pay on Delivery</option>
+          </select>
+        </label>
+        <label class="field"><span>Default store for recordings</span>
+          <select class="input" name="defaultSite">
+            <option value="amazon">Amazon.in</option>
+            <option value="flipkart">Flipkart</option>
+          </select>
+        </label>
+        <label class="field"><span>Daily budget ₹ (0 = none)</span><input class="input" name="dailyBudget" type="number" min="0" step="1"></label>
+        <label class="field" title="Allowed on top of max price × qty for delivery / platform fees"><span>Fee allowance ₹</span><input class="input" name="feeAllowance" type="number" min="0" max="5000" step="1"></label>
+        <label class="field"><span>Refresh during sale (ms)</span><input class="input" name="refreshMs" type="number" min="800" step="100"></label>
+        <label class="field"><span>Refresh before sale (ms)</span><input class="input" name="preSaleRefreshMs" type="number" min="2000" step="500"></label>
+        <label class="field"><span>Keep trying for (min)</span><input class="input" name="saleWaitMinutes" type="number" min="1" max="120"></label>
+        <label class="field"><span>Open tab early (sec)</span><input class="input" name="openLeadSeconds" type="number" min="15" max="600"></label>
+        <label class="switch"><input type="checkbox" name="notify"> Desktop notifications</label>
+        <div class="row"><button class="btn primary" type="submit">Save settings</button><span class="small muted" id="savedMsg"></span></div>
+      </form>
+    </section>
+
+    <section class="card pad">
+      <div class="section-head">
+        <h2>🛡️ Safety rails</h2>
+      </div>
+      <ul class="rails small">
+        <li><b>Never auto-pays without a max price.</b> Order total must be ≤ max × qty + fee allowance.</li>
+        <li><b>Never types OTP, CVV, card or UPI PIN.</b> If the bank asks, it stops and pings you.</li>
+        <li><b>Only uses Buy Now</b> — your existing cart is never checked out.</li>
+        <li><b>One checkout per store at a time</b>; an item can't be ordered twice.</li>
+        <li><b>Daily budget</b> caps everything auto-ordered today.</li>
+        <li>Auto-pay is <b>off by default</b>: it stops at the final button for you.</li>
+      </ul>
+    </section>
+
+    <section class="card pad span">
+      <div class="section-head">
+        <h2>📜 Activity</h2>
+        <span class="grow"></span>
+        <button class="btn sm ghost" id="clearLogs">Clear</button>
+      </div>
+      <div id="logs" class="logs small"></div>
+    </section>
+  </main>
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>
