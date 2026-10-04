@@ -1,4 +1,5 @@
 import { SITES, cleanProductUrl, formatINR, parseRecordedLine, siteFromUrl, splitRecording } from '../lib/store.js';
+import { PUBLIC_BUILD } from '../lib/build.js';
 import { bindItemActions, esc, fromLocalInput, renderItems, send, watchState } from '../ui/shared.js';
 
 const $ = (id) => document.getElementById(id);
@@ -72,6 +73,7 @@ $('micBtn').addEventListener('click', () => chrome.tabs.create({ url: chrome.run
 $('openDash').addEventListener('click', () => chrome.runtime.openOptionsPage());
 $('startAll').addEventListener('click', () => send('run:start', {}));
 $('stopAll').addEventListener('click', () => send('run:stop', {}));
+if (PUBLIC_BUILD) $('autoPlace').closest('label').hidden = true;
 $('autoPlace').addEventListener('change', (e) => send('settings:save', { patch: { autoPlaceOrder: e.target.checked } }));
 
 bindItemActions($('items'));

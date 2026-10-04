@@ -16,6 +16,7 @@ import {
   startUrl,
   todayKey,
 } from './lib/store.js';
+import { PUBLIC_BUILD } from './lib/build.js';
 
 const LOCK_MS = 3 * 60_000; // a checkout lock lapses if its tab goes quiet this long
 const ATTENTION_LOCK_MS = 5 * 60_000;
@@ -212,6 +213,8 @@ const fromTab = {
     const item = findItem(st, st.jobs[tabId]);
     if (!item || !ACTIVE.has(item.status)) return null;
     const passive = item.status === 'placing' || (item.status === 'attention' && ['final', 'payment', 'checkout'].includes(item.attentionStage));
+    // Content scripts read autoPlace straight from the job, so the public build hands them "off".
+    if (PUBLIC_BUILD) return { item: { ...item, autoPlace: false }, settings: { ...st.settings, autoPlaceOrder: false }, passive };
     return { item, settings: st.settings, passive };
   },
 

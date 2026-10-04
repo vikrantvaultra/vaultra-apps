@@ -2,6 +2,8 @@
 // All *writes* to items/settings go through the background worker (see background.js)
 // so two pages can never clobber each other's changes.
 
+import { PUBLIC_BUILD } from './build.js';
+
 export const DEFAULT_SETTINGS = {
   autoPlaceOrder: false, // master switch: click the final "Place Order" button by itself
   paymentPreference: 'default', // 'default' = keep the site's saved method, 'cod' = pick Cash/Pay on Delivery
@@ -95,6 +97,7 @@ export function itemLabel(item) {
 }
 
 export function effectiveAutoPlace(item, settings) {
+  if (PUBLIC_BUILD) return false;
   return item.autoPlace == null ? !!settings.autoPlaceOrder : !!item.autoPlace;
 }
 

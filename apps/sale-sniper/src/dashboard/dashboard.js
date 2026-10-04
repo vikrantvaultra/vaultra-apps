@@ -1,4 +1,5 @@
 import { SITES, formatINR, parseRecordedLine, splitRecording } from '../lib/store.js';
+import { PUBLIC_BUILD } from '../lib/build.js';
 import { bindItemActions, esc, fromLocalInput, renderItems, send, watchState } from '../ui/shared.js';
 
 const $ = (id) => document.getElementById(id);
@@ -125,6 +126,7 @@ $('startAll').addEventListener('click', () => send('run:start', {}));
 $('stopAll').addEventListener('click', () => send('run:stop', {}));
 $('clearDone').addEventListener('click', () => send('items:clearDone'));
 $('clearLogs').addEventListener('click', () => send('logs:clear'));
+if (PUBLIC_BUILD) $('autoPlace').closest('label').hidden = true;
 $('autoPlace').addEventListener('change', (e) => {
   if (e.target.checked && !confirm('Auto place order ON: Sale Sniper will click the final Place Order button by itself when the total is within your max price. Continue?')) {
     e.target.checked = false;

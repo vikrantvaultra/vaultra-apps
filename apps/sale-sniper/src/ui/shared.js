@@ -1,3 +1,4 @@
+import { PUBLIC_BUILD } from '../lib/build.js';
 import { ACTIVE, DEFAULT_SETTINGS, SITES, STATUS, effectiveAutoPlace, formatINR, itemLabel } from '../lib/store.js';
 
 export const send = (type, payload = {}) => chrome.runtime.sendMessage({ type, ...payload });
@@ -72,13 +73,13 @@ function editForm(item) {
       <label class="field"><span>Max price ₹</span><input class="input" name="maxPrice" type="number" min="1" value="${item.maxPrice ?? ''}"></label>
       <label class="field"><span>Qty</span><input class="input" name="quantity" type="number" min="1" max="10" value="${item.quantity}"></label>
       <label class="field"><span>Sale starts</span><input class="input" name="scheduleAt" type="datetime-local" value="${toLocalInput(item.scheduleAt)}"></label>
-      <label class="field"><span>Place order</span>
+      ${PUBLIC_BUILD ? '' : `<label class="field"><span>Place order</span>
         <select class="input" name="autoPlace">
           <option value="default" ${auto === 'default' ? 'selected' : ''}>Use global setting</option>
           <option value="on" ${auto === 'on' ? 'selected' : ''}>Automatically</option>
           <option value="off" ${auto === 'off' ? 'selected' : ''}>Ask me first</option>
         </select>
-      </label>
+      </label>`}
       <div class="row"><button class="btn sm primary" type="submit">Save</button><button class="btn sm ghost" type="button" data-action="edit">Cancel</button></div>
     </form>`;
 }
