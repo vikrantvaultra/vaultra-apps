@@ -106,7 +106,9 @@ hidden. The public manifest also gets a name and description without "auto-buy".
 `icons/` and `src/`. The packager fails on `.git`, `node_modules`, `.env*`, source maps, keys, or anything that looks
 like a secret.
 
-The zip is deterministic (sorted entries, fixed timestamps), so the same source always gives the same SHA-256.
+The zip is deterministic (sorted entries, fixed timestamps): the same source on the same Node version gives the same
+SHA-256. Different Node/zlib versions compress differently, so a Vercel build can have a different hash from your local
+one. The hash shown on the page always comes from the zip that was actually deployed.
 
 ### Ship a new version
 

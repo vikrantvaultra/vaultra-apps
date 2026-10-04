@@ -8,7 +8,7 @@
 // 4. zips it as public/downloads/sale-sniper-v<version>.zip with one top-level folder `sale-sniper/`
 // 5. writes public/downloads/latest.json { version, filename, size_bytes, sha256, built_at }
 //
-// The zip is deterministic (sorted entries, fixed timestamps), so the same source always gives the same sha256.
+// The zip is deterministic (sorted entries, fixed timestamps): same source + same Node/zlib → same sha256.
 // Any problem throws and exits non-zero.
 
 import { createHash } from 'node:crypto';
