@@ -1,6 +1,9 @@
 import { cn } from "@/lib/utils";
 
-/** Two overlapping rounded forms: one leaning on the other, i.e. a saathi. */
+/**
+ * Two companions leaning the same way, one in front of the other, with an emerald dot where they meet: a saathi.
+ * Same drawing as LOGO_SVG (logo-data.ts) and app/icon.svg; the glossy app icon (app/apple-icon.png) follows it.
+ */
 export function LogoMark({ className, title }: { className?: string; title?: string }) {
   return (
     <svg
@@ -17,10 +20,10 @@ export function LogoMark({ className, title }: { className?: string; title?: str
           <stop offset="1" stopColor="#10B981" />
         </linearGradient>
       </defs>
-      <rect width="40" height="40" rx="12" fill="url(#ys-tile)" />
-      <rect x="7.5" y="12" width="15" height="19" rx="7.5" fill="#fff" fillOpacity="0.55" transform="rotate(-12 15 21.5)" />
-      <rect x="17.5" y="9" width="15" height="19" rx="7.5" fill="#fff" transform="rotate(12 25 18.5)" />
-      <circle cx="21.2" cy="22.6" r="2.1" fill="#10B981" />
+      <rect width="40" height="40" rx="10" fill="url(#ys-tile)" />
+      <rect x="19.75" y="8" width="9" height="24" rx="4.5" fill="#fff" fillOpacity="0.5" transform="rotate(24 24.25 20)" />
+      <rect x="11.25" y="8" width="9" height="24" rx="4.5" fill="#fff" transform="rotate(24 15.75 20)" />
+      <circle cx="19.4" cy="20" r="2.9" fill="#10B981" />
     </svg>
   );
 }

@@ -17,6 +17,7 @@ import catSocialWelfare from "@/assets/images/cat-social-welfare.jpg";
 import catWomenChild from "@/assets/images/cat-women-child.jpg";
 import heroDesktop from "@/assets/images/hero-desktop.jpg";
 import heroMobile from "@/assets/images/hero-mobile.jpg";
+import kundliEmblem from "@/assets/images/kundli-emblem.jpg";
 import kundliStory from "@/assets/images/kundli-story.jpg";
 import kundliWide from "@/assets/images/kundli-wide.jpg";
 import type { CategorySlug } from "@/data/taxonomy";
@@ -46,6 +47,9 @@ export const HERO = {
 
 /** Night-sky backdrops for the Sarkari Kundli (decorative) */
 export const COSMIC = { story: kundliStory, wide: kundliWide };
+
+/** Gold North-Indian-style Kundli chart on pure black, for `mix-blend-screen` on dark backgrounds (decorative) */
+export const KUNDLI_EMBLEM = kundliEmblem;
 
 export const CATEGORY_PHOTOS: Record<CategorySlug, Photo> = {
   agriculture: {

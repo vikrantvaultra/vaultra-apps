@@ -3,10 +3,9 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { DiscoverTabs } from "@/components/home/DiscoverTabs";
 import { FaqList } from "@/components/home/FaqList";
 import { TaxonomyIcon } from "@/components/icons";
-import { KundliOutline } from "@/components/kundli/KundliOutline";
 import { HeroPhoto } from "@/components/media/HeroPhoto";
 import Image from "next/image";
-import { CATEGORY_PHOTOS, COSMIC } from "@/lib/images";
+import { CATEGORY_PHOTOS, COSMIC, KUNDLI_EMBLEM } from "@/lib/images";
 import { CountUp } from "@/components/motion/CountUp";
 import { Button } from "@/components/ui/button";
 import { FAQS } from "@/data/faqs";
@@ -266,7 +265,10 @@ export default async function HomePage() {
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
             </span>
           </span>
-          <KundliOutline className="mx-auto hidden w-full max-w-[18rem] lg:block" />
+          {/* Gold Kundli emblem on pure black, screen-blended so only the gold shows on the night sky */}
+          <span aria-hidden className="relative mx-auto block aspect-square w-full max-w-[13rem] mix-blend-screen sm:max-w-[16rem] lg:max-w-[20rem]">
+            <Image src={KUNDLI_EMBLEM} alt="" fill sizes="(min-width: 1024px) 20rem, 16rem" placeholder="blur" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+          </span>
         </IntentLink>
       </section>
 
