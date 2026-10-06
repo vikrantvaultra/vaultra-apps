@@ -1,0 +1,15 @@
+## uttar-pradesh
+- `up-kushth-pension`: ₹3,000/month is worked out from the official SSPY portal's 2024-25 Q1 payout (12,400 pensioners, ₹111.60 crore in the quarter); the portal's own eligibility table still shows an old ₹2,500 figure. Confirm the current monthly rate from a G.O. launchedYear (2016) not confirmed.
+- `mukhyamantri-bal-seva-yojana`: ₹2,500/month and the 18–23 higher-education extension confirmed by an Aug 2026 report; category list, max-two-children rule and application route (District Probation Officer) come from 2021 descriptions. The official mbsy.up.gov.in portal did not resolve, so the current guidelines and any income limit were not checked.
+- `up-nirashrit-govansh-sahbhagita-yojana`: ₹50 per animal per day confirmed for cow shelters (Sept 2023); its use for the Sahbhagita (home adoption) part and the per-person animal cap (reported as 4) are from secondary sources only. Not checked on an official page.
+- `up-ujjwala-free-lpg-refill`: two free refills confirmed for 2025-26 (Oct–Dec 2025 and Jan–Mar 2026 rounds). Whether the state has funded rounds for 2026-27 (Diwali 2026) is not confirmed. launchedYear 2023 not confirmed.
+- `up-free-tubewell-electricity`: 100% waiver from 1 April 2023 and the conditions (meter, dues cleared) confirmed from 2024 reports; no 2026-27 budget or UPPCL page confirming it continues was found (web search budget ran out).
+- `up-divyang-pension` (active): ₹1,000/month confirmed from the SSPY portal's quarterly payout table and 2025-26 reports; launchedYear (1995) is approximate.
+- `swami-vivekananda-yuva-sashaktikaran-yojana` (active): the nodal department (IT & Electronics) is not confirmed from an official page.
+- `mukhyamantri-jan-arogya-abhiyan` (active): SACHIS page confirms the scheme and the ₹5 lakh cover; the full list of added groups (Antyodaya, construction workers, ASHA/Anganwadi, etc.) was not seen on an official page, so only Antyodaya is named.
+- `up-shadi-anudan-yojana` (active): the official portal gives the urban limit ₹56,460 and prints the rural limit as "₹46,460" (likely a typo for ₹46,080), so the rural figure is left out. launchedYear (2017) approximate.
+- BOCW schemes (`up-bocw-*`, active): launchedYear 2009 is the year the board was set up, not each scheme's start year.
+- (not added) Mukhyamantri Awas Yojana (Gramin): exists and is current (new priority groups added in 2025), but the assistance amount and full eligible-group list could not be confirmed from an official source.
+- (not added) UP pre-matric scholarship (class 9–10, General/OBC): reports from April 2026 say income limits are being doubled; current limits and amounts not confirmed.
+- (not added) Mukhyamantri Yuva Swarozgar Yojana: it appears to have been replaced by CM-YUVA (Mukhyamantri Yuva Udyami Vikas Abhiyan, already in the dataset); couldn't confirm it is still taking applications.
+- (not added) Mission Shakti-linked benefits and solar pump / PM-KUSUM state top-up: couldn't find an individual benefit with confirmed current amounts before the web search budget ran out.

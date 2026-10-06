@@ -1,0 +1,14 @@
+## mh-other
+- `ahilyadevi-holkar-shetkari-karjmukti-yojana`: 2026 farm loan waiver (approved June 2026, criteria revised July 2026). The ₹2 lakh cap, loan cut-off dates, exclusions and implementing department (assumed Cooperation) come from news reports only; the GR was not found. No value encoded.
+- `shabari-adivasi-gharkul-yojana`: Official sources give inconsistent income limits (₹10,000/month rural vs ₹1/1.5/2 lakh by area) and grant amounts (₹1.32–2 lakh). No value or income rule encoded. launchedYear (2013) unconfirmed.
+- `modi-awas-gharkul-yojana`: Target period was FY 2023-24 to 2025-26; couldn't confirm whether new sanctions continue in 2026-27. Department page not reachable during check.
+- `mahatma-phule-mahamandal-direct-loan-yojana`: Loan terms (₹1 lakh direct loan at 4%, margin money up to ₹5 lakh) come from secondary listings that point to mpbcdc.maharashtra.gov.in (site too large to fetch). Age and income limits unconfirmed. launchedYear 1978 is the corporation's founding year (unconfirmed).
+- `mukhyamantri-tirth-darshan-yojana-maharashtra`: 2024 GR terms (60+, ₹2.5 lakh income, ₹30,000 cap, lottery) come from news. Trips are still running per news reports, but I couldn't confirm a current application round or the exact online process.
+- `mukhyamantri-vayoshri-yojana`: 65+ and ₹3,000 one-time confirmed on Nashik/Jalgaon district sites. The ₹2 lakh income limit and the current application process come from secondary sources only, so income is not encoded.
+- Uncertain launchedYear values (not used for eligibility): shravanbal-seva-rajya-nivruttivetan-yojana (2008), ramai-awas-yojana (2008), dr-babasaheb-ambedkar-krishi-swavalamban-yojana (2016), birsa-munda-krishi-kranti-yojana (2017), maharashtra-bandhkam-kamgar-kalyan-yojana (2011), annasaheb-patil-vyaj-partava-yojana (2018).
+- `sanjay-gandhi-niradhar-anudan-yojana`: ₹1,500/month confirmed on district sites. Couldn't confirm reports of a higher rate for disabled beneficiaries.
+- (not added) Majhi Kanya Bhagyashree: replaced by Lek Ladki Yojana for girls born on or after 1 April 2023 (already in the dataset).
+- (not added) Mukhyamantri Shashwat Krishi Sinchan Yojana (state top-up for drip/sprinkler): listed on MahaDBT but I couldn't confirm the current top-up percentages from an official source.
+- (not added) State Agriculture Mechanisation Scheme (MahaDBT): listed on MahaDBT but no current official subsidy rates were found.
+- (not added) Punyashlok Ahilyadevi Holkar Gharkul Yojana (Dhangar NT-C housing): verified on the Satara ZP site, but the profile can't tell Dhangar/NT-C from other OBCs, so it would wrongly match every OBC user.
+- (not added) Free higher education fees for girls: left to the scholarship batch.

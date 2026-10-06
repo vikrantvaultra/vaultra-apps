@@ -1,0 +1,14 @@
+## bihar
+- `bihar-laghu-udyami-yojana`: Running in 2024-25 (training and first instalments confirmed), but no 2025-26 or 2026-27 application round found on udyami.bihar.gov.in. Confirm a new round is planned. Launch year 2024 and the ₹50,000/₹1 lakh/₹50,000 split come from news reports of the cabinet decision.
+- `bihar-mukhyamantri-jan-arogya-yojana`: Couldn't reach an official Bihar health page (BSSS site down). Scope (NFSA ration-card families left out of PM-JAY) and the ₹5 lakh cover come from secondary reports of the 2024 launch. Confirm it is still running and the launch year.
+- `bihar-antarjatiya-vivah-protsahan-yojana`: The ₹1 lakh amount comes only from secondary sources, so it is kept out of `value`. Launch year (2008) is unconfirmed. Confirm the amount, whether it is paid as a fixed deposit, and that the scheme is still open.
+- `karpoori-thakur-kisan-samman-nidhi`: Announced in the Bihar Budget 2026-27 (₹3,000 a year on top of PM-KISAN). No notification, eligibility rules or first payment date found yet. `value` is left out until payments start.
+- `bihar-parvarish-yojana`: Only the myScheme listing confirms ₹1,000 a month, so it is kept out of `value`. Launch year (2012) is unconfirmed. Confirm the amount and that the scheme is current.
+- `bihar-mukhyamantri-cycle-yojana` (active): The scheme was running in Sept 2025 (DBT transfer on newsonair). The ₹3,000 amount is widely reported but I couldn't open an official page that states it.
+- `bihar-disability-pension` / `laxmibai-samajik-suraksha-pension-yojana` / `bihar-mukhyamantri-kanya-vivah-yojana` (active): Launch years (1990 / 2007 / 2008) are approximate. Amounts and eligibility are confirmed.
+- `bihar-mukhyamantri-udyami-yojana` (active): The guideline PDF is a scanned image. The loan interest (interest-free in most parts, 1% in some) is described only as "little or no interest".
+- (not added) Mukhyamantri Gramin Awas Yojana: very narrow (SC/ST/EBC families in pre-1996 cluster housing, plus families left off the PMAY-G waitlist). Couldn't confirm a current round.
+- (not added) Bihar Building and Other Construction Workers Welfare Board benefits: bocw.bihar.gov.in didn't resolve, so current amounts couldn't be checked.
+- (not added) Mukhyamantri Balika Poshak Yojana: still paid in 2025, but the current per-student amount couldn't be confirmed.
+- (not added) Jal-Jeevan-Hariyali: a mission for public works, with no individual benefit people can apply for.
+- (not added) Matric-level Balika Protsahan (₹10,000) and earlier Kanya Utthan stages: covered inside `mukhyamantri-kanya-utthan-yojana`.
