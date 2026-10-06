@@ -1,0 +1,16 @@
+## telangana
+- `cheyutha-pension`: Clearly running (₹14,861 crore in the 2026-27 budget, ~43 lakh pensioners per the CM's 17 Sept 2026 speech), but the current monthly amounts per category and the old-age entry age (57) could not be confirmed on an official page: the GOs on the Cheyutha portal are behind ASP.NET postbacks that wouldn't download. `value` is left out. Confirm the amounts (the ₹4,000 guarantee vs. the older Aasara rates), the age limit, and the "one pension per person / no service pension" exclusions.
+- `rajiv-yuva-vikasam`: ₹5,800 crore in the 2026-27 budget, but no official guideline page found (not listed on tgobmms.cgg.gov.in). Age limits, income limits, subsidy slabs and whether a 2026-27 application round is open are unconfirmed, so they are described only generally.
+- `indiramma-kutumba-jivitha-bima`: Announced in the 2026-27 budget (₹5 lakh family life cover, ₹4,000 crore, due June 2026, per PRS and Budget-in-Brief). Couldn't confirm it has launched, who in the family is insured, age limits or enrolment process. `value` left out.
+- `telangana-mahalakshmi-free-bus` (active): Exclusion of premium/AC services and the out-of-state fare rule are from public reports, not an official TGSRTC page (the TGSRTC site has no Mahalakshmi page).
+- `telangana-mahalakshmi-lpg-subsidy` / `telangana-gruha-jyothi` (active): White ration card + Praja Palana application are confirmed for Gruha Jyothi (Feb 2024 press release). For the LPG scheme, the "active domestic LPG connection" and white-ration-card criteria follow G.O.Ms.No.2 as summarised in news; the G.O. itself wasn't read.
+- `indiramma-atmeeya-bharosa` (active): ₹12,000/year confirmed (AIR, Jan 2025) and funded in 2026-27 (₹600 crore). The exact job-card work-days criterion (reported as 20 days in 2023-24) is from news only, so the text says "minimum days set by the government".
+- `kalyana-lakshmi` (active): The MRO/Tahsildar verification step is the usual process but wasn't on the ePASS page. The tola-of-gold promise: no order found.
+- `telangana-overseas-vidya-nidhi` (active): Launch year 2013 is approximate.
+- `rajiv-aarogyasri` (active): The white ration card as the eligibility marker is standard practice; the official site only says "BPL families".
+- (not added) Rythu Bima (farmer group life insurance, ₹5 lakh): it was in use until 2025-26, but the 2026-27 budget gives "Insurance to Farmers" no money (₹1,168 crore in 2025-26 RE). It seems to be folded into the new Indiramma Kutumba Jivitha Bima. Couldn't confirm it is still running.
+- (not added) MCH Kit / KCR Kit successor (₹12,000/₹13,000 maternity cash): the "MCH Kit" budget heads get no money in 2026-27 (BE shows nil). Couldn't confirm cash is still being paid.
+- (not added) Mahalakshmi ₹2,500 a month for women: promised, but still not started. The 2026-27 budget funds only the RTC free travel and the LPG subsidy under Mahalakshmi.
+- (not added) Financial help of ₹2 lakh for couples where both partners have a disability (CM, Jan 2026 Bala Bharosa launch): no guidelines found.
+- (not added) Crop insurance with the state paying the farmer's PMFBY premium (2024-25 budget speech; ₹1,886 crore in 2026-27): couldn't confirm the current season's rules. PMFBY itself is covered at central level.
+- (not added) Telangana BOCW welfare board benefits: the board site (tgbocwwb.cgg.gov.in) didn't load.
