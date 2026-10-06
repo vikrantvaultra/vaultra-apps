@@ -21,7 +21,7 @@ const buttonVariants = cva(
         ghost:
           "text-foreground hover:bg-muted aria-expanded:bg-muted dark:hover:bg-muted",
         destructive:
-          "bg-destructive/10 text-destructive hover:bg-destructive/15",
+          "bg-destructive text-white hover:bg-[color-mix(in_oklab,var(--destructive),black_12%)] dark:text-ink",
         link: "h-auto rounded-md px-0 text-primary underline-offset-4 hover:underline",
       },
       size: {

@@ -10,7 +10,7 @@ import { Providers } from "@/components/layout/Providers";
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/site";
 import { textSizeBootScript } from "@/lib/text-size-boot";
-import { devanagari, inter, jakarta } from "../fonts";
+import { inter, jakarta, rupeeHeading, rupeeSans } from "../fonts";
 import "../globals.css";
 
 export const dynamicParams = false;
@@ -49,7 +49,7 @@ export default async function LocaleLayout({ children }: LayoutProps<"/[locale]"
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${inter.variable} ${jakarta.variable} ${devanagari.variable}`}
+      className={`${inter.variable} ${jakarta.variable} ${rupeeSans.variable} ${rupeeHeading.variable}`}
     >
       <head>
         <InlineScript html={textSizeBootScript} />

@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   experimental: {
     optimizePackageImports: ["lucide-react", "recharts", "framer-motion"],
+    // Tailwind's atomic CSS is small; inlining it removes render-blocking stylesheet requests
+    inlineCss: true,
   },
 };
 

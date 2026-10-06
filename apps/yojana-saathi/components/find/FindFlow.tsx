@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check, CloudCheck, Lock, RotateCcw, ShieldCheck, Wand2 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
@@ -17,6 +17,14 @@ type Stage = { kind: "intro" } | { kind: "question"; field: ProfileField } | { k
 const EMPTY: Profile = {};
 
 export function FindFlow() {
+  return (
+    <MotionConfig reducedMotion="user">
+      <FindFlowInner />
+    </MotionConfig>
+  );
+}
+
+function FindFlowInner() {
   const t = useTranslations("find");
   const locale = useLocale() as Locale;
   const router = useRouter();

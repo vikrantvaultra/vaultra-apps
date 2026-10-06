@@ -24,7 +24,7 @@ vaultra-apps/
 |---|---|---|---|
 | [loot-liye-ya-lut-gaye](apps/loot-liye-ya-lut-gaye) | 60-second festive-sale trap game (Hinglish) | Next.js 16, TypeScript | lootyalut.in |
 | [sale-sniper](apps/sale-sniper) | Chrome extension: record a sale wishlist, auto-buy on Amazon.in & Flipkart | Manifest V3, vanilla JS | load unpacked |
-| [yojana-saathi](apps/yojana-saathi) | Government scheme discovery + Sarkari Kundli (EN/HI) | Next.js 16, TypeScript, Tailwind | — |
+| [yojana-saathi](apps/yojana-saathi) | Government scheme discovery + Sarkari Kundli (EN/HI) | Next.js 16, TypeScript, Tailwind | not deployed yet |
 
 ## Adding a new app
 

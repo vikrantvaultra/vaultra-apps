@@ -1,18 +1,23 @@
 "use client";
 
-import { createClient, type Session, type SupabaseClient } from "@supabase/supabase-js";
+import type { Session, SupabaseClient } from "@supabase/supabase-js";
 import { useSyncExternalStore } from "react";
 import { isSupabaseConfigured, SUPABASE_ANON_KEY, SUPABASE_URL } from "./env";
 
-let client: SupabaseClient | null = null;
+let clientPromise: Promise<SupabaseClient> | null = null;
 
-/** The browser client, or null when Supabase isn't configured */
-export function getSupabase(): SupabaseClient | null {
-  if (!isSupabaseConfigured() || typeof window === "undefined") return null;
-  client ??= createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-    auth: { persistSession: true, autoRefreshToken: true, storageKey: "ys-auth" },
-  });
-  return client;
+/**
+ * The browser client, or null when Supabase isn't configured.
+ * supabase-js is loaded on demand, so pages never pay for it unless sync is set up.
+ */
+export function getSupabase(): Promise<SupabaseClient | null> {
+  if (!isSupabaseConfigured() || typeof window === "undefined") return Promise.resolve(null);
+  clientPromise ??= import("@supabase/supabase-js").then(({ createClient }) =>
+    createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: { persistSession: true, autoRefreshToken: true, storageKey: "ys-auth" },
+    }),
+  );
+  return clientPromise;
 }
 
 /* Session store ------------------------------------------------------ */
@@ -20,19 +25,21 @@ export function getSupabase(): SupabaseClient | null {
 let session: Session | null = null;
 let started = false;
 const listeners = new Set<() => void>();
+const emit = () => listeners.forEach((l) => l());
 
 function start() {
-  if (started) return;
+  if (started || !isSupabaseConfigured()) return;
   started = true;
-  const sb = getSupabase();
-  if (!sb) return;
-  sb.auth.getSession().then(({ data }) => {
-    session = data.session;
-    listeners.forEach((l) => l());
-  });
-  sb.auth.onAuthStateChange((_event, s) => {
-    session = s;
-    listeners.forEach((l) => l());
+  getSupabase().then((sb) => {
+    if (!sb) return;
+    sb.auth.getSession().then(({ data }) => {
+      session = data.session;
+      emit();
+    });
+    sb.auth.onAuthStateChange((_event, s) => {
+      session = s;
+      emit();
+    });
   });
 }
 
@@ -44,4 +51,9 @@ function subscribe(cb: () => void) {
 
 export function useSession(): Session | null {
   return useSyncExternalStore(subscribe, () => session, () => null);
+}
+
+export async function signOut() {
+  const sb = await getSupabase();
+  await sb?.auth.signOut();
 }

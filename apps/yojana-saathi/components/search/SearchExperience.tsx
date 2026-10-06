@@ -224,6 +224,7 @@ export function SearchExperience({ cards, locked = NO_LOCK, showQuery = true }: 
 
         {fromFind && myProfile && <FindResultsBanner cards={cards} profile={myProfile} matched={results.length} locale={locale} />}
 
+        <h2 className="sr-only">{t("resultsHeading")}</h2>
         <p className="mt-5 text-sm font-semibold text-muted-foreground" aria-live="polite">
           {t("results", { count: results.length })}
         </p>
@@ -274,8 +275,8 @@ function ResultList({ results, locale, profile }: { results: Card[]; locale: Loc
   return (
     <>
       <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        {shown.map((c) => (
-          <li key={c.slug}>
+        {shown.map((c, i) => (
+          <li key={c.slug} className="animate-rise" style={{ animationDelay: `${(i % PAGE) * 35}ms` }}>
             <SchemeCard card={c} locale={locale} badge={badge(c)} />
           </li>
         ))}

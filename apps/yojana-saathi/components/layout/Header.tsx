@@ -3,7 +3,8 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { AccountButton } from "@/components/account/AccountButton";
 import { LogoMark } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/button";
-import { getPathname, Link } from "@/i18n/navigation";
+import { IntentLink } from "@/components/IntentLink";
+import { getPathname } from "@/i18n/navigation";
 import { LanguageSwitch, LanguageToggle } from "./LanguageSwitch";
 import { MobileMenu } from "./MobileMenu";
 import { TextSizePopover } from "./TextSizePopover";
@@ -17,24 +18,24 @@ export async function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/80 backdrop-blur-xl supports-backdrop-filter:bg-background/70">
       <div className="container-page flex h-16 items-center gap-2 lg:h-[4.5rem] lg:gap-3">
-        <Link href="/" className="-ml-1 flex shrink-0 items-center gap-2.5 rounded-xl p-1" aria-label={t("nav.home")}>
+        <IntentLink href="/" className="-ml-1 flex shrink-0 items-center gap-2.5 rounded-xl p-1" aria-label={t("nav.home")}>
           <LogoMark />
           <span className="font-heading text-[1.1rem] leading-none font-extrabold tracking-tight whitespace-nowrap sm:text-[1.2rem]">
             {t("brand.name")}
           </span>
-        </Link>
+        </IntentLink>
 
         <nav aria-label={t("nav.explore")} className="ml-2 hidden shrink-0 items-center gap-0.5 lg:flex xl:ml-4">
-          <Link
+          <IntentLink
             href="/kundli"
             className="inline-flex h-10 items-center gap-1.5 rounded-full px-3.5 text-sm font-semibold whitespace-nowrap text-gold-ink transition-colors hover:bg-gold-soft"
           >
             <Sparkles className="size-4" aria-hidden />
             {t("nav.kundli")}
-          </Link>
-          <Link href="/dashboard" className="inline-flex h-10 items-center rounded-full px-3.5 text-sm font-medium whitespace-nowrap text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+          </IntentLink>
+          <IntentLink href="/dashboard" className="inline-flex h-10 items-center rounded-full px-3.5 text-sm font-medium whitespace-nowrap text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
             {t("nav.dashboard")}
-          </Link>
+          </IntentLink>
         </nav>
 
         <div className="ml-auto flex min-w-0 flex-1 items-center justify-end gap-1 lg:gap-1.5">
@@ -52,9 +53,9 @@ export async function Header() {
           </form>
 
           <Button asChild variant="ghost" size="icon" className="md:hidden">
-            <Link href="/search" aria-label={t("nav.search")}>
+            <IntentLink href="/search" aria-label={t("nav.search")}>
               <Search className="size-5" aria-hidden />
-            </Link>
+            </IntentLink>
           </Button>
 
           <LanguageToggle className="sm:hidden" />
@@ -67,7 +68,7 @@ export async function Header() {
             <AccountButton />
           </div>
           <Button asChild variant="brand" className="hidden lg:inline-flex">
-            <Link href="/find">{t("nav.find")}</Link>
+            <IntentLink href="/find">{t("nav.find")}</IntentLink>
           </Button>
           <MobileMenu />
         </div>

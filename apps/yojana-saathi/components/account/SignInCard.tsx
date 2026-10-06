@@ -18,7 +18,7 @@ export function SignInCard() {
 
   async function send(e?: React.FormEvent) {
     e?.preventDefault();
-    const sb = getSupabase();
+    const sb = await getSupabase();
     if (!sb) return;
     setBusy(true);
     setError(null);
@@ -30,7 +30,7 @@ export function SignInCard() {
 
   async function verify(e: React.FormEvent) {
     e.preventDefault();
-    const sb = getSupabase();
+    const sb = await getSupabase();
     if (!sb) return;
     setBusy(true);
     setError(null);

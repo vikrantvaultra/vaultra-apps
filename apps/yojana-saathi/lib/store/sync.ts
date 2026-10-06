@@ -41,7 +41,7 @@ function applyRemote(fn: () => void) {
 }
 
 async function initialSync(userId: string) {
-  const sb = getSupabase();
+  const sb = await getSupabase();
   if (!sb) return;
   const meta = readMeta();
 
@@ -79,7 +79,7 @@ async function initialSync(userId: string) {
 }
 
 async function pushProfile(userId: string) {
-  const sb = getSupabase();
+  const sb = await getSupabase();
   const data = readProfile();
   if (!sb) return;
   if (!data) {
@@ -92,7 +92,7 @@ async function pushProfile(userId: string) {
 }
 
 async function pushKundli(userId: string) {
-  const sb = getSupabase();
+  const sb = await getSupabase();
   if (!sb) return;
   const at = new Date().toISOString();
   await sb.from("kundli").upsert({ user_id: userId, data: readKundliState(), updated_at: at });
@@ -100,7 +100,7 @@ async function pushKundli(userId: string) {
 }
 
 async function pushBookmarks(userId: string) {
-  const sb = getSupabase();
+  const sb = await getSupabase();
   if (!sb) return;
   const slugs = readBookmarks();
   if (slugs.length) {
@@ -143,7 +143,7 @@ export function useCloudSync() {
 
 /** Deletes the account and every synced row (cascade), then signs out */
 export async function deleteAccount() {
-  const sb = getSupabase();
+  const sb = await getSupabase();
   if (!sb) return;
   const { error } = await sb.rpc("delete_my_account");
   if (error) throw error;

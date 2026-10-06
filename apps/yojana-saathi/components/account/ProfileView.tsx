@@ -13,7 +13,7 @@ import type { SchemeCard as Card } from "@/lib/schemes";
 import { useBookmarks } from "@/lib/store/bookmarks";
 import { clearProfile, useProfile } from "@/lib/store/profile";
 import { clearLocalData, deleteAccount } from "@/lib/store/sync";
-import { getSupabase, useSession } from "@/lib/supabase/client";
+import { signOut, useSession } from "@/lib/supabase/client";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import type { Locale, Profile } from "@/lib/types";
 import { SignInCard } from "./SignInCard";
@@ -77,7 +77,7 @@ export function ProfileView({ cards }: { cards: Card[] }) {
                 <p className="text-sm text-muted-foreground">{ta("syncOn")}</p>
               </div>
             </div>
-            <Button variant="outline" size="sm" onClick={() => getSupabase()?.auth.signOut()}>
+            <Button variant="outline" size="sm" onClick={() => signOut()}>
               <LogOut aria-hidden />
               {ta("signOut")}
             </Button>

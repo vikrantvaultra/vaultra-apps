@@ -3,17 +3,20 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { DiscoverTabs } from "@/components/home/DiscoverTabs";
 import { FaqList } from "@/components/home/FaqList";
 import { TaxonomyIcon } from "@/components/icons";
+import { KundliOutline } from "@/components/kundli/KundliOutline";
 import { CountUp } from "@/components/motion/CountUp";
 import { Button } from "@/components/ui/button";
 import { FAQS } from "@/data/faqs";
 import { CATEGORIES, MINISTRIES, STATES, type CategorySlug, type MinistrySlug, type StateSlug } from "@/data/taxonomy";
-import { getPathname, Link } from "@/i18n/navigation";
+import { IntentLink } from "@/components/IntentLink";
+import { getPathname } from "@/i18n/navigation";
 import { shortOrgName } from "@/lib/filter-options";
 import { categoryCounts, ministryCounts, stateCounts, stats } from "@/lib/schemes";
 import type { Locale } from "@/lib/types";
 
 export default async function HomePage() {
   const t = await getTranslations("home");
+  const tk = await getTranslations("kundli");
   const locale = (await getLocale()) as Locale;
   const s = stats();
   const catCounts = categoryCounts();
@@ -33,7 +36,8 @@ export default async function HomePage() {
           aria-hidden
           className="pointer-events-none absolute inset-x-0 -top-40 h-[38rem] bg-[radial-gradient(55%_55%_at_25%_30%,rgb(79_70_229/0.16),transparent_70%),radial-gradient(45%_45%_at_80%_35%,rgb(16_185_129/0.14),transparent_70%)]"
         />
-        <div className="container-page relative pt-12 pb-14 sm:pt-20 lg:pt-24 lg:pb-20">
+        <div className="container-page relative grid items-center gap-10 pt-12 pb-14 sm:pt-20 lg:grid-cols-[1.25fr_1fr] lg:pt-24 lg:pb-20">
+          <div>
           <p className="inline-flex items-center rounded-full border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-soft sm:text-sm">{t("eyebrow")}</p>
           <h1 className="mt-6 max-w-3xl text-[2.35rem] leading-[1.08] font-extrabold sm:text-6xl">
             {t.rich("title", { hl: (chunks) => <span className="text-brand-gradient">{chunks}</span> })}
@@ -62,30 +66,41 @@ export default async function HomePage() {
           <div className="mt-3 flex max-w-2xl flex-wrap items-center gap-1.5 text-sm">
             <span className="mr-1 text-muted-foreground">{t("popular")}</span>
             {popular.map((term) => (
-              <Link
+              <IntentLink
                 key={term}
                 href={{ pathname: "/search", query: { q: term } }}
                 className="inline-flex min-h-9 items-center rounded-full border bg-card/70 px-3 text-sm font-medium transition-colors hover:border-primary/50 hover:text-primary"
               >
                 {term}
-              </Link>
+              </IntentLink>
             ))}
           </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild variant="brand" size="lg">
-              <Link href="/find">
+              <IntentLink href="/find">
                 <Wand2 aria-hidden />
                 {t("ctaFind")}
                 <ArrowRight className="transition-transform group-hover/button:translate-x-0.5" aria-hidden />
-              </Link>
+              </IntentLink>
             </Button>
             <Button asChild variant="gold" size="lg">
-              <Link href="/kundli">
+              <IntentLink href="/kundli">
                 {t("ctaKundli")} <span aria-hidden>✨</span>
-              </Link>
+              </IntentLink>
             </Button>
           </div>
+          </div>
+
+          {/* Kundli teaser (desktop) */}
+          <IntentLink
+            href="/kundli"
+            className="group relative hidden overflow-hidden rounded-[2rem] bg-cosmic p-8 text-white shadow-pop transition-transform duration-300 hover:-translate-y-1 lg:block"
+          >
+            <KundliOutline className="mx-auto w-full max-w-sm" />
+            <p className="mt-6 font-heading text-2xl font-extrabold text-gold">{tk("title")} ✨</p>
+            <p className="mt-1 text-sm text-white/75">{tk("noStars")}</p>
+          </IntentLink>
         </div>
       </section>
 
@@ -126,15 +141,15 @@ export default async function HomePage() {
                 label: t("discover.categories"),
                 content: (
                   <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-                    {(Object.keys(CATEGORIES) as CategorySlug[]).map((c) => (
-                      <li key={c}>
-                        <Link href={`/category/${c}`} className="group flex h-full flex-col rounded-[1.25rem] border bg-card p-4 shadow-soft hover-lift sm:p-5">
+                    {(Object.keys(CATEGORIES) as CategorySlug[]).map((c, i) => (
+                      <li key={c} className="animate-rise" style={{ animationDelay: `${i * 35}ms` }}>
+                        <IntentLink href={`/category/${c}`} className="group flex h-full flex-col rounded-[1.25rem] border bg-card p-4 shadow-soft hover-lift sm:p-5">
                           <span className="grid size-11 place-items-center rounded-2xl bg-secondary text-secondary-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                             <TaxonomyIcon name={CATEGORIES[c].icon} className="size-5" />
                           </span>
                           <span className="mt-3 font-heading text-[0.95rem] leading-snug font-bold sm:text-base">{CATEGORIES[c].name[locale]}</span>
                           <span className="mt-1 text-xs text-muted-foreground sm:text-sm">{t("discover.count", { count: catCounts[c] })}</span>
-                        </Link>
+                        </IntentLink>
                       </li>
                     ))}
                   </ul>
@@ -147,13 +162,13 @@ export default async function HomePage() {
                   <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                     {states.map((st) => (
                       <li key={st}>
-                        <Link href={`/state/${st}`} className="group flex min-h-14 items-center justify-between gap-3 rounded-2xl border bg-card px-4 py-3 shadow-soft hover-lift">
+                        <IntentLink href={`/state/${st}`} className="group flex min-h-14 items-center justify-between gap-3 rounded-2xl border bg-card px-4 py-3 shadow-soft hover-lift">
                           <span>
                             <span className="block font-semibold">{STATES[st].name[locale]}</span>
                             <span className="text-xs text-muted-foreground">{t("discover.stateCount", { count: stCounts[st] })}</span>
                           </span>
                           <ChevronRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden />
-                        </Link>
+                        </IntentLink>
                       </li>
                     ))}
                   </ul>
@@ -166,7 +181,7 @@ export default async function HomePage() {
                   <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                     {ministries.map((m) => (
                       <li key={m}>
-                        <Link href={`/ministry/${m}`} className="group flex min-h-16 items-center justify-between gap-3 rounded-2xl border bg-card px-4 py-3 shadow-soft hover-lift">
+                        <IntentLink href={`/ministry/${m}`} className="group flex min-h-16 items-center justify-between gap-3 rounded-2xl border bg-card px-4 py-3 shadow-soft hover-lift">
                           <span>
                             <span className="block leading-snug font-semibold">
                               {locale === "en" ? shortOrgName(MINISTRIES[m].name.en) : MINISTRIES[m].name.hi}
@@ -174,7 +189,7 @@ export default async function HomePage() {
                             <span className="text-xs text-muted-foreground">{t("discover.count", { count: minCounts[m] })}</span>
                           </span>
                           <ChevronRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden />
-                        </Link>
+                        </IntentLink>
                       </li>
                     ))}
                   </ul>
@@ -213,10 +228,10 @@ export default async function HomePage() {
         </ol>
         <div className="mt-8">
           <Button asChild variant="brand" size="lg">
-            <Link href="/find">
+            <IntentLink href="/find">
               {t("ctaFind")}
               <ArrowRight aria-hidden />
-            </Link>
+            </IntentLink>
           </Button>
         </div>
       </section>
@@ -263,10 +278,10 @@ export default async function HomePage() {
             <FaqList items={FAQS.slice(0, 5).map((f) => ({ id: f.id, q: f.q[locale], a: f.a[locale] }))} />
           </div>
           <Button asChild variant="outline" className="mt-5">
-            <Link href="/faqs">
+            <IntentLink href="/faqs">
               {t("faq.viewMore")}
               <ArrowRight aria-hidden />
-            </Link>
+            </IntentLink>
           </Button>
         </div>
       </section>

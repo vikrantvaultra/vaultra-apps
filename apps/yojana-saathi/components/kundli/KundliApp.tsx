@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Calculator, ListChecks, PencilLine, Share2, SkipForward, Sparkles } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -28,6 +28,14 @@ const REVEALED_KEY = "ys-kundli-revealed";
 const EMPTY: Profile = {};
 
 export function KundliApp({ cards }: { cards: SchemeCard[] }) {
+  return (
+    <MotionConfig reducedMotion="user">
+      <KundliAppInner cards={cards} />
+    </MotionConfig>
+  );
+}
+
+function KundliAppInner({ cards }: { cards: SchemeCard[] }) {
   const t = useTranslations("kundli");
   const locale = useLocale() as Locale;
   const mounted = useMounted();

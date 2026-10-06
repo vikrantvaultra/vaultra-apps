@@ -63,8 +63,9 @@ function List({ items, icon }: { items: string[]; icon: "check" | "x" | "doc" | 
 
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
-  <section id={id} aria-labelledby={`${id}-h`} className="scroll-mt-36 border-b pb-10 last:border-0">
-    <h2 id={`${id}-h`} className="text-2xl font-extrabold">
+  // html has scroll-padding-top: 5rem (the header); scroll-mt adds the sticky section nav for direct #links
+  <section id={id} aria-labelledby={`${id}-h`} className="scroll-mt-16 border-b pb-10 last:border-0">
+    <h2 id={`${id}-h`} tabIndex={-1} className="text-2xl font-extrabold outline-none">
       {title}
     </h2>
     <div className="mt-4">{children}</div>
@@ -284,8 +285,9 @@ export default async function SchemePage({ params }: PageProps<"/[locale]/scheme
                 <ApplyButton url={s.officialUrl} name={name} className="w-full" />
               </div>
             </div>
-            <dl className="grid gap-3 rounded-[1.25rem] border bg-card p-5 text-sm shadow-soft">
+            <div className="rounded-[1.25rem] border bg-card p-5 text-sm shadow-soft">
               <h2 className="font-heading text-base font-bold">{t("scheme.keyFacts")}</h2>
+              <dl className="mt-3 grid gap-3">
               <div>
                 <dt className="text-muted-foreground">{t("scheme.benefitType")}</dt>
                 <dd className="font-semibold">{BENEFIT_TYPES[s.benefitType][locale]}</dd>
@@ -302,7 +304,8 @@ export default async function SchemePage({ params }: PageProps<"/[locale]/scheme
                 <dt className="text-muted-foreground">{t("scheme.officialSite")}</dt>
                 <dd className="font-semibold break-all">{new URL(s.officialUrl).hostname.replace(/^www\./, "")}</dd>
               </div>
-            </dl>
+              </dl>
+            </div>
           </div>
         </aside>
       </div>

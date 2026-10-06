@@ -15,7 +15,7 @@ export default function BarList({ data, unit, yWidth = 150 }: { data: Datum[]; u
   return (
     <div style={{ height: data.length * ROW + 16 }} aria-hidden>
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data} layout="vertical" margin={{ top: 4, right: 40, bottom: 4, left: 0 }} barCategoryGap={8}>
+        <BarChart accessibilityLayer={false} data={data} layout="vertical" margin={{ top: 4, right: 40, bottom: 4, left: 0 }} barCategoryGap={8}>
           <XAxis type="number" hide domain={[0, "dataMax"]} />
           <YAxis
             type="category"
