@@ -1,0 +1,17 @@
+import { fileURLToPath } from "node:url";
+import { defineConfig } from "vitest/config";
+
+export default defineConfig({
+  resolve: {
+    alias: { "@": fileURLToPath(new URL("./", import.meta.url)) },
+  },
+  test: {
+    include: ["**/*.test.ts"],
+    exclude: ["node_modules/**", ".next/**", "e2e/**"],
+    coverage: {
+      provider: "v8",
+      include: ["lib/engine/**", "lib/kundli/**"],
+      exclude: ["**/*.test.ts"],
+    },
+  },
+});
