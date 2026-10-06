@@ -6,6 +6,7 @@ import { TaxonomyIcon } from "@/components/icons";
 import { PageHero } from "@/components/layout/PageHero";
 import { SearchExperience, StaticResults } from "@/components/search/SearchExperience";
 import { CATEGORIES, type CategorySlug } from "@/data/taxonomy";
+import { CATEGORY_PHOTOS } from "@/lib/images";
 import { firstPage, schemesInCategory, toCard } from "@/lib/schemes";
 import type { Locale } from "@/lib/types";
 
@@ -43,6 +44,7 @@ export default async function CategoryPage({ params }: PageProps<"/[locale]/cate
           </span>
         }
         meta={<p className="text-sm font-semibold">{t("count", { count: cards.length })}</p>}
+        image={{ src: CATEGORY_PHOTOS[slug].src, alt: CATEGORY_PHOTOS[slug].alt[locale], preload: true }}
       />
       <div className="container-page py-8 lg:py-10">
         <Suspense fallback={<StaticResults cards={initial} locale={locale} />}>

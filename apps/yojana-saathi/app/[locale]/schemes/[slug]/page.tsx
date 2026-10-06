@@ -11,6 +11,7 @@ import { SchemeCard } from "@/components/scheme/SchemeCard";
 import { SectionNav } from "@/components/scheme/SectionNav";
 import { BENEFIT_TYPES } from "@/data/profile-labels";
 import { CATEGORIES, MINISTRIES, STATES } from "@/data/taxonomy";
+import { CATEGORY_PHOTOS } from "@/lib/images";
 import { getPathname, Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { allSlugs, getScheme, relatedSchemes, toCard } from "@/lib/schemes";
@@ -161,6 +162,7 @@ export default async function SchemePage({ params }: PageProps<"/[locale]/scheme
         ]}
         title={name}
         description={s.shortDescription[locale]}
+        image={{ src: CATEGORY_PHOTOS[primary].src, alt: CATEGORY_PHOTOS[primary].alt[locale], desktopOnly: true }}
         meta={
           <div className="grid gap-4">
             <div className="flex flex-wrap items-center gap-2 text-sm">

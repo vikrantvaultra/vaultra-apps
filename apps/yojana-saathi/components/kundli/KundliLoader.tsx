@@ -1,5 +1,6 @@
 "use client";
 
+import { CosmicBackdrop } from "./CosmicBackdrop";
 import { Sparkles } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
@@ -7,7 +8,8 @@ import { useTranslations } from "next-intl";
 function IntroShell() {
   const t = useTranslations("kundli");
   return (
-    <section className="bg-cosmic text-white">
+    <section className="relative isolate overflow-hidden bg-cosmic text-white">
+        <CosmicBackdrop />
       <div className="container-page flex min-h-[calc(100dvh-4rem)] flex-col items-center justify-center py-14 text-center">
         <p className="inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-gold/10 px-3.5 py-1.5 text-sm font-semibold text-gold">
           <Sparkles className="size-4" aria-hidden />

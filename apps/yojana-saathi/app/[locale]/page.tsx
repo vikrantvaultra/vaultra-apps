@@ -4,6 +4,9 @@ import { DiscoverTabs } from "@/components/home/DiscoverTabs";
 import { FaqList } from "@/components/home/FaqList";
 import { TaxonomyIcon } from "@/components/icons";
 import { KundliOutline } from "@/components/kundli/KundliOutline";
+import { HeroPhoto } from "@/components/media/HeroPhoto";
+import Image from "next/image";
+import { CATEGORY_PHOTOS, COSMIC } from "@/lib/images";
 import { CountUp } from "@/components/motion/CountUp";
 import { Button } from "@/components/ui/button";
 import { FAQS } from "@/data/faqs";
@@ -31,13 +34,13 @@ export default async function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative isolate overflow-hidden">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 -top-40 h-[38rem] bg-[radial-gradient(55%_55%_at_25%_30%,rgb(79_70_229/0.16),transparent_70%),radial-gradient(45%_45%_at_80%_35%,rgb(16_185_129/0.14),transparent_70%)]"
+          className="pointer-events-none absolute inset-x-0 -top-40 -z-20 h-[38rem] bg-[radial-gradient(55%_55%_at_25%_30%,rgb(79_70_229/0.16),transparent_70%),radial-gradient(45%_45%_at_80%_35%,rgb(16_185_129/0.14),transparent_70%)]"
         />
-        <div className="container-page relative grid items-center gap-10 pt-12 pb-14 sm:pt-20 lg:grid-cols-[1.25fr_1fr] lg:pt-24 lg:pb-20">
-          <div>
+        <div className="container-page pt-12 pb-14 sm:pt-20 lg:pt-24 lg:pb-24">
+          <div className="lg:max-w-[34rem] xl:max-w-[38rem]">
           <p className="inline-flex items-center rounded-full border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-soft sm:text-sm">{t("eyebrow")}</p>
           <h1 className="mt-6 max-w-3xl text-[2.35rem] leading-[1.08] font-extrabold sm:text-6xl">
             {t.rich("title", { hl: (chunks) => <span className="text-brand-gradient">{chunks}</span> })}
@@ -92,15 +95,10 @@ export default async function HomePage() {
           </div>
           </div>
 
-          {/* Kundli teaser (desktop) */}
-          <IntentLink
-            href="/kundli"
-            className="group relative hidden overflow-hidden rounded-[2rem] bg-cosmic p-8 text-white shadow-pop transition-transform duration-300 hover:-translate-y-1 lg:block"
-          >
-            <KundliOutline className="mx-auto w-full max-w-sm" />
-            <p className="mt-6 font-heading text-2xl font-extrabold text-gold">{tk("title")} ✨</p>
-            <p className="mt-1 text-sm text-white/75">{tk("noStars")}</p>
-          </IntentLink>
+          {/* Photo: a rounded card below the buttons on phones; the right side of the hero on desktop */}
+          <div className="relative mt-10 aspect-[4/3] overflow-hidden rounded-[1.75rem] shadow-pop sm:aspect-[16/10] lg:absolute lg:inset-y-0 lg:right-0 lg:-z-10 lg:mt-0 lg:aspect-auto lg:w-[58vw] lg:max-w-none lg:rounded-none lg:shadow-none lg:[mask-image:linear-gradient(90deg,transparent_0%,#000_40%),linear-gradient(0deg,transparent_0%,#000_22%)] lg:[mask-composite:intersect]">
+            <HeroPhoto locale={locale} className="h-full w-full" />
+            </div>
         </div>
       </section>
 
@@ -143,12 +141,24 @@ export default async function HomePage() {
                   <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
                     {(Object.keys(CATEGORIES) as CategorySlug[]).map((c, i) => (
                       <li key={c} className="animate-rise" style={{ animationDelay: `${i * 35}ms` }}>
-                        <IntentLink href={`/category/${c}`} className="group flex h-full flex-col rounded-[1.25rem] border bg-card p-4 shadow-soft hover-lift sm:p-5">
-                          <span className="grid size-11 place-items-center rounded-2xl bg-secondary text-secondary-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                            <TaxonomyIcon name={CATEGORIES[c].icon} className="size-5" />
+                        <IntentLink href={`/category/${c}`} className="group flex h-full flex-col overflow-hidden rounded-[1.25rem] border bg-card shadow-soft hover-lift">
+                          <span className="relative block aspect-[4/3] overflow-hidden bg-muted">
+                            <Image
+                              src={CATEGORY_PHOTOS[c].src}
+                              alt=""
+                              fill
+                              sizes="(min-width: 1024px) 18rem, (min-width: 640px) 33vw, 50vw"
+                              placeholder="blur"
+                              className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <span className="absolute bottom-2 left-2 grid size-9 place-items-center rounded-xl bg-card/90 text-secondary-foreground shadow-soft backdrop-blur-sm">
+                              <TaxonomyIcon name={CATEGORIES[c].icon} className="size-4.5" />
+                            </span>
                           </span>
-                          <span className="mt-3 font-heading text-[0.95rem] leading-snug font-bold sm:text-base">{CATEGORIES[c].name[locale]}</span>
-                          <span className="mt-1 text-xs text-muted-foreground sm:text-sm">{t("discover.count", { count: catCounts[c] })}</span>
+                          <span className="flex flex-1 flex-col p-3.5 sm:p-4">
+                            <span className="font-heading text-[0.95rem] leading-snug font-bold sm:text-base">{CATEGORIES[c].name[locale]}</span>
+                            <span className="mt-1 text-xs text-muted-foreground sm:text-sm">{t("discover.count", { count: catCounts[c] })}</span>
+                          </span>
                         </IntentLink>
                       </li>
                     ))}
@@ -234,6 +244,30 @@ export default async function HomePage() {
             </IntentLink>
           </Button>
         </div>
+      </section>
+
+      {/* Sarkari Kundli band */}
+      <section className="container-page mt-24" aria-labelledby="kundli-band-h">
+        <IntentLink
+          href="/kundli"
+          className="group relative isolate grid items-center gap-8 overflow-hidden rounded-[1.75rem] p-7 text-white shadow-pop sm:p-10 lg:grid-cols-[1fr_20rem]"
+        >
+          <Image src={COSMIC.wide} alt="" fill sizes="(min-width: 1280px) 76rem, 100vw" placeholder="blur" className="-z-10 object-cover" />
+          <span aria-hidden className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,rgb(11_13_23/0.92)_10%,rgb(11_13_23/0.55)_65%,rgb(11_13_23/0.3))]" />
+          <span>
+            <span className="text-sm font-semibold text-gold">{tk("eyebrow")}</span>
+            <span id="kundli-band-h" className="mt-2 block font-heading text-3xl font-extrabold sm:text-4xl">
+              {tk("title")} <span aria-hidden>✨</span>
+            </span>
+            <span className="mt-3 block max-w-lg text-white/80">{tk("tagline")}</span>
+            <span className="mt-1 block text-sm text-gold/90">{tk("noStars")}</span>
+            <span className="mt-6 inline-flex h-12 items-center gap-2 rounded-full bg-[linear-gradient(135deg,#f8cb6b,#f5b83d_45%,#e79d1c)] px-5 font-semibold text-ink shadow-[0_10px_24px_-10px_rgb(245_184_61/0.9)] transition group-hover:brightness-105">
+              {t("ctaKundli")}
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+            </span>
+          </span>
+          <KundliOutline className="mx-auto hidden w-full max-w-[18rem] lg:block" />
+        </IntentLink>
       </section>
 
       {/* About */}

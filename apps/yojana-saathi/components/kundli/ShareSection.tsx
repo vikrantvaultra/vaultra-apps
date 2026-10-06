@@ -7,6 +7,7 @@ import { LOGO_SVG } from "@/components/brand/logo-data";
 import { TaxonomyIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { KUNDLI_HOUSES } from "@/data/taxonomy";
+import { COSMIC } from "@/lib/images";
 import { usePathname } from "@/i18n/navigation";
 import { formatINRCompact } from "@/lib/format";
 import type { KundliResult } from "@/lib/kundli/compute";
@@ -227,15 +228,19 @@ function ShareCard({ format, result, name }: { format: Format; result: KundliRes
       style={{
         width: w,
         height: h,
-        padding: story ? "90px 80px" : "60px 64px",
-        display: "flex",
-        flexDirection: "column",
+        position: "relative",
+        overflow: "hidden",
         color: "#fff",
         background:
           "radial-gradient(2px 2px at 12% 18%, rgba(245,184,61,.8), transparent 60%), radial-gradient(2px 2px at 82% 10%, rgba(245,184,61,.6), transparent 60%), radial-gradient(3px 3px at 64% 76%, rgba(245,184,61,.5), transparent 60%), radial-gradient(2px 2px at 26% 86%, rgba(255,255,255,.4), transparent 60%), radial-gradient(120% 80% at 50% 0%, #1E1B4B 0%, #0B0D17 70%)",
       }}
       className="font-sans"
     >
+      {/* Night-sky photo (embedded by html-to-image), darkened so text and chart stay readable */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={(story ? COSMIC.story : COSMIC.wide).src} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(11,13,23,0.62) 0%, rgba(11,13,23,0.45) 45%, rgba(11,13,23,0.85) 100%)" }} />
+      <div style={{ position: "relative", height: "100%", padding: story ? "90px 80px" : "60px 64px", display: "flex", flexDirection: "column" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={LOGO_SVG} width={story ? 72 : 56} height={story ? 72 : 56} alt="" />
@@ -264,6 +269,7 @@ function ShareCard({ format, result, name }: { format: Format; result: KundliRes
         <div style={{ fontSize: story ? 24 : 18, color: "rgba(255,255,255,0.7)", marginTop: 8 }}>
           * {t("cardFooter")} {t("noStars")}
         </div>
+      </div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import { CosmicBackdrop } from "./CosmicBackdrop";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Calculator, ListChecks, PencilLine, Share2, SkipForward, Sparkles } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
@@ -135,7 +136,8 @@ function KundliAppInner() {
   /* ---------------- Intro ---------------- */
   if (stage === "intro" || !mounted) {
     return (
-      <section className="relative overflow-hidden bg-cosmic text-white">
+      <section className="relative isolate overflow-hidden bg-cosmic text-white">
+        <CosmicBackdrop />
         <div className="container-page flex min-h-[calc(100dvh-4rem)] flex-col items-center justify-center py-14 text-center">
           <p className="inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-gold/10 px-3.5 py-1.5 text-sm font-semibold text-gold">
             <Sparkles className="size-4" aria-hidden />
@@ -173,7 +175,8 @@ function KundliAppInner() {
     if (!q) return null;
     const pct = Math.round(((qIndex + 1) / plan.length) * 100);
     return (
-      <section className="bg-cosmic text-white">
+      <section className="relative isolate overflow-hidden bg-cosmic text-white">
+        <CosmicBackdrop />
         <div className="container-page min-h-[calc(100dvh-4rem)] max-w-2xl pt-6 pb-24">
           <div className="flex items-center justify-between">
             <Button
@@ -209,7 +212,8 @@ function KundliAppInner() {
 
   if (!loaded && profile.birthYear) {
     return (
-      <section className="bg-cosmic text-white" aria-busy="true">
+      <section className="relative isolate overflow-hidden bg-cosmic text-white" aria-busy="true">
+        <CosmicBackdrop />
         <div className="container-page flex min-h-[60dvh] flex-col items-center justify-center text-center">
           <Sparkles className="size-8 animate-pulse text-gold" aria-hidden />
           <p className="mt-4 text-white/80">{t("revealing")}</p>
@@ -221,7 +225,8 @@ function KundliAppInner() {
   if (!result) {
     // Answers were cleared since the last visit: start again
     return (
-      <section className="bg-cosmic text-white">
+      <section className="relative isolate overflow-hidden bg-cosmic text-white">
+        <CosmicBackdrop />
         <div className="container-page flex min-h-[60dvh] flex-col items-center justify-center text-center">
           <p className="text-white/80">{t("needAnswers")}</p>
           <Button variant="gold" className="mt-5" onClick={begin}>
@@ -236,7 +241,8 @@ function KundliAppInner() {
   /* ---------------- Reveal ---------------- */
   if (stage === "reveal") {
     return (
-      <section className="relative bg-cosmic text-white">
+      <section className="relative isolate overflow-hidden bg-cosmic text-white">
+        <CosmicBackdrop />
         <div className="container-page flex min-h-[calc(100dvh-4rem)] flex-col items-center justify-center py-10">
           <Button variant="ghost" size="sm" onClick={finishReveal} className="absolute top-4 right-4 text-white/80 hover:bg-white/10 hover:text-white">
             {t("skipIntro")}
@@ -267,7 +273,8 @@ function KundliAppInner() {
 
   return (
     <>
-      <section className="bg-cosmic text-white">
+      <section className="relative isolate overflow-hidden bg-cosmic text-white">
+        <CosmicBackdrop />
         <div className="container-page grid items-center gap-8 py-10 lg:grid-cols-[1fr_1.1fr] lg:py-16">
           <div className="order-2 text-center lg:order-1 lg:text-left">
             <p className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold">
