@@ -5,6 +5,7 @@
   "buildCommand": "echo 'static'",
   "outputDirectory": "public",
   "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     { "source": "/yojana-saathi/:path*", "destination": "https://vaultra-yojana-saathi.vercel.app/yojana-saathi/:path*" },
     { "source": "/loot-liye-ya-lut-gaye/:path*", "destination": "https://vaultra-loot-liye.vercel.app/loot-liye-ya-lut-gaye/:path*" },
