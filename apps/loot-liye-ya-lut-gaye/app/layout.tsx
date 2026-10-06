@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { display, mono, text } from "./fonts";
-import { SITE_DESC, SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/site";
+import { BASE_PATH, SITE_DESC, SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -42,7 +42,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="hi-Latn" className={`${display.variable} ${text.variable} ${mono.variable}`}>
       <body>
         {children}
-        <Analytics />
+        {/* Through the hub, Vercel's /_vercel endpoints are reached under our path (see apps/hub/vercel.json) */}
+        <Analytics scriptSrc={`${BASE_PATH}/_vercel/insights/script.js`} endpoint={`${BASE_PATH}/_vercel/insights`} />
       </body>
     </html>
   );

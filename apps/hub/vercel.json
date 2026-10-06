@@ -10,6 +10,7 @@
     { "source": "/yojana-saathi", "destination": "https://vaultra-yojana-saathi.vercel.app/yojana-saathi" },
     { "source": "/yojana-saathi/:path*", "destination": "https://vaultra-yojana-saathi.vercel.app/yojana-saathi/:path*" },
     { "source": "/loot-liye-ya-lut-gaye", "destination": "https://vaultra-loot-liye.vercel.app/loot-liye-ya-lut-gaye" },
+    { "source": "/loot-liye-ya-lut-gaye/_vercel/:path*", "destination": "https://vaultra-loot-liye.vercel.app/_vercel/:path*" },
     { "source": "/loot-liye-ya-lut-gaye/:path*", "destination": "https://vaultra-loot-liye.vercel.app/loot-liye-ya-lut-gaye/:path*" },
     { "source": "/sale-sniper", "destination": "https://vaultra-sale-sniper.vercel.app/sale-sniper" },
     { "source": "/sale-sniper/:path*", "destination": "https://vaultra-sale-sniper.vercel.app/sale-sniper/:path*" }

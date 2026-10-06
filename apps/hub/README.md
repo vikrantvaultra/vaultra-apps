@@ -19,3 +19,7 @@ the same through the hub and on its own `*.vercel.app` domain, and apps still de
 3. Add two rewrites to `vercel.json`: `/<slug>` → `https://<project>.vercel.app/<slug>` (exact root, no trailing slash,
    or Next.js redirects it back in a loop) and `/<slug>/:path*` → `https://<project>.vercel.app/<slug>/:path*`.
 4. Add a card to `public/index.html` (and its sitemap/disallows to `public/robots.txt`).
+
+**Vercel Analytics:** an app that uses `@vercel/analytics` sets `scriptSrc`/`endpoint` to `/<slug>/_vercel/insights…`,
+and the hub rewrites `/<slug>/_vercel/:path*` to that project's `/_vercel/:path*` (see loot-liye-ya-lut-gaye).
+Turn Web Analytics on in the app's own Vercel project.
