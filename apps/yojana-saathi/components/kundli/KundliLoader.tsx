@@ -3,7 +3,6 @@
 import { Sparkles } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
-import type { SchemeCard } from "@/lib/schemes";
 
 function IntroShell() {
   const t = useTranslations("kundli");
@@ -28,6 +27,6 @@ function IntroShell() {
 // The Kundli (chart, animation, share cards) is its own chunk; nothing else on the site pays for it
 const KundliApp = dynamic(() => import("./KundliApp").then((m) => m.KundliApp), { ssr: false, loading: IntroShell });
 
-export function KundliLoader({ cards }: { cards: SchemeCard[] }) {
-  return <KundliApp cards={cards} />;
+export function KundliLoader() {
+  return <KundliApp />;
 }

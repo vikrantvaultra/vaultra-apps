@@ -21,6 +21,34 @@ Validate with `SCHEME_FILTER=<folder or slug> npx vitest run data/schemes.test.t
    Sanskritised terms. Keep widely used English words (Aadhaar, OTP, KYC, BPL, online) as they are.
    Every Hindi list must have the same number of items as its English list.
 
+## Full vs compact
+
+- `tier: "full"` (default): all eight sections. Use for a state's flagship schemes.
+- `tier: "compact"`: long-tail schemes. Required: `details` (1–2 short paragraphs), `benefits`, `eligibilityText`,
+  `applicationProcess`, `officialUrl`, `sources`. `exclusions`, `documents`, `faqs` are optional: include them only
+  when you have solid facts. The accuracy rules are exactly the same.
+
+## Slugs
+
+Slugs are global across all states. If a name is generic ("old age pension", "ladli", "free bicycle"),
+prefix it with the state slug: `bihar-old-age-pension`, `west-bengal-sabooj-sathi`. Check `ls data/schemes/**`
+before choosing. The file name must equal the slug.
+
+## Which state schemes to include
+
+Only schemes **run or funded by the state** (or a state top-up to a central scheme, like Namo Shetkari on top of
+PM-KISAN). Don't create a state copy of a central scheme that the state merely implements (PMAY, PM-KISAN, NSAP)
+unless the state adds its own money or a distinct benefit; then describe only the state part.
+Include only schemes that are **currently open or paying**. Prefer schemes with individual benefits people can apply for.
+
+## Overlap groups (for the Kundli)
+
+If a person can't get the scheme together with a similar one, set `overlapGroup`:
+`old-age-pension`, `widow-pension`, `disability-pension`, `women-monthly` (monthly cash for women),
+`scholarship` (any study scholarship or stipend), `health-cover`, `daughter-savings` (girl-child staged payments),
+`maternity-cash`, `farmer-income` (state farmer income support), `unemployment-allowance`, `marriage-assistance`,
+`contributory-pension`. Leave it out if the scheme stacks with others.
+
 ## Fields
 
 | Field | Guidance |

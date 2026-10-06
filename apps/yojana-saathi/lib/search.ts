@@ -210,6 +210,9 @@ export function applyFilters(cards: SchemeCard[], f: Filters, index: SearchIndex
 
   const sort = f.sort ?? "relevance";
   if (sort === "newest") return [...list].sort((a, b) => b.launchedYear - a.launchedYear || a.name[locale].localeCompare(b.name[locale], locale));
-  if (sort === "az" || !f.q) return [...list].sort((a, b) => a.name[locale].localeCompare(b.name[locale], locale));
+  const az = (a: SchemeCard, b: SchemeCard) => a.name[locale].localeCompare(b.name[locale], locale);
+  // Browsing a state: its own schemes first, then central ones
+  if (sort === "relevance" && !f.q && f.state) return [...list].sort((a, b) => Number(b.state === f.state) - Number(a.state === f.state) || az(a, b));
+  if (sort === "az" || !f.q) return [...list].sort(az);
   return list; // relevance with a query: Fuse order
 }

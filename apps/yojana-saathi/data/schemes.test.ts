@@ -2,7 +2,7 @@
  * Validates every scheme file on disk. Set SCHEME_FILTER=<path fragment> to check only some files,
  * e.g. SCHEME_FILTER=state/karnataka npx vitest run data/schemes.test.ts
  */
-import { readFileSync, existsSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { CATEGORIES, KUNDLI_HOUSES, MINISTRIES, STATES } from "@/data/taxonomy";
 import { isLeaf } from "@/lib/engine/evaluate";
@@ -35,7 +35,8 @@ function localizedList(list: Localized<string[]> | undefined, name: string) {
 }
 
 function verificationNotes(): string {
-  return existsSync("data/NEEDS_VERIFICATION.md") ? readFileSync("data/NEEDS_VERIFICATION.md", "utf8") : "";
+  const files = ["data/NEEDS_VERIFICATION.md", ...(existsSync("data/verification") ? readdirSync("data/verification").map((f) => `data/verification/${f}`) : [])];
+  return files.map((f) => (existsSync(f) ? readFileSync(f, "utf8") : "")).join("\n");
 }
 
 describe("scheme dataset", () => {
@@ -87,13 +88,14 @@ describe("scheme dataset", () => {
       localizedList(s.details, "details");
       localizedList(s.benefits, "benefits");
       localizedList(s.eligibilityText, "eligibilityText");
-      localizedList(s.exclusions, "exclusions");
-      localizedList(s.documents, "documents");
+      const full = (s.tier ?? "full") === "full";
+      if (full || s.exclusions) localizedList(s.exclusions, "exclusions");
+      if (full || s.documents) localizedList(s.documents, "documents");
       expect(s.applicationProcess.online || s.applicationProcess.offline, "needs online or offline steps").toBeTruthy();
       if (s.applicationProcess.online) localizedList(s.applicationProcess.online, "applicationProcess.online");
       if (s.applicationProcess.offline) localizedList(s.applicationProcess.offline, "applicationProcess.offline");
-      expect(s.faqs.length).toBeGreaterThan(0);
-      s.faqs.forEach((f) => {
+      if (full) expect(s.faqs?.length, "full-tier schemes need FAQs").toBeGreaterThan(0);
+      (s.faqs ?? []).forEach((f) => {
         expect(f.q.en && f.a.en).toBeTruthy();
         expect(DEVANAGARI.test(f.q.hi) && DEVANAGARI.test(f.a.hi), "faq must be in Hindi too").toBe(true);
       });
@@ -131,7 +133,7 @@ describe("scheme dataset", () => {
 
     it("lists check-status schemes for verification", () => {
       if (s.status !== "check-status") return;
-      expect(notes.includes(s.slug), `${s.slug} is check-status but not listed in data/NEEDS_VERIFICATION.md`).toBe(true);
+      expect(notes.includes(s.slug), `${s.slug} is check-status but not listed in data/NEEDS_VERIFICATION.md or data/verification/*.md`).toBe(true);
     });
   });
 });

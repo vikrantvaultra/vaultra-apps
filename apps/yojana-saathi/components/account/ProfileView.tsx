@@ -9,6 +9,7 @@ import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle, Dia
 import { useMounted } from "@/hooks/use-mounted";
 import { Link } from "@/i18n/navigation";
 import { visibleQuestions } from "@/lib/questions";
+import { useCards } from "@/lib/cards-client";
 import type { SchemeCard as Card } from "@/lib/schemes";
 import { useBookmarks } from "@/lib/store/bookmarks";
 import { clearProfile, useProfile } from "@/lib/store/profile";
@@ -20,7 +21,7 @@ import { SignInCard } from "./SignInCard";
 
 const EMPTY: Profile = {};
 
-export function ProfileView({ cards }: { cards: Card[] }) {
+export function ProfileView() {
   const t = useTranslations("profile");
   const ta = useTranslations("account");
   const locale = useLocale() as Locale;
@@ -28,12 +29,13 @@ export function ProfileView({ cards }: { cards: Card[] }) {
   const session = useSession();
   const profile = useProfile() ?? EMPTY;
   const bookmarks = useBookmarks();
+  const { cards } = useCards(bookmarks.length ? "all" : null);
   const [done, setDone] = useState<null | "ok" | "error">(null);
 
   const configured = isSupabaseConfigured();
   const questions = visibleQuestions(profile);
   const answered = questions.filter((q) => profile[q.field] !== undefined);
-  const saved = bookmarks.map((s) => cards.find((c) => c.slug === s)).filter((c): c is Card => !!c);
+  const saved = bookmarks.map((s) => cards?.find((c) => c.slug === s)).filter((c): c is Card => !!c);
 
   const answerText = (q: (typeof questions)[number]) => {
     const v = profile[q.field];
@@ -139,7 +141,13 @@ export function ProfileView({ cards }: { cards: Card[] }) {
           <Bookmark className="size-6 text-primary" aria-hidden />
           {t("saved")}
         </h2>
-        {saved.length === 0 ? (
+        {bookmarks.length > 0 && !cards ? (
+          <ul className="mt-4 grid gap-4 sm:grid-cols-2" aria-busy="true">
+            {bookmarks.slice(0, 4).map((s) => (
+              <li key={s} className="h-48 animate-pulse rounded-[1.25rem] bg-muted" />
+            ))}
+          </ul>
+        ) : saved.length === 0 ? (
           <div className="mt-4 rounded-[1.25rem] border border-dashed bg-card/50 p-6 text-center">
             <p className="text-muted-foreground">{t("noSaved")}</p>
             <Button asChild variant="outline" className="mt-4">

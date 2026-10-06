@@ -6,7 +6,7 @@ import { Suspense } from "react";
 import { PageHero } from "@/components/layout/PageHero";
 import { SearchExperience, StaticResults } from "@/components/search/SearchExperience";
 import { STATES, type StateSlug } from "@/data/taxonomy";
-import { allCards, schemesInState } from "@/lib/schemes";
+import { allCards, firstPage, schemesInState } from "@/lib/schemes";
 import type { Locale } from "@/lib/types";
 
 export const dynamicParams = false;
@@ -32,6 +32,8 @@ export default async function StatePage({ params }: PageProps<"/[locale]/state/[
   // Everything a resident can use: this state's schemes plus every central scheme
   const cards = allCards().filter((c) => c.level === "central" || c.state === slug);
   const central = cards.length - own;
+  // Lead with the state's own schemes, then central ones
+  const initial = [...firstPage(cards.filter((c) => c.state === slug), locale), ...firstPage(cards.filter((c) => c.level === "central"), locale)].slice(0, 12);
 
   return (
     <>
@@ -55,8 +57,8 @@ export default async function StatePage({ params }: PageProps<"/[locale]/state/[
         }
       />
       <div className="container-page py-8 lg:py-10">
-        <Suspense fallback={<StaticResults cards={cards} locale={locale} />}>
-          <SearchExperience cards={cards} locked={{ state: slug }} />
+        <Suspense fallback={<StaticResults cards={initial} locale={locale} />}>
+          <SearchExperience scope={slug} initial={initial} total={cards.length} locked={{ state: slug }} />
         </Suspense>
       </div>
     </>

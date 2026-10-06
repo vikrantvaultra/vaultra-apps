@@ -13,6 +13,7 @@ export const PENSION_FROM = 60;
 export const TIMELINE_UNTIL = 80;
 
 /**
+ * Legacy overlap groups for the original dataset; new scheme files set `overlapGroup` themselves.
  * Schemes that overlap in real life: in any one year only the largest in a group is counted.
  * (A person draws one old-age pension, holds one scholarship, and state health schemes are merged with PM-JAY.)
  */
@@ -188,7 +189,7 @@ export function computeKundli(
       if (e.gatedBy || CONTINGENT.has(e.card.slug)) continue;
       const amount = yearlyCash(e, y);
       if (amount <= 0) continue;
-      const group = GROUP_OF.get(e.card.slug);
+      const group = e.card.overlapGroup ?? GROUP_OF.get(e.card.slug);
       if (!group) {
         e.counted += amount;
         continue;

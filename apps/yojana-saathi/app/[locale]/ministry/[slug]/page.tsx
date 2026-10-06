@@ -6,7 +6,7 @@ import { Suspense } from "react";
 import { PageHero } from "@/components/layout/PageHero";
 import { SearchExperience, StaticResults } from "@/components/search/SearchExperience";
 import { MINISTRIES, type MinistrySlug } from "@/data/taxonomy";
-import { schemesByMinistry, toCard } from "@/lib/schemes";
+import { firstPage, schemesByMinistry, toCard } from "@/lib/schemes";
 import type { Locale } from "@/lib/types";
 
 export const dynamicParams = false;
@@ -29,6 +29,7 @@ export default async function MinistryPage({ params }: PageProps<"/[locale]/mini
   const locale = (await getLocale()) as Locale;
   const name = MINISTRIES[slug].name[locale];
   const cards = schemesByMinistry(slug).map(toCard);
+  const initial = firstPage(cards, locale);
 
   return (
     <>
@@ -45,8 +46,8 @@ export default async function MinistryPage({ params }: PageProps<"/[locale]/mini
         meta={<p className="text-sm font-semibold">{t("count", { count: cards.length })}</p>}
       />
       <div className="container-page py-8 lg:py-10">
-        <Suspense fallback={<StaticResults cards={cards} locale={locale} />}>
-          <SearchExperience cards={cards} locked={{ ministry: slug }} />
+        <Suspense fallback={<StaticResults cards={initial} locale={locale} />}>
+          <SearchExperience scope="central" initial={initial} total={cards.length} locked={{ ministry: slug }} />
         </Suspense>
       </div>
     </>

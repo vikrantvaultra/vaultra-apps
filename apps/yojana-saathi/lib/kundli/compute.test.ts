@@ -121,6 +121,12 @@ describe("computeKundli", () => {
     expect(r.entries.find((e) => e.card.slug === "indira-gandhi-old-age-pension")!.counted).toBe(0);
   });
 
+  it("uses a scheme's own overlapGroup", () => {
+    const a = card("state-a-pension", minAge(60), { value: { amount: 600, period: "monthly", kind: "pension" }, ageRange: { min: 60 }, overlapGroup: "old-age-pension" });
+    const b = card("indira-gandhi-old-age-pension", minAge(60), { value: { amount: 200, period: "monthly", kind: "pension" }, ageRange: { min: 60 } });
+    expect(computeKundli([a, b], base, { currentYear: YEAR })!.totals.cash).toBe(16 * 12 * 600);
+  });
+
   it("never adds cover or loans to the cash total", () => {
     const health = card("health", everyone(), { value: { amount: 500000, period: "yearly", kind: "cover" }, kundliHouse: "health" });
     const life = card("life", everyone(), { value: { amount: 200000, period: "yearly", kind: "cover" }, kundliHouse: "insurance" });

@@ -14,6 +14,7 @@ import { checkScheme, isLeaf } from "@/lib/engine/evaluate";
 import { explainFailure, valueLabel } from "@/lib/engine/explain";
 import { withInferred } from "@/lib/questions";
 import { shortOrgName } from "@/lib/filter-options";
+import { useCards, type CardScope } from "@/lib/cards-client";
 import type { SchemeCard as Card } from "@/lib/schemes";
 import { activeFilterKeys, applyFilters, buildIndex, parseFilters, serializeFilters, type FilterKey, type Filters, type SortKey } from "@/lib/search";
 import { hasProfile, useProfile } from "@/lib/store/profile";
@@ -24,12 +25,29 @@ const PAGE = 12;
 const FIXED_FIELDS = new Set<keyof Profile>(["state", "gender", "caste", "minority", "area", "disabled"]);
 const NO_LOCK: Partial<Filters> = {};
 
-export function SearchExperience({ cards, locked = NO_LOCK, showQuery = true }: { cards: Card[]; locked?: Partial<Filters>; showQuery?: boolean }) {
+export function SearchExperience({
+  scope,
+  initial,
+  total,
+  locked = NO_LOCK,
+  showQuery = true,
+}: {
+  /** Which static card index to load (see /api/cards) */
+  scope: CardScope;
+  /** Server-rendered first page, shown until the index arrives */
+  initial: Card[];
+  total: number;
+  locked?: Partial<Filters>;
+  showQuery?: boolean;
+}) {
   const t = useTranslations("search");
   const locale = useLocale() as Locale;
   const params = useSearchParams();
   const profile = useProfile();
 
+  const { cards: loaded } = useCards(scope);
+  const cards = useMemo(() => loaded ?? [], [loaded]);
+  const ready = loaded !== null;
   const urlFilters = useMemo(() => parseFilters(params), [params]);
   const filters: Filters = useMemo(() => ({ ...urlFilters, ...locked }), [urlFilters, locked]);
   const index = useMemo(() => buildIndex(cards), [cards]);
@@ -222,14 +240,27 @@ export function SearchExperience({ cards, locked = NO_LOCK, showQuery = true }: 
           </ul>
         )}
 
-        {fromFind && myProfile && <FindResultsBanner cards={cards} profile={myProfile} matched={results.length} locale={locale} />}
+        {ready && fromFind && myProfile && <FindResultsBanner cards={cards} profile={myProfile} matched={results.length} locale={locale} />}
 
         <h2 className="sr-only">{t("resultsHeading")}</h2>
         <p className="mt-5 text-sm font-semibold text-muted-foreground" aria-live="polite">
-          {t("results", { count: results.length })}
+          {t("results", { count: ready ? results.length : total })}
         </p>
 
-        {results.length === 0 ? (
+        {!ready ? (
+          // Until the full index arrives: the server's first page, or skeletons if filters are already applied
+          active.length || filters.q ? (
+            <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3" aria-busy="true">
+              {Array.from({ length: 6 }, (_, i) => (
+                <li key={i} className="h-56 animate-pulse rounded-[1.25rem] bg-muted" />
+              ))}
+            </ul>
+          ) : (
+            <div className="mt-4">
+              <StaticResults cards={initial} locale={locale} />
+            </div>
+          )
+        ) : results.length === 0 ? (
           <div className="mt-6 flex flex-col items-center rounded-[1.25rem] border border-dashed bg-card/50 px-6 py-14 text-center">
             <div className="grid size-14 place-items-center rounded-2xl bg-secondary text-secondary-foreground">
               <SearchX className="size-7" aria-hidden />

@@ -90,8 +90,32 @@ export interface FAQ {
   a: Localized;
 }
 
+/**
+ * Schemes a person can't hold together (or that a state scheme already includes, like a state pension
+ * that contains the central share). The Kundli counts only the largest in a group each year.
+ */
+export type OverlapGroup =
+  | "contributory-pension"
+  | "old-age-pension"
+  | "widow-pension"
+  | "disability-pension"
+  | "women-monthly"
+  | "scholarship"
+  | "health-cover"
+  | "daughter-savings"
+  | "maternity-cash"
+  | "farmer-income"
+  | "unemployment-allowance"
+  | "marriage-assistance";
+
 export interface Scheme {
   slug: string;
+  /**
+   * full: all eight sections. compact: summary, benefits, eligibility, how to apply, official link and
+   * sources (exclusions, documents and FAQs optional). Used for long-tail state schemes.
+   */
+  tier?: "full" | "compact";
+  overlapGroup?: OverlapGroup;
   name: Localized;
   /** Short name or acronym people search for, e.g. "PM-KISAN" */
   aka?: string[];
@@ -113,13 +137,16 @@ export interface Scheme {
   details: Localized<string[]>;
   benefits: Localized<string[]>;
   eligibilityText: Localized<string[]>;
-  exclusions: Localized<string[]>;
+  /** Required for full-tier schemes */
+  exclusions?: Localized<string[]>;
   applicationProcess: {
     online?: Localized<string[]>;
     offline?: Localized<string[]>;
   };
-  documents: Localized<string[]>;
-  faqs: FAQ[];
+  /** Required for full-tier schemes */
+  documents?: Localized<string[]>;
+  /** Required for full-tier schemes */
+  faqs?: FAQ[];
 
   officialUrl: string;
   sources: string[];

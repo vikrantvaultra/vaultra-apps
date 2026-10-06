@@ -101,16 +101,18 @@ export default async function SchemePage({ params }: PageProps<"/[locale]/scheme
   const related = relatedSchemes(s, 3);
   const primary = s.categories[0];
 
+  const has = (l?: { en: unknown[] } | unknown[]) => !!l && (Array.isArray(l) ? l.length > 0 : l.en.length > 0);
+  // Compact schemes may leave out exclusions, documents and FAQs; only show what exists
   const sections = [
     { id: "details", label: t("scheme.tabs.details") },
     { id: "benefits", label: t("scheme.tabs.benefits") },
     { id: "eligibility", label: t("scheme.tabs.eligibility") },
-    { id: "exclusions", label: t("scheme.tabs.exclusions") },
+    has(s.exclusions) && { id: "exclusions", label: t("scheme.tabs.exclusions") },
     { id: "apply", label: t("scheme.tabs.apply") },
-    { id: "documents", label: t("scheme.tabs.documents") },
-    { id: "faqs", label: t("scheme.tabs.faqs") },
+    has(s.documents) && { id: "documents", label: t("scheme.tabs.documents") },
+    has(s.faqs) && { id: "faqs", label: t("scheme.tabs.faqs") },
     { id: "sources", label: t("scheme.tabs.sources") },
-  ];
+  ].filter((x): x is { id: string; label: string } => !!x);
 
   const pageUrl = `${SITE_URL}${getPathname({ href: `/schemes/${slug}`, locale })}`;
   const jsonLd = [
@@ -125,11 +127,15 @@ export default async function SchemePage({ params }: PageProps<"/[locale]/scheme
       provider: { "@type": "GovernmentOrganization", name: org },
       sameAs: s.officialUrl,
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: s.faqs.map((f) => ({ "@type": "Question", name: f.q[locale], acceptedAnswer: { "@type": "Answer", text: f.a[locale] } })),
-    },
+    ...(s.faqs?.length
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: s.faqs.map((f) => ({ "@type": "Question", name: f.q[locale], acceptedAnswer: { "@type": "Answer", text: f.a[locale] } })),
+          },
+        ]
+      : []),
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -224,21 +230,27 @@ export default async function SchemePage({ params }: PageProps<"/[locale]/scheme
                 <EligibilityCheck eligibility={s.eligibility} className="w-full sm:w-auto" />
               </div>
             </Section>
-            <Section id="exclusions" title={t("scheme.tabs.exclusions")}>
-              <List items={s.exclusions[locale]} icon="x" />
-            </Section>
+            {s.exclusions && has(s.exclusions) && (
+              <Section id="exclusions" title={t("scheme.tabs.exclusions")}>
+                <List items={s.exclusions[locale]} icon="x" />
+              </Section>
+            )}
             <Section id="apply" title={t("scheme.tabs.apply")}>
               <div className="grid gap-4 xl:grid-cols-2">
                 {s.applicationProcess.online && <Steps title={t("scheme.online")} steps={s.applicationProcess.online[locale]} />}
                 {s.applicationProcess.offline && <Steps title={t("scheme.offline")} steps={s.applicationProcess.offline[locale]} />}
               </div>
             </Section>
-            <Section id="documents" title={t("scheme.tabs.documents")}>
-              <List items={s.documents[locale]} icon="doc" />
-            </Section>
-            <Section id="faqs" title={t("scheme.tabs.faqs")}>
-              <FaqList items={s.faqs.map((f, i) => ({ id: `faq-${i}`, q: f.q[locale], a: f.a[locale] }))} />
-            </Section>
+            {s.documents && has(s.documents) && (
+              <Section id="documents" title={t("scheme.tabs.documents")}>
+                <List items={s.documents[locale]} icon="doc" />
+              </Section>
+            )}
+            {s.faqs && s.faqs.length > 0 && (
+              <Section id="faqs" title={t("scheme.tabs.faqs")}>
+                <FaqList items={s.faqs.map((f, i) => ({ id: `faq-${i}`, q: f.q[locale], a: f.a[locale] }))} />
+              </Section>
+            )}
             <Section id="sources" title={t("scheme.tabs.sources")}>
               <p className="text-[0.95rem] text-muted-foreground">{t("scheme.sourcesIntro")}</p>
               <ul className="mt-3 grid gap-2">

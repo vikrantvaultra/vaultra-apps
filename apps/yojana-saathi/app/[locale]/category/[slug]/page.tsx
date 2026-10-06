@@ -6,7 +6,7 @@ import { TaxonomyIcon } from "@/components/icons";
 import { PageHero } from "@/components/layout/PageHero";
 import { SearchExperience, StaticResults } from "@/components/search/SearchExperience";
 import { CATEGORIES, type CategorySlug } from "@/data/taxonomy";
-import { schemesInCategory, toCard } from "@/lib/schemes";
+import { firstPage, schemesInCategory, toCard } from "@/lib/schemes";
 import type { Locale } from "@/lib/types";
 
 export const dynamicParams = false;
@@ -28,6 +28,7 @@ export default async function CategoryPage({ params }: PageProps<"/[locale]/cate
   const locale = (await getLocale()) as Locale;
   const cat = CATEGORIES[slug];
   const cards = schemesInCategory(slug).map(toCard);
+  const initial = firstPage(cards, locale);
 
   return (
     <>
@@ -44,8 +45,8 @@ export default async function CategoryPage({ params }: PageProps<"/[locale]/cate
         meta={<p className="text-sm font-semibold">{t("count", { count: cards.length })}</p>}
       />
       <div className="container-page py-8 lg:py-10">
-        <Suspense fallback={<StaticResults cards={cards} locale={locale} />}>
-          <SearchExperience cards={cards} locked={{ category: slug }} />
+        <Suspense fallback={<StaticResults cards={initial} locale={locale} />}>
+          <SearchExperience scope="all" initial={initial} total={cards.length} locked={{ category: slug }} />
         </Suspense>
       </div>
     </>

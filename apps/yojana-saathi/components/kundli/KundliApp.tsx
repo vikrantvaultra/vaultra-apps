@@ -12,6 +12,7 @@ import { KUNDLI_HOUSES, type KundliHouse } from "@/data/taxonomy";
 import { formatINRCompact } from "@/lib/format";
 import { computeKundli, type HouseSummary } from "@/lib/kundli/compute";
 import { visibleQuestions, type Question } from "@/lib/questions";
+import { useCards } from "@/lib/cards-client";
 import type { SchemeCard } from "@/lib/schemes";
 import { useKundliState } from "@/lib/store/kundli";
 import { updateProfile, useProfile } from "@/lib/store/profile";
@@ -27,20 +28,25 @@ type Stage = "intro" | "questions" | "reveal" | "result";
 const REVEALED_KEY = "ys-kundli-revealed";
 const EMPTY: Profile = {};
 
-export function KundliApp({ cards }: { cards: SchemeCard[] }) {
+export function KundliApp() {
   return (
     <MotionConfig reducedMotion="user">
-      <KundliAppInner cards={cards} />
+      <KundliAppInner />
     </MotionConfig>
   );
 }
 
-function KundliAppInner({ cards }: { cards: SchemeCard[] }) {
+const NO_CARDS: SchemeCard[] = [];
+
+function KundliAppInner() {
   const t = useTranslations("kundli");
   const locale = useLocale() as Locale;
   const mounted = useMounted();
   const profile = useProfile() ?? EMPTY;
   const kundliState = useKundliState();
+  // Only central schemes + the person's own state are relevant to their Kundli
+  const { cards: loaded } = useCards(profile.state ?? "central");
+  const cards = loaded ?? NO_CARDS;
   const currentYear = new Date().getFullYear();
 
   // Client-only component (loaded with ssr: false), so sessionStorage is available here.
@@ -79,8 +85,8 @@ function KundliAppInner({ cards }: { cards: SchemeCard[] }) {
   }, [profile, extras]);
 
   const result = useMemo(
-    () => (profile.birthYear ? computeKundli(cards, profile, { currentYear, claimed: kundliState.claimed }) : null),
-    [cards, profile, currentYear, kundliState.claimed],
+    () => (profile.birthYear && loaded ? computeKundli(cards, profile, { currentYear, claimed: kundliState.claimed }) : null),
+    [cards, loaded, profile, currentYear, kundliState.claimed],
   );
 
   function begin() {
@@ -196,6 +202,17 @@ function KundliAppInner({ cards }: { cards: SchemeCard[] }) {
               <QuestionInput question={q} value={profile[q.field]} locale={locale} onAnswer={(v) => answer(q.field, v)} headingLevel="h1" />
             </motion.div>
           </AnimatePresence>
+        </div>
+      </section>
+    );
+  }
+
+  if (!loaded && profile.birthYear) {
+    return (
+      <section className="bg-cosmic text-white" aria-busy="true">
+        <div className="container-page flex min-h-[60dvh] flex-col items-center justify-center text-center">
+          <Sparkles className="size-8 animate-pulse text-gold" aria-hidden />
+          <p className="mt-4 text-white/80">{t("revealing")}</p>
         </div>
       </section>
     );

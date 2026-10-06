@@ -40,6 +40,7 @@ export type SchemeCard = Pick<
   | "eligibility"
   | "launchedYear"
   | "status"
+  | "overlapGroup"
 >;
 
 export function toCard(s: Scheme): SchemeCard {
@@ -62,10 +63,15 @@ export function toCard(s: Scheme): SchemeCard {
     eligibility: s.eligibility,
     launchedYear: s.launchedYear,
     status: s.status,
+    overlapGroup: s.overlapGroup,
   };
 }
 
 export const allCards = (): SchemeCard[] => SCHEMES.map(toCard);
+
+/** The first page of a list as the client sorts it by default (A–Z in the page's language) */
+export const firstPage = (cards: SchemeCard[], locale: Locale, n = 12) =>
+  [...cards].sort((a, b) => a.name[locale].localeCompare(b.name[locale], locale)).slice(0, n);
 
 /* ------------------------------------------------------------------ */
 /* Groupings and counts                                                */
