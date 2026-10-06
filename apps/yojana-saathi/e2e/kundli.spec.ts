@@ -3,7 +3,7 @@ import { answerQuestions } from "./helpers";
 
 test("home → Kundli → reveal → share image", async ({ page }) => {
   const started = Date.now();
-  await page.goto("/");
+  await page.goto("./");
   await page.getByRole("link", { name: /Get my Sarkari Kundli/ }).first().click();
   await page.getByRole("button", { name: /Make my Kundli/ }).click();
   await answerQuestions(page, page.locator("main"), async () => (await page.getByText("Reading the rules of every scheme…").count()) > 0);

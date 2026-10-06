@@ -11,6 +11,7 @@ import { display, mono, text } from "@/app/fonts";
 import type { Round, Stats } from "./Game";
 import MuteButton from "./MuteButton";
 import css from "./result.module.css";
+import { BASE_PATH } from "@/lib/site";
 
 interface Props {
   round: Round;
@@ -45,7 +46,7 @@ export default function ResultScreen({ round, summary: s, stats, newBest, challe
     return local ? siteUrl : window.location.origin;
   }, [siteUrl]);
   const shareUrl = useMemo(() => {
-    const u = new URL("/c", base);
+    const u = new URL(`${BASE_PATH}/c`, base);
     u.searchParams.set("s", String(Math.round(s.score)));
     u.searchParams.set("r", s.rank);
     u.searchParams.set("d", round.seed);

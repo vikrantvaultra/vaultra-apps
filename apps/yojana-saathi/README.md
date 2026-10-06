@@ -15,7 +15,7 @@ A government scheme discovery app in plain English and Hindi: search and filter 
 ```bash
 cd apps/yojana-saathi
 npm install
-npm run dev              # http://localhost:3000  (Hindi: /hi)
+npm run dev              # http://localhost:3000/yojana-saathi  (Hindi: /yojana-saathi/hi)
 npm run build && npm start
 ```
 

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import type { StateSlug } from "@/data/taxonomy";
 import type { SchemeCard } from "./schemes";
+import { BASE_PATH } from "./site";
 
 export type CardScope = "all" | "central" | StateSlug;
 
@@ -12,7 +13,7 @@ const cache = new Map<CardScope, Promise<SchemeCard[]>>();
 export function loadCards(scope: CardScope): Promise<SchemeCard[]> {
   let p = cache.get(scope);
   if (!p) {
-    p = fetch(`/api/cards/${scope}`).then((r) => {
+    p = fetch(`${BASE_PATH}/api/cards/${scope}`).then((r) => {
       if (!r.ok) throw new Error(`cards ${scope}: ${r.status}`);
       return r.json() as Promise<SchemeCard[]>;
     });

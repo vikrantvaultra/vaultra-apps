@@ -89,11 +89,11 @@ human-ish refresh rates (the minimum refresh is clamped to 800 ms).
 
 ## Public download + install page
 
-The public build and its install page live here too, deployed as their own Vercel project (Root Directory `apps/sale-sniper`).
+The public build and its install page live here too, deployed as their own Vercel project (Root Directory `apps/sale-sniper`) and served at https://vaultra-apps.vercel.app/sale-sniper through the hub (`apps/hub`).
 
 ```
-scripts/package-extension.mjs   manifest.json + icons/ + src/ → dist/sale-sniper/ → public/downloads/sale-sniper-v<version>.zip + latest.json
-scripts/build-site.mjs          site/* → public/, fills version / size / sha256 / site URL from latest.json
+scripts/package-extension.mjs   manifest.json + icons/ + src/ → dist/sale-sniper/ → public/sale-sniper/downloads/sale-sniper-v<version>.zip + latest.json
+scripts/build-site.mjs          site/* → public/sale-sniper/, fills version / size / sha256 / site URL / base path from latest.json
 site/                           index.html (Hinglish install guide), app.js, theme.js, og.png (1200×630)
 assets/og.html                  source of site/og.png
 vercel.json                     build command, output dir `public`, zip download headers, CSP
@@ -114,8 +114,8 @@ one. The hash shown on the page always comes from the zip that was actually depl
 
 1. Bump `"version"` in `manifest.json` (and `package.json` to match). That is the only place it lives: the page and
    the zip name read it from `latest.json`.
-2. `npm run build`, then check the output and `public/downloads/latest.json`.
-3. Optional local check: serve `public/` with any static server and open it.
+2. `npm run build`, then check the output and `public/sale-sniper/downloads/latest.json`.
+3. Optional local check: serve `public/` with any static server and open `/sale-sniper/`.
 4. Commit and push a branch. Vercel builds a preview for it (or run `npx vercel` from this folder for a manual preview).
    Production: merge to `main` (if Git is connected) or run `npx vercel --prod`.
 

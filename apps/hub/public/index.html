@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vaultra Apps</title>
+<meta name="description" content="Small, free web apps and games for India: government scheme finder, a festive-sale trap game and a sale-day Chrome extension.">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://vaultra-apps.vercel.app/">
+<link rel="icon" href="/yojana-saathi/icon.svg" type="image/svg+xml">
+<style>
+  :root {
+    --bg: #f7f6f2; --card: #ffffff; --ink: #14121f; --muted: #5d5a6e; --line: #e6e3da;
+    --a1: #4f46e5; --a2: #10b981;
+  }
+  .yojana { --accent: #4f46e5; }
+  .loot { --accent: #c2185b; }
+  .sniper { --accent: #047857; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0c0a1d; --card: #17142c; --ink: #f4f2ff; --muted: #a9a4c4; --line: #2a2648; }
+    .yojana { --accent: #a5b4fc; }
+    .loot { --accent: #ff7aa8; }
+    .sniper { --accent: #6ee7b7; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 1040px; margin: 0 auto; padding: 56px 16px 64px; }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; }
+  h1 { font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1.02; letter-spacing: -0.03em; margin: 18px 0 12px; font-weight: 800; }
+  h1 span { background: linear-gradient(90deg, var(--a1), var(--a2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lede { color: var(--muted); font-size: 1.1rem; max-width: 34rem; margin: 0 0 40px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+  a.app {
+    display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 22px; text-decoration: none; color: inherit;
+    background: var(--card); border: 1px solid var(--line); transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  a.app:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -20px rgb(20 18 31 / .35); border-color: var(--accent); }
+  a.app:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .top { display: flex; align-items: center; gap: 12px; }
+  .top img { width: 48px; height: 48px; border-radius: 14px; }
+  .name { font-weight: 800; font-size: 1.2rem; line-height: 1.2; }
+  .tag { font-size: 12px; font-weight: 600; color: var(--accent); }
+  .desc { color: var(--muted); margin: 0; flex: 1; }
+  .go { font-weight: 700; color: var(--accent); }
+  .go::after { content: " →"; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 13px; }
+  @media (prefers-reduced-motion: reduce) { a.app { transition: none; } a.app:hover { transform: none; } }
+</style>
+</head>
+<body>
+<main>
+  <span class="eyebrow">Free · Made for India · Works on any phone</span>
+  <h1>Vaultra <span>Apps</span></h1>
+  <p class="lede">Small, free web apps and games. Open one below: no sign-up needed.</p>
+
+  <div class="grid">
+    <a class="app yojana" href="/yojana-saathi">
+      <div class="top">
+        <img src="/yojana-saathi/icon.svg" alt="" width="48" height="48">
+        <div><div class="name">Yojana Saathi</div><div class="tag">English · हिंदी</div></div>
+      </div>
+      <p class="desc">Find the central and state government schemes you may qualify for, in plain language, and see your Sarkari Kundli.</p>
+      <span class="go">Find schemes</span>
+    </a>
+
+    <a class="app loot" href="/loot-liye-ya-lut-gaye">
+      <div class="top">
+        <img src="/loot-liye-ya-lut-gaye/icon.svg" alt="" width="48" height="48">
+        <div><div class="name">Loot Liye Ya Lut Gaye?</div><div class="tag">60-second game · Hinglish</div></div>
+      </div>
+      <p class="desc">12 festive-sale deals, 6 seconds each. Grab the real loot and dodge the fake-MRP and no-cost-EMI traps.</p>
+      <span class="go">Play now</span>
+    </a>
+
+    <a class="app sniper" href="/sale-sniper">
+      <div class="top">
+        <img src="/sale-sniper/icon-128.png" alt="" width="48" height="48">
+        <div><div class="name">Sale Sniper</div><div class="tag">Chrome extension</div></div>
+      </div>
+      <p class="desc">Save your sale wishlist and jump to checkout on Amazon.in and Flipkart the moment Buy Now goes live. You approve the payment.</p>
+      <span class="go">Get the extension</span>
+    </a>
+  </div>
+
+  <footer>Independent projects. Not affiliated with any government, store or brand named on these pages.</footer>
+</main>
+</body>
+</html>

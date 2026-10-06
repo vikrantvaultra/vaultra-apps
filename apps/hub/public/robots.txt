@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /yojana-saathi/api/
+Disallow: /yojana-saathi/profile
+Disallow: /yojana-saathi/hi/profile
+Disallow: /loot-liye-ya-lut-gaye/api/
+
+Sitemap: https://vaultra-apps.vercel.app/yojana-saathi/sitemap.xml
+Sitemap: https://vaultra-apps.vercel.app/loot-liye-ya-lut-gaye/sitemap.xml

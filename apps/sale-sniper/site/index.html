@@ -8,8 +8,8 @@
   <meta name="theme-color" content="#16110D">
   <meta name="color-scheme" content="light dark">
   <link rel="canonical" href="{{SITE_URL}}/">
-  <link rel="icon" href="/icon-32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="/icon-128.png">
+  <link rel="icon" href="{{BASE_PATH}}/icon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="{{BASE_PATH}}/icon-128.png">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sale Sniper">
@@ -27,7 +27,7 @@
   <meta name="twitter:image" content="{{SITE_URL}}/og.png">
   <meta name="twitter:image:alt" content="Sale Sniper: sale khulte hi Buy Now.">
 
-  <script src="/theme.js"></script>
+  <script src="{{BASE_PATH}}/theme.js"></script>
   <style>
     :root {
       --brand-a: #FF6B1A; --brand-b: #FF3D6E; --yellow: #FFD60A; --ink: #16110D;
@@ -186,7 +186,7 @@
 
   <header class="top">
     <div class="wrap">
-      <a class="logo" href="#top" aria-label="Sale Sniper home"><img src="/icon-128.png" alt="" width="36" height="36">Sale Sniper</a>
+      <a class="logo" href="#top" aria-label="Sale Sniper home"><img src="{{BASE_PATH}}/icon-128.png" alt="" width="36" height="36">Sale Sniper</a>
       <nav class="jump" aria-label="Sections">
         <a href="#install">Install</a>
         <a class="opt" href="#setup">Setup</a>
@@ -203,7 +203,7 @@
         <h1>Sale khulte hi <mark>Buy&nbsp;Now</mark>.<br>Payment tum karo.</h1>
         <p class="lede">Wishlist bolo, max price set karo. Sale live hote hi Sale Sniper page refresh karta hai, <b>Buy Now</b> dabata hai aur checkout tak le jaata hai. <b>Payment page pe ruk jaata hai</b> — approve tum karte ho.</p>
         <div class="cta">
-          <a class="btn primary big" id="download" href="/downloads/{{FILENAME}}" download="{{FILENAME}}">
+          <a class="btn primary big" id="download" href="{{BASE_PATH}}/downloads/{{FILENAME}}" download="{{FILENAME}}">
             ⬇ Download Sale Sniper
             <small>v{{VERSION}} · {{SIZE}} · .zip</small>
           </a>
@@ -378,6 +378,6 @@
   </footer>
 
   <div class="sr-only" role="status" aria-live="polite" id="status"></div>
-  <script src="/app.js" defer></script>
+  <script src="{{BASE_PATH}}/app.js" defer></script>
 </body>
 </html>

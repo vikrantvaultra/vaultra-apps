@@ -4,6 +4,7 @@ import { Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useId, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { BASE_PATH } from "@/lib/site";
 
 export function ContactForm() {
   const t = useTranslations("contact");
@@ -15,7 +16,7 @@ export function ContactForm() {
     const f = new FormData(e.currentTarget);
     setState("sending");
     try {
-      const res = await fetch("/api/feedback", {
+      const res = await fetch(`${BASE_PATH}/api/feedback`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ kind: "contact", name: f.get("name"), email: f.get("email"), message: f.get("message"), page: window.location.pathname }),

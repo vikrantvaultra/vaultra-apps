@@ -6,6 +6,7 @@ import { useId, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
+import { BASE_PATH } from "@/lib/site";
 
 const TYPES = ["outdated", "wrong", "link", "other"] as const;
 
@@ -20,7 +21,7 @@ export function ReportIssue({ slug }: { slug: string }) {
     const form = new FormData(e.currentTarget);
     setState("sending");
     try {
-      const res = await fetch("/api/feedback", {
+      const res = await fetch(`${BASE_PATH}/api/feedback`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({

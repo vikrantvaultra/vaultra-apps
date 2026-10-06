@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import { answerQuestions, PERSONA, seedProfile } from "./helpers";
 
 test("scheme page has all sections, sources and the disclaimer", async ({ page }) => {
-  await page.goto("/schemes/pm-kisan");
+  await page.goto("./schemes/pm-kisan");
   await expect(page.getByRole("heading", { level: 1, name: "PM Kisan Samman Nidhi" })).toBeVisible();
   for (const name of ["Details", "Benefits", "Eligibility", "Exclusions", "How to apply", "Documents", "FAQs", "Sources"]) {
     await expect(page.getByRole("heading", { level: 2, name })).toBeAttached();
@@ -12,7 +12,7 @@ test("scheme page has all sections, sources and the disclaimer", async ({ page }
 });
 
 test("eligibility check asks only what's missing and explains the result", async ({ page }) => {
-  await page.goto("/schemes/pm-kisan");
+  await page.goto("./schemes/pm-kisan");
   await page.getByRole("button", { name: "Check eligibility" }).last().click();
   const dialog = page.getByRole("dialog");
   const asked = await answerQuestions(page, dialog, async () => (await dialog.getByText("Conditions we checked").count()) > 0);
@@ -22,7 +22,7 @@ test("eligibility check asks only what's missing and explains the result", async
 
 test("almost eligible names the one failing condition", async ({ page }) => {
   await seedProfile(page, { ...PERSONA, age: 67 });
-  await page.goto("/schemes/majhi-ladki-bahin");
+  await page.goto("./schemes/majhi-ladki-bahin");
   await page.getByRole("button", { name: "Check eligibility" }).last().click();
   const dialog = page.getByRole("dialog");
   await expect(dialog.getByRole("heading", { name: "You're almost eligible" })).toBeVisible();
@@ -30,7 +30,7 @@ test("almost eligible names the one failing condition", async ({ page }) => {
 });
 
 test("apply opens a leaving-site notice before the official portal", async ({ page }) => {
-  await page.goto("/schemes/pm-kisan");
+  await page.goto("./schemes/pm-kisan");
   await page.getByRole("button", { name: /Apply on official portal/ }).last().click();
   const dialog = page.getByRole("dialog");
   await expect(dialog.getByRole("heading", { name: "You're leaving Yojana Saathi" })).toBeVisible();
@@ -40,7 +40,7 @@ test("apply opens a leaving-site notice before the official portal", async ({ pa
 });
 
 test("section tabs scroll to their section and highlight it", async ({ page }) => {
-  await page.goto("/schemes/rashtriya-vayoshri-yojana");
+  await page.goto("./schemes/rashtriya-vayoshri-yojana");
   const nav = page.getByRole("navigation", { name: "Sections on this page" });
   for (const name of ["Benefits", "Documents", "Details", "Sources"]) {
     await nav.getByRole("link", { name, exact: true }).click();
@@ -58,7 +58,7 @@ test("section tabs scroll to their section and highlight it", async ({ page }) =
 });
 
 test("the section highlight follows normal scrolling", async ({ page }) => {
-  await page.goto("/schemes/pm-kisan");
+  await page.goto("./schemes/pm-kisan");
   const nav = page.getByRole("navigation", { name: "Sections on this page" });
   await page.getByRole("heading", { level: 2, name: "Exclusions" }).evaluate((h) => window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - 140 }));
   await expect(nav.getByRole("link", { name: "Exclusions", exact: true })).toHaveAttribute("aria-current", "location");

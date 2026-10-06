@@ -5,8 +5,8 @@
 // 1. copies only manifest.json, icons/ and src/ into dist/sale-sniper/
 // 2. applies the public variant there: PUBLIC_BUILD = true (auto place order hard-off) + public name/description
 // 3. validates the manifest (MV3, version, every referenced file, every relative import / <script> / <link>)
-// 4. zips it as public/downloads/sale-sniper-v<version>.zip with one top-level folder `sale-sniper/`
-// 5. writes public/downloads/latest.json { version, filename, size_bytes, sha256, built_at }
+// 4. zips it as public/sale-sniper/downloads/sale-sniper-v<version>.zip with one top-level folder `sale-sniper/`
+// 5. writes public/sale-sniper/downloads/latest.json { version, filename, size_bytes, sha256, built_at }
 //
 // The zip is deterministic (sorted entries, fixed timestamps): same source + same Node/zlib → same sha256.
 // Any problem throws and exits non-zero.
@@ -19,7 +19,8 @@ import { deflateRawSync, inflateRawSync } from 'node:zlib';
 const ROOT = new URL('..', import.meta.url).pathname;
 const FOLDER = 'sale-sniper';
 const DIST = join(ROOT, 'dist', FOLDER);
-const OUT = join(ROOT, 'public', 'downloads');
+// The site is served under /sale-sniper on the shared vaultra-apps domain (see build-site.mjs)
+const OUT = join(ROOT, 'public', 'sale-sniper', 'downloads');
 
 // Only these ship. Everything else (test/, scripts/, README, package.json, …) stays behind.
 const ALLOW = ['manifest.json', 'icons', 'src'];
@@ -220,6 +221,6 @@ const latest = {
 };
 writeFileSync(join(OUT, 'latest.json'), JSON.stringify(latest, null, 2) + '\n');
 
-console.log(`✓ ${files.length} files → public/downloads/${filename} (${(archive.length / 1024).toFixed(1)} KB)`);
+console.log(`✓ ${files.length} files → public/sale-sniper/downloads/${filename} (${(archive.length / 1024).toFixed(1)} KB)`);
 console.log(`  sha256 ${latest.sha256}`);
 console.log('  public build: auto place order hard-disabled');

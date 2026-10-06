@@ -5,6 +5,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "public",
   "cleanUrls": true,
+  "redirects": [{ "source": "/", "destination": "/sale-sniper", "permanent": false }],
   "headers": [
     {
       "source": "/(.*)",
@@ -17,7 +18,7 @@
       ]
     },
     {
-      "source": "/downloads/(.*)\\.zip",
+      "source": "/sale-sniper/downloads/(.*)\\.zip",
       "headers": [
         { "key": "Content-Type", "value": "application/zip" },
         { "key": "Content-Disposition", "value": "attachment" },
@@ -25,7 +26,7 @@
       ]
     },
     {
-      "source": "/downloads/latest.json",
+      "source": "/sale-sniper/downloads/latest.json",
       "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
     }
   ]

@@ -13,7 +13,7 @@ The game moves between two worlds:
 ```bash
 cd apps/loot-liye-ya-lut-gaye
 npm install
-npm run dev                  # http://localhost:3000
+npm run dev                  # http://localhost:3000/loot-liye-ya-lut-gaye
 npm run build && npm start   # production build
 ```
 To test on your phone over Wi-Fi, run `npm run dev -- -H 0.0.0.0` and open `http://<your-mac-ip>:3000`.
@@ -76,11 +76,11 @@ vercel --prod     # production
 
 Then turn on **Analytics** in the project dashboard and redeploy.
 
-**Site URL:** OG tags and share links use your production domain automatically (`VERCEL_PROJECT_PRODUCTION_URL`). That's the `*.vercel.app` URL until you add a custom domain, then the custom domain. To force a specific URL, set `NEXT_PUBLIC_SITE_URL`.
+**Site URL:** the game is served at https://vaultra-apps.vercel.app/loot-liye-ya-lut-gaye (Next.js `basePath`, routed by the hub in `apps/hub`). OG tags and share links use that URL; to change it (e.g. for a custom domain), set `NEXT_PUBLIC_SITE_URL` including the path.
 
 ## Custom domain: lootyalut.in
 1. Buy the domain.
 2. Run `vercel domains add lootyalut.in` and `vercel domains add www.lootyalut.in`. You can also do this in Project → Settings → Domains; set `www` to redirect to the apex.
 3. At your registrar's DNS settings, add the records Vercel shows. Typically: `A @ 76.76.21.21` and `CNAME www cname.vercel-dns.com`.
-4. Wait for "Valid Configuration" (HTTPS is automatic), then **redeploy once** so the OG tags pick up the new domain.
+4. Wait for "Valid Configuration" (HTTPS is automatic). The bare domain redirects to `/loot-liye-ya-lut-gaye`. Set `NEXT_PUBLIC_SITE_URL=https://lootyalut.in/loot-liye-ya-lut-gaye` and redeploy so the OG tags and share links use the new domain.
 5. Check the preview at https://www.opengraph.xyz, or by sending the link to yourself on WhatsApp.

@@ -1,4 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
+import { BASE_PATH } from "./lib/site";
 
 const PORT = Number(process.env.PORT ?? 3100);
 
@@ -13,7 +14,8 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? "github" : "list",
   use: {
-    baseURL: process.env.PW_BASE_URL ?? `http://localhost:${PORT}`,
+    // The app lives under basePath, so tests navigate relative to it: page.goto("./search")
+    baseURL: `${process.env.PW_BASE_URL ?? `http://localhost:${PORT}`}${BASE_PATH}/`,
     channel: process.env.PW_CHANNEL,
     trace: "retain-on-failure",
   },
@@ -23,5 +25,5 @@ export default defineConfig({
   ],
   webServer: process.env.PW_BASE_URL
     ? undefined
-    : { command: `npx next start -p ${PORT}`, port: PORT, reuseExistingServer: true, timeout: 60_000 },
+    : { command: `npx next start -p ${PORT}`, url: `http://localhost:${PORT}${BASE_PATH}`, reuseExistingServer: true, timeout: 60_000 },
 });

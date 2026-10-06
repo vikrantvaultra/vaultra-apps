@@ -15,6 +15,7 @@ import { useKundliState, writeKundliState } from "@/lib/store/kundli";
 import type { Locale } from "@/lib/types";
 import { KundliChart } from "./KundliChart";
 import { ScoreRing } from "./KundliResultParts";
+import { BASE_PATH } from "@/lib/site";
 
 type Format = "story" | "square";
 const SIZES: Record<Format, { w: number; h: number }> = { story: { w: 1080, h: 1920 }, square: { w: 1080, h: 1080 } };
@@ -31,7 +32,7 @@ export const ShareSection = forwardRef<HTMLElement, { result: KundliResult }>(fu
   const storyRef = useRef<HTMLDivElement>(null);
   const squareRef = useRef<HTMLDivElement>(null);
 
-  const shareUrl = () => `${window.location.origin}${locale === "en" ? "" : `/${locale}`}${pathname}`;
+  const shareUrl = () => `${window.location.origin}${BASE_PATH}${locale === "en" ? "" : `/${locale}`}${pathname}`;
   const shareText = () => `${t("whatsappText")} ${shareUrl()}`;
 
   async function render(format: Format): Promise<Blob | null> {
@@ -176,7 +177,7 @@ function ShareCard({ format, result, name }: { format: Format; result: KundliRes
   const { w, h } = SIZES[format];
   const story = format === "story";
   const top = [...result.houses].filter((x) => x.count > 0).sort((a, b) => b.cash - a.cash || b.count - a.count).slice(0, 3);
-  const host = typeof window === "undefined" ? "" : window.location.host;
+  const host = typeof window === "undefined" ? "" : window.location.host + BASE_PATH;
 
   const chart = (
     <KundliChart

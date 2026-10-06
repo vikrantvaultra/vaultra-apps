@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "echo 'no dependencies'",
+  "buildCommand": "echo 'static'",
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/yojana-saathi/:path*", "destination": "https://vaultra-yojana-saathi.vercel.app/yojana-saathi/:path*" },
+    { "source": "/loot-liye-ya-lut-gaye/:path*", "destination": "https://vaultra-loot-liye.vercel.app/loot-liye-ya-lut-gaye/:path*" },
+    { "source": "/sale-sniper/:path*", "destination": "https://sale-sniper.vercel.app/sale-sniper/:path*" }
+  ],
+  "headers": [
+    {
+      "source": "/",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "DENY" }
+      ]
+    }
+  ]
+}

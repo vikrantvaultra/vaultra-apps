@@ -1,4 +1,8 @@
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://yojana-saathi.vercel.app").replace(/\/$/, "");
+/** Served under this path on the shared vaultra-apps domain; keep in sync with `basePath` in next.config.ts */
+export const BASE_PATH = "/yojana-saathi";
+
+/** Public URL of the app, including BASE_PATH */
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? `https://vaultra-apps.vercel.app${BASE_PATH}`).replace(/\/$/, "");
 
 /** Government and public-data portals linked from the footer. */
 export const USEFUL_LINKS = [

@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import { answerQuestions } from "./helpers";
 
 test("questionnaire → matched results with the Kundli entry point", async ({ page }) => {
-  await page.goto("/find");
+  await page.goto("./find");
   await page.getByRole("button", { name: "Let's start" }).click();
   const asked = await answerQuestions(page, page.locator("main"), async () => page.url().includes("/search"));
   expect(asked.length).toBeGreaterThan(12);
