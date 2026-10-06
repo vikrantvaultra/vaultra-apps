@@ -4,36 +4,50 @@ Schemes and facts a human should confirm against the official source before laun
 Every scheme with `status: "check-status"` must appear here (the dataset test enforces it).
 Batch notes from the original research pass are kept below as written.
 
-## Summary (23 schemes marked `check-status`, research pass of 2026-10-06)
+## Summary (166 of 578 schemes marked `check-status`, as of 2026-10-06)
 
-- `anna-bhagya`
-- `cm-comprehensive-health-insurance`
-- `delhi-old-age-pension`
-- `indira-gandhi-widow-pension`
-- `kalaignar-magalir-urimai-thogai`
-- `kisan-credit-card`
-- `lakhpati-didi`
-- `merit-cum-means-scholarship-minorities`
-- `mission-vatsalya-sponsorship`
-- `mukhyamantri-annapurna-yojana`
-- `mukhyamantri-yuva-karya-prashikshan`
-- `pm-kusum`
-- `pm-matsya-sampada-yojana`
-- `pm-poshan`
-- `pm-ujjwala-yojana`
-- `pmegp`
-- `pmkvy`
-- `poshan-anganwadi`
-- `post-matric-scholarship-minorities`
-- `post-matric-scholarship-sc`
-- `pre-matric-scholarship-minorities`
-- `stand-up-india`
-- `vidiyal-payanam`
+Grouped by where they live. Each one has a reason in the notes below.
+
+- **central** (16): `indira-gandhi-widow-pension`, `kisan-credit-card`, `lakhpati-didi`, `merit-cum-means-scholarship-minorities`, `mission-vatsalya-sponsorship`, `pm-kusum`, `pm-matsya-sampada-yojana`, `pm-poshan`, `pm-ujjwala-yojana`, `pmegp`, `pmkvy`, `poshan-anganwadi`, `post-matric-scholarship-minorities`, `post-matric-scholarship-sc`, `pre-matric-scholarship-minorities`, `stand-up-india`
+- **andhra-pradesh** (9): `ap-anna-canteen`, `ap-post-matric-fee-reimbursement`, `auto-driverla-sevalo`, `dr-ntr-vaidya-seva`, `matsyakarula-sevalo`, `ntr-bharosa-chronic-illness-pension`, `ntr-bharosa-disability-pension`, `ntr-bharosa-old-age-pension`, `talliki-vandanam`
+- **arunachal-pradesh** (3): `arunachal-cm-social-security-scheme`, `deen-dayal-bunkar-yojana`, `dulari-kanya`
+- **assam** (5): `assam-old-age-pension`, `assam-widow-pension`, `cm-atmanirbhar-asom-abhijan`, `krishi-sa-sajuli-yojana`, `mahila-udyamita-abhiyaan`
+- **bihar** (5): `bihar-antarjatiya-vivah-protsahan-yojana`, `bihar-laghu-udyami-yojana`, `bihar-mukhyamantri-jan-arogya-yojana`, `bihar-parvarish-yojana`, `karpoori-thakur-kisan-samman-nidhi`
+- **chandigarh** (1): `chandigarh-sc-widow-daughter-marriage`
+- **chhattisgarh** (2): `chhattisgarh-mukhyamantri-pension-yojana`, `chhattisgarh-sukhad-sahara-pension`
+- **delhi** (5): `delhi-arogya-kosh`, `delhi-disability-pension`, `delhi-free-electricity-subsidy`, `delhi-higher-education-loan-guarantee`, `delhi-old-age-pension`
+- **goa** (2): `dayanand-social-security-scheme`, `goa-deen-dayal-swasthya-seva-yojana`
+- **gujarat** (8): `ganga-swaroopa-punah-lagna-sahay-yojana`, `mukhyamantri-pak-sangrah-structure-yojana`, `namo-kaushalya-lakshmi-yojana`, `namo-lakshmi-yojana`, `namo-saraswati-vigyan-sadhana-yojana`, `namo-shree-yojana`, `pandit-deendayal-upadhyay-awas-yojana-gujarat`, `pmjay-ma-gujarat`
+- **haryana** (4): `chirayu-haryana`, `haryana-bhavantar-bharpai-yojana`, `haryana-super-100`, `mukhyamantri-antyodaya-parivar-utthan-yojana`
+- **himachal-pradesh** (5): `hp-disability-pension`, `hp-mukhya-mantri-kanyadaan-yojana`, `mukhya-mantri-sukh-ashray-yojana`, `rajiv-gandhi-prakritik-kheti-khushhal-kisan-yojana`, `rajiv-gandhi-swarozgar-start-up-yojana`
+- **jammu-kashmir** (3): `jk-ladli-beti`, `jk-motorised-tricycle-divyang`, `jk-state-marriage-assistance`
+- **jharkhand** (6): `abua-awas-yojana`, `jharkhand-cycle-vitran-yojana`, `jharkhand-mukhyamantri-kanyadan-yojana`, `jharkhand-sarvjan-pension-yojana`, `mukhyamantri-abua-swasthya-suraksha-yojana`, `mukhyamantri-pashudhan-vikas-yojana`
+- **karnataka** (5): `anna-bhagya`, `arivu-education-loan`, `raitha-vidya-nidhi`, `swavalambi-sarathi`, `udyogini-karnataka`
+- **kerala** (8): `abhayakiranam`, `ashwasakiranam`, `karunya-benevolent-fund`, `kerala-life-mission`, `kerala-women-headed-family-education-assistance`, `mangalya-widow-remarriage`, `margadeepam-scholarship`, `snehapoorvam`
+- **ladakh** (2): `ladakh-rewa-meritorious-students`, `ladakh-universal-healthcare`
+- **lakshadweep** (3): `lakshadweep-fishermen-boat-assistance`, `lakshadweep-pwd-marriage-allowance`, `lakshadweep-utl-state-pension`
+- **madhya-pradesh** (6): `mp-kanya-vivah-nikah-yojana`, `mp-kisan-kalyan-yojana`, `mp-mukhyamantri-tirth-darshan-yojana`, `mp-sambal-prasuti-sahayata`, `mukhyamantri-seekho-kamao-yojana`, `mukhyamantri-udyam-kranti-yojana`
+- **maharashtra** (9): `ahilyadevi-holkar-shetkari-karjmukti-yojana`, `mahatma-phule-mahamandal-direct-loan-yojana`, `modi-awas-gharkul-yojana`, `mukhyamantri-annapurna-yojana`, `mukhyamantri-tirth-darshan-yojana-maharashtra`, `mukhyamantri-vayoshri-yojana`, `mukhyamantri-yuva-karya-prashikshan`, `pandit-deendayal-upadhyay-swayam-yojana`, `shabari-adivasi-gharkul-yojana`
+- **manipur** (2): `manipur-cm-shotharabasingi-tengbang`, `manipur-cmflss`
+- **meghalaya** (4): `focus-plus-meghalaya`, `meghalaya-cm-care-pension`, `meghalaya-cm-housing-assistance`, `meghalaya-cm-safe-motherhood-scheme`
+- **odisha** (3): `godabarish-vidyarthi-protsahan-yojana`, `gopabandhu-jan-arogya-yojana`, `kalinga-shiksha-sathi-yojana`
+- **puducherry** (6): `puducherry-fishermen-old-age-pension`, `puducherry-girl-child-family-planning-incentive`, `puducherry-old-age-destitute-pension`, `puducherry-poor-bride-marriage-assistance`, `puducherry-sc-st-full-tuition-fee-assistance`, `puducherry-widow-daughter-marriage-assistance`
+- **punjab** (2): `bebe-nanki-laadli-beti`, `punjab-meri-rasoi-yojana`
+- **rajasthan** (8): `kali-bai-bheel-medhavi-chhatra-scooty-yojana`, `mukhyamantri-anuprati-coaching-yojana`, `mukhyamantri-yuva-sambal-yojana`, `rajasthan-ekal-nari-samman-pension`, `rajasthan-gopal-credit-card-yojana`, `rajasthan-mukhyamantri-yuva-swarozgar-yojana`, `rajasthan-vishesh-yogyajan-samman-pension`, `rajasthan-vriddhjan-samman-pension`
+- **sikkim** (2): `sikkim-aama-sashaktikaran-yojana`, `sikkim-widow-pension`
+- **tamil-nadu** (11): `annai-therasa-marriage-assistance`, `annan-seer-thittam`, `cm-comprehensive-health-insurance`, `dharmambal-widow-remarriage-assistance`, `evr-maniammaiyar-marriage-assistance`, `kalaignar-magalir-urimai-thogai`, `muthulakshmi-reddy-inter-caste-marriage-assistance`, `muthulakshmi-reddy-maternity-benefit`, `tamil-nadu-fishing-lean-period-relief`, `vetri-veedu-thittam`, `vidiyal-payanam`
+- **telangana** (3): `cheyutha-pension`, `indiramma-kutumba-jivitha-bima`, `rajiv-yuva-vikasam`
+- **tripura** (2): `mukhyamantri-matrupushti-uphar`, `tripura-cm-scholarship-blind-students`
+- **uttar-pradesh** (5): `mukhyamantri-bal-seva-yojana`, `up-free-tubewell-electricity`, `up-kushth-pension`, `up-nirashrit-govansh-sahbhagita-yojana`, `up-ujjwala-free-lpg-refill`
+- **uttarakhand** (4): `deendayal-upadhyay-sahkarita-kisan-kalyan-yojana`, `mukhyamantri-ekal-mahila-swarozgar-yojana`, `uttarakhand-kisan-pension`, `uttarakhand-parityakta-pension`
+- **west-bengal** (7): `bhorsha-karmasuchi`, `krishak-bandhu-natun`, `manabik-pension`, `west-bengal-mukhya-mantri-swasthya-bima-yojana`, `west-bengal-old-age-pension`, `west-bengal-sabooj-sathi`, `west-bengal-widow-pension`
 
 Also worth a look:
-- **MGNREGA** was replaced by the VB-G RAM G Act from 1 July 2026; it is covered by `vb-g-ram-g` (searchable as MGNREGA/NREGA). Its portal (vbgramg.dord.gov.in) needs JavaScript, so only offline steps are listed; a reported ₹300/day minimum wage and a 31 Dec 2026 card-transition deadline are unconfirmed and left out.
-- The guidelines for several scholarships (SC, ST, OBC) ran 2021-22 to 2025-26; recheck once the 2026-31 versions are notified.
-- `pm-internship-scheme` is a pilot; its terms were revised in 2026.
+- **Andaman & Nicobar Islands** has no UT schemes yet: andaman.gov.in did not resolve during the research pass, so only central schemes show there.
+- **MGNREGA** was replaced by the VB-G RAM G Act from 1 July 2026 and is covered by `vb-g-ram-g` (searchable as MGNREGA/NREGA).
+- Several state governments changed in 2024–26 (Andhra Pradesh, Odisha, Tamil Nadu, West Bengal, Kerala, Bihar); schemes were checked against their latest budgets, but renames continue.
+- Many `launchedYear` values for state schemes are approximate (used only for sorting; not shown on pages).
+- `sje.rajasthan.gov.in` pages carried injected spam links during research; links were moved to sso.rajasthan.gov.in.
 
 ## Research notes by batch
 
@@ -119,3 +133,615 @@ All 11 schemes confirmed as running, with current amounts, so none is marked che
 - `gruha-jyothi` (active): The 2024 change from a "10% buffer" to "10 extra units" comes from news reports (South First / Deccan Herald) because no revised G.O. was found. Please confirm whether it applies to all consumers or only to low users.
 - `yuva-nidhi` (active): The eligible pass-out years (2022–23 onward) and the exclusions come from vikaspedia/myscheme and secondary sources. The amounts (₹3,000/₹1,500) are confirmed on sevasindhugs.karnataka.gov.in.
 - Note (taxonomy): there are no `department` slugs to choose from, so this note is just for the record. `gruha-lakshmi`'s tax/GST exclusion covers only the woman or her husband, not the whole family, so it is in the text and not encoded as `notTaxPayer()`.
+
+## State coverage pass (2026-10-06)
+
+### an-chandigarh-lakshadweep
+
+Context: WebSearch was unavailable; all facts come from official pages fetched directly. Chandigarh: chdsw.gov.in (Department of Social Welfare, Women & Child Development scheme pages, forms, notifications, 2021 pension press release) and the e-District portal chdservices.gov.in. Lakshadweep: lakshadweep.gov.in (Social Welfare & Tribal Affairs, Fisheries and Education department pages, all "Last Updated: Sep 30, 2026"; Education notices of Sept 2024 and Sept 2025; Feb 2024 UTL pension sanction order). Andaman & Nicobar: andaman.gov.in did not resolve at all (its name servers 117.251.201.66/67 did not answer, confirmed via Google DNS), and the and.nic.in department hosts (www.and.nic.in, db.and.nic.in/fisheries) timed out or returned 403, so nothing could be verified.
+
+- `chandigarh-sc-widow-daughter-marriage`: ₹20,000 and the conditions are on the current department page, but the income limit there (₹2,000 a month, verified by the Tehsildar) is clearly decades old, so the page may not reflect the current rules or amount. Income limit not encoded in rules.
+- `lakshadweep-utl-state-pension`: ₹1,500 a month and the four categories (old age, widow, abandoned, disability; 3,481 beneficiaries as of May 2025) are on the Social Welfare department page, and the Feb 2024 sanction order confirms ₹1,500 per person. Age limit for the old-age category, income limit and how to apply are not published online, so eligibility is encoded as residence only. `launchedYear` 2024 is only the earliest sanction order seen, not the start year.
+- `lakshadweep-pwd-marriage-allowance`: ₹30,000 is listed on the Social Welfare department page, but there are no published rules (disability %, time limit, form). `launchedYear` 2025 is approximate.
+- `lakshadweep-fishermen-boat-assistance`: The Fisheries department page lists the UT DBT schemes (fishing vessel/craft construction, upgrading, processing platforms, deep freezers, ice/fish boxes), but no current notice with subsidy rates or eligibility was found (latest application notices on the portal are for 2018-19 to 2023-24). No `value`. `launchedYear` 2025 is approximate.
+- `lakshadweep-scholarship-scheme` (active, no value): Confirmed running in 2025-26 (NSP window 14 Aug to 15 Oct 2025; HEI students moved to NSP from 2025-26). The 2026-27 notice wasn't found yet, and scholarship amounts are not published.
+- `chandigarh-old-age-pension`, `chandigarh-widow-pension`, `chandigarh-disability-pension` (active): amounts (₹1,000; disability ₹1,000 / ₹2,000 above 70%) and ₹1.5 lakh family income limit from the current department scheme pages; the pages are undated. `launchedYear` 2017 is when the pensions went online on e-District, not the original start year.
+- `chandigarh-widow-children-assistance` (active): ₹1,000 per child (up to two) w.e.f. 1 Jan 2016, from the department page.
+- `chandigarh-inter-caste-marriage-incentive` (active): ₹2.5 lakh as FD, from the department page; the form/affidavit PDF was re-uploaded in Jan 2026. `launchedYear` 2017 is approximate. It may be part-funded by the central PCR Act scheme; not confirmed.
+- (not added) All Andaman & Nicobar schemes (social security pensions, girl-child/marriage assistance, scholarships, fishermen support): andaman.gov.in was unreachable (DNS failure) and no other official page describing UT schemes could be loaded. District sites (southandaman.nic.in, northmiddle.andaman.nic.in, nicobars.andaman.nic.in) list only central schemes.
+- (not added) Chandigarh Unemployment Allowance to Disabled Persons (₹500 a month for matriculates aged 18-30): on the department page, but the rate looks old and no evidence it is still being paid.
+- (not added) Chandigarh Petrol Subsidy to Persons with Disability (50% of fuel, up to 20 litres a month): on the department page, but too niche and no current confirmation of payments.
+- (not added) Chandigarh UT Funds for Persons with Disability: a Sept 2026 letter about grants exists, but no amounts or individual eligibility could be confirmed.
+- (not added) Chandigarh scholarships (education/SC-BC): not found on any reachable official Chandigarh page; the Education Department site wasn't checked successfully.
+- (not added) Lakshadweep Waqf Board financial assistance and scholarship: only an old notice found; not current.
+- (review) `lakshadweep-utl-state-pension`: value removed; with no published age/income rules it matches every resident, so counting ₹1,500/month in the Kundli would overstate benefits.
+
+### andhra-pradesh
+Research note: WebSearch quota ran out twice during this batch, and many AP portals (gsws-nbm, fisheries, apfinance, aphousing) did not resolve or refused connections, so several facts rest on PTI/news reports plus the reachable official pages (sspensions.ap.gov.in, SERP memo 3407491 of 06.09.2026, handlooms.ap.gov.in, drntrvaidyaseva.ap.gov.in, district NIC pages, PRS budget analysis 2026-27). No injected spam was seen on any page used.
+
+- `dr-ntr-vaidya-seva`: Cabinet approved a universal hybrid policy (insurer up to ₹2.5 lakh, Trust up to ₹25 lakh) in Sept 2025. A search summary said it launched on 1 April 2026, but no official page confirmed the launch or the current cover/eligibility (the Nellore district page still says ₹5 lakh for white ration card families). `value` left out. Confirm current cover, APL coverage and the rollout date.
+- `matsyakarula-sevalo`: ₹20,000 fishing-ban relief confirmed for 2025 (budget coverage, ICSF), but fisheries.ap.gov.in was unreachable. The official scheme name (Matsyakarula Sevalo vs Matsyakara Bharosa) and a 2026 payment are unconfirmed. `value` left out.
+- `auto-driverla-sevalo`: Launched 4 Oct 2025 (₹15,000/yr, ~2.9 lakh drivers, PTI). No official eligibility rules (ownership, licence, income) found and no 2026 round confirmed yet.
+- `ap-post-matric-fee-reimbursement`: RTF/MTF are clearly still run through Jnanabhumi, but no current official GO was readable. The ₹2.5 lakh income cap and eligible communities come from the previous government's rules and secondary sites; MTF amounts omitted. Confirm current rules.
+- `ntr-bharosa-chronic-illness-pension`: ₹10,000 categories confirmed on sspensions.ap.gov.in, but the Sept 2026 new-application memo does not list a health category, so how new patients apply is unconfirmed.
+- `ntr-bharosa-old-age-pension` (active): age 60 comes from the common criteria in G.O.Ms.No.174 (2019), which the 2026 memo still cites, but the GO itself couldn't be read. Income limits (₹10,000/₹12,000 a month) from Outlook Money. Doorstep monthly payment by secretariat staff is from general reporting, not an official page read today.
+- `ntr-bharosa-disability-pension` (active): sspensions.ap.gov.in's table lists "fully disabled" at ₹10,000 while its banner and Deccan Chronicle (Sept 2026) say ₹15,000; ₹15,000 is used. "Bedridden / wheelchair-bound" examples are from reporting, not the GO.
+- `ntr-bharosa-single-women-pension` / `ntr-bharosa-occupational-pension` (active): category age limits (except weavers 50+, from handlooms.ap.gov.in) were not confirmed, so they are described without numbers.
+- `talliki-vandanam` (active): ₹15,000 / ₹13,000 split, 75% attendance and the 22 July 2026 release come from secondary sources (kpiasacademy, search summaries) plus budget allocation (PRS). No official AP page was reachable. The "no form, check list at secretariat" application steps follow the 2025 process and should be confirmed.
+- `annadata-sukhibhava` (active): tenant-farmer (CCRC) coverage was announced in 2025 (ap7am), but the June 2026 instalment report lists only land-owning and RoFR families. "Rythu Seva Kendram" naming for village farmer centres is from memory.
+- `ap-anna-canteen` (active): ₹5 price, timings and the 205-canteen count come from Wikipedia and its cited news; annacanteenstrust.ap.gov.in is a JS app that didn't render.
+- (not added) Aadabidda Nidhi (₹1,500/month for women 18-59): a manifesto promise; no launch found in the 2026-27 budget coverage.
+- (not added) Nirudyoga Bhruthi (₹3,000/month unemployment allowance): manifesto promise; no evidence it has launched.
+- (not added) Housing for the poor (PMAY-linked NTR housing / house sites): couldn't reach the AP housing portal or confirm a state-funded individual benefit beyond PMAY.
+- (not added) BC pension from age 50, Chandranna Pelli Kanuka, Ambedkar Overseas Vidya Nidhi revival, AP construction workers' welfare board benefits, free power for SC/ST households: couldn't verify current status with the search quota available.
+- (review) `talliki-vandanam`, `ap-anna-canteen`: moved to check-status (amounts/details from secondary sources); Talliki Vandanam value removed.
+- (review) `ntr-bharosa-old-age-pension`, `ntr-bharosa-disability-pension`: check-status because income limits come from news coverage; the pension amounts (₹4,000 / ₹6,000) are official and kept. Disability text now shows the portal's two figures (₹10,000 / ₹15,000) for fully disabled people instead of picking one.
+
+### arunachal-mizoram
+
+### Arunachal Pradesh
+- `dulari-kanya`: the IPR scheme page and the Tawang district page (updated Aug 2026) still say ₹20,000 FD. Akashvani (newsonair.gov.in) reports the Feb 2025 cabinet raised it to ₹30,000, and ANI/CMO statements add ₹20,000 DBT on Class XI admission. No order or official page says when the new amounts apply, so `value` is left out and the Class XI payment isn't mentioned as a benefit.
+- `arunachal-cm-social-security-scheme`: CMSSS (old age, widow, divyang pensions) is clearly running (2024–25 fund releases reported by PTI), but no official page with current monthly rates or eligibility was found (SJETA department site doesn't load). No `value`. Widow age lowered to 18 is from news reports only. launchedYear 2017 is approximate.
+- `deen-dayal-bunkar-yojana`: only source is the Tawang district scheme page (Aug 2026): "interest-free / concessional working capital loans up to ₹2 lakh". No guidelines found; no `value`. launchedYear 2018 is approximate.
+- `ddusy`: the age limit differs between official pages (Tawang 2026: 18–45 and Class 12; IPR: 18–35 and Class 8), so only age ≥18 is encoded and no upper limit is stated. Subsidy terms (40% front-ended, ₹10–50 lakh, +5% interest for women) are from the DDUSY portal. Not check-status.
+- `arunachal-state-stipend-scheme`: ₹16,400/yr and dates are from the DHTE notice of 31 Jul 2026. launchedYear 2021 is a placeholder (taken from the notice's file number); the real start year is unknown. Not check-status.
+- `arunachal-cm-krishi-rinn-yojana`: department is assumed to be Agriculture (the district pages don't name it). Facts are from Tawang (2026) and Lohit district pages.
+- `arunachal-atmanirbhar-krishi-bagwani-yojana`: 45/45/10 is confirmed on official pages. The ₹1.6 lakh / ₹10 lakh collateral-free limits are from the IPR scheme page. The exclusion of defaulters and government servants is from the 2023 ANBY guideline summary on lohit.nic.in. The current-year list of crops and machines is not given.
+- `cmaay`: eligibility is only `residentOf` because the profile can't express APST status, RC holders in three districts, or state-employee status. The detail is in the text.
+- (not added) Arunachal orphan assistance of ₹1,500/month (April 2025 cabinet): reported only by PTI. No official source or scheme page was found.
+- (not added) Arunachal CM's Yuva Kaushal / other youth schemes, and the PM-JAY state top-up: not researched for lack of official pages. PM-JAY is the central scheme and is already in the dataset.
+
+### Mizoram
+- `mizoram-universal-health-care-scheme`: ₹5 lakh cover, the three fee levels and the 2026-27 enrolment dates are from the MSHCS notice (in Mizo). The enrolment-extension PDF is a scanned image and couldn't be read. "Outside the state with approved referral" and "replaced the older MSHCS" rest on circular titles and news. launchedYear 2025 is taken from the notice calling 2026-27 the scheme's second year.
+- `bana-kaih-handholding-scheme`: amounts are from the 2024 Gazette notification and the Component-1 guidelines. The guidelines cap the CM's Special Package grant at ₹1 lakh, while secondary sources describe a "Bana Kaih 3.0" with grants up to ₹50,000, so the grant amount is left out. `value` = ₹50 lakh loan limit for full interest subvention.
+- `mizoram-old-age-pension`, `mizoram-widow-pension`: the state top-up of ₹1,000 is on the Social Welfare pages (the old age page was updated Jul 2026, the widow page is undated). The widow page's "eligible age 40" is used. The 2024 start of the top-up is stated for old age only and assumed for widow.
+- `mizoram-disability-pension`, `mizoram-handicapped-students-stipend`, `mizoram-pwd-unemployed-stipend`: rates are from the Social Welfare "Schemes on Disability" page (updated Jul 2026). launchedYear (2015) is a placeholder; the start year is unknown.
+- `mizoram-post-matric-merit-scholarship`: the scheme document says it is for all permanent residents with 60%, but the 2026-27 form title says "for Scheduled Tribes students", so ST is encoded. Rates aren't published, so there is no `value`. An ₹8 lakh income cap appears only on aggregator sites and is left out. launchedYear 2010 is a placeholder.
+- (not added) Mizoram Research Fellowship, scholarships for Sainik School / RIMC cadets: too niche, and amounts aren't published.
+- (not added) Mizoram BOCW welfare board benefits and farm price support under Bana Kaih (Component 4): no official current benefit rates found.
+- (not added) Mizoram Ruangphurh (state reimbursement for transporting a deceased person's body within Mizoram): a real state scheme, but it isn't a benefit people plan for, so it is left out of this pass.
+
+### assam
+
+Context: the BJP-led alliance under Himanta Biswa Sarma won the 2026 assembly election (second term). The first full budget of the new government was presented on 10 July 2026 (budget speech on the Assam Legislative Assembly digital library, aladigitallibrary.in/handle/123456789/4238). It said the welfare "basket" would resume from August 2026 after the election pause. WebSearch ran out partway through; most facts come from the budget speech and Higher Education Department orders. socialwelfare.assam.gov.in returned HTTP 503 throughout, and the Orunodoi portal (orunodoi.in) returned no content.
+
+- `cm-atmanirbhar-asom-abhijan`: the budget announces selection of 50,000 new youth in 2026-27 (₹500 crore), but no guidelines, amount, age band or portal opening for the new round were found. The 28–45 age and Class 10 rules in the text are from the CMAAA 2.0 round (cmaaa.assam.gov.in). The department is written generically because the portal does not name it.
+- `mahila-udyamita-abhiyaan`: the ₹10,000 enterprise fund to ~30 lakh women comes from the budget speech, but it describes past payments. No official page says whether new members can still apply, or what the later instalments are. The ASRLM site has no MMUA page. Not in `value`.
+- `assam-old-age-pension`: the budget says Swahid Kushal Konwar Sarbajanin Briddha Pension Achoni continues through "Orunodoi Plus". The amount, the age threshold (60 is assumed and encoded), the department and launchedYear (2024) are not confirmed. The Social Welfare site was down (503).
+- `assam-widow-pension`: the budget says the widow pension continues through Orunodoi Plus. The name "Indira Miri Universal Widow Pension Scheme", the amount, the age rules, the department and launchedYear (2020) are not confirmed on an official page.
+- `krishi-sa-sajuli-yojana`: the budget says ₹11,000 a year "through convergence with PM-KISAN". It's unclear how much of that is the state's share, so it's not in `value`. No guidelines were found on agri-horti.assam.gov.in. launchedYear 2023 is approximate.
+- Follow-ups on active schemes:
+  - `orunodoi`: ₹1,250/month is confirmed (it.assam.gov.in, and All India Radio on 1 Aug 2026 for the 2026-27 payment). The income cap (₹2 lakh) and the exclusion list (government employees, four-wheeler, etc.) appear only in secondary sources, so they are left out of the rules and the text. The 2020 guideline PDF on district sites is a scanned image. The budget's proposed bars (polygamy, criminal conviction) are mentioned only as a proposal in an FAQ.
+  - `ayushman-asom-mmjay`: ₹5 lakh, NFSA families outside PM-JAY, and 1,949 procedures are confirmed on atalamritabhiyan.assam.gov.in. launchedYear 2023 is approximate.
+  - `assam-bocw-welfare`: the amounts come from labour.assam.gov.in (page last updated July 2024). The registration rules (18–55, 90 days, e-Shram) come from abocwwb.assam.gov.in. launchedYear 2010 is approximate, and the registration fee was not found.
+  - `nijut-babu`: launchedYear 2025 is approximate (the guideline is titled "2026", and the budget made it a regular scheme).
+  - `pragyan-bharati-fee-waiver`: launchedYear 2017 is approximate.
+  - `banikanta-kakati-merit-award`: the 2026 round is the last (the budget says scooter distribution ends from the next academic year). Remove this scheme after the 2026 distribution. launchedYear 2018 is approximate.
+- (not added) Atal Amrit Abhiyan: the separate ₹2 lakh scheme seems to have been replaced by Ayushman Asom – MMJAY, which the same society runs (its site lists AA-MMJAY under the old scheme URL). "Atal Amrit Abhiyan" is listed as an aka of `ayushman-asom-mmjay`.
+- (not added) Arundhati Gold Scheme: the only official page found is from 2022 (Jorhat district). There is no mention in the 2026-27 budget and no current portal was found.
+- (not added) SVAYEM: only an old guideline PDF on industries.assam.gov.in. CMAAA appears to have replaced it, and no current call for applications was found.
+- (not added) Anundoram Borooah Award (laptops for HSLC toppers): no 2025–26 or 2026 official notice was found, and the budget doesn't mention it.
+- (not added) CM's Jibon Prerana (₹2,500/month to graduates): the budget resumes payments for the existing 48,366 beneficiaries only. No new enrolment was found.
+- (not added) ₹15,000 support for pregnant tea-garden women workers (budget para 49): the official scheme name and rules were not found on the NHM or Health sites.
+- (not added) Udasin Bhakt monthly aid (₹1,500, 621 people) and HIV/AIDS family support (₹1 lakh, ~140 people): too narrow, and no application pages were found.
+- `banikanta-kakati-merit-award`: (review) the official notice says the scooter award ends after the 2026 round; remove it once distribution is over.
+
+### bihar
+- `bihar-laghu-udyami-yojana`: Running in 2024-25 (training and first instalments confirmed), but no 2025-26 or 2026-27 application round found on udyami.bihar.gov.in. Confirm a new round is planned. Launch year 2024 and the ₹50,000/₹1 lakh/₹50,000 split come from news reports of the cabinet decision.
+- `bihar-mukhyamantri-jan-arogya-yojana`: Couldn't reach an official Bihar health page (BSSS site down). Scope (NFSA ration-card families left out of PM-JAY) and the ₹5 lakh cover come from secondary reports of the 2024 launch. Confirm it is still running and the launch year.
+- `bihar-antarjatiya-vivah-protsahan-yojana`: The ₹1 lakh amount comes only from secondary sources, so it is kept out of `value`. Launch year (2008) is unconfirmed. Confirm the amount, whether it is paid as a fixed deposit, and that the scheme is still open.
+- `karpoori-thakur-kisan-samman-nidhi`: Announced in the Bihar Budget 2026-27 (₹3,000 a year on top of PM-KISAN). No notification, eligibility rules or first payment date found yet. `value` is left out until payments start.
+- `bihar-parvarish-yojana`: Only the myScheme listing confirms ₹1,000 a month, so it is kept out of `value`. Launch year (2012) is unconfirmed. Confirm the amount and that the scheme is current.
+- `bihar-mukhyamantri-cycle-yojana` (active): The scheme was running in Sept 2025 (DBT transfer on newsonair). The ₹3,000 amount is widely reported but I couldn't open an official page that states it.
+- `bihar-disability-pension` / `laxmibai-samajik-suraksha-pension-yojana` / `bihar-mukhyamantri-kanya-vivah-yojana` (active): Launch years (1990 / 2007 / 2008) are approximate. Amounts and eligibility are confirmed.
+- `bihar-mukhyamantri-udyami-yojana` (active): The guideline PDF is a scanned image. The loan interest (interest-free in most parts, 1% in some) is described only as "little or no interest".
+- (not added) Mukhyamantri Gramin Awas Yojana: very narrow (SC/ST/EBC families in pre-1996 cluster housing, plus families left off the PMAY-G waitlist). Couldn't confirm a current round.
+- (not added) Bihar Building and Other Construction Workers Welfare Board benefits: bocw.bihar.gov.in didn't resolve, so current amounts couldn't be checked.
+- (not added) Mukhyamantri Balika Poshak Yojana: still paid in 2025, but the current per-student amount couldn't be confirmed.
+- (not added) Jal-Jeevan-Hariyali: a mission for public works, with no individual benefit people can apply for.
+- (not added) Matric-level Balika Protsahan (₹10,000) and earlier Kanya Utthan stages: covered inside `mukhyamantri-kanya-utthan-yojana`.
+
+### chhattisgarh
+
+WebSearch quota ran out early. Most facts come from the Chhattisgarh Directorate of Public Relations (dprcg.gov.in), searched through its own site search, plus the Mahtari Vandan order PDF. Several department sites (sw.cg.gov.in, dkbssy.cg.nic.in, tribal.cg.gov.in, finance.cg.gov.in) did not load, and shramevjayate.cg.gov.in renders only with JavaScript.
+
+- `chhattisgarh-sukhad-sahara-pension`: Confirmed running (state pension paid up to March 2026, DPR 29 Apr 2026). Not confirmed on an official page: the exact monthly amount (DPR district posts give only "₹500 to ₹650" across all pensions, so it is kept out of `value`), the age band (often cited as 18 to 50), income/BPL conditions, the rule that it can't be held with IGNWPS, and the launch year (2003 is approximate).
+- `chhattisgarh-mukhyamantri-pension-yojana`: Confirmed running (DPR Sept 2026 case of a 62-year-old approved). Not confirmed on an official page: the exact amount (kept out of `value`), the income/SECC conditions, the rule that it can't be held with IGNOAPS, and the launch year (2012 is approximate).
+- `deendayal-upadhyay-bhumiheen-krishi-mazdoor-kalyan-yojana` (active): ₹10,000 a year and the eligible groups come from DPR (June 2026). The implementing department isn't named in any source I could open, so it is listed generically. The 2025 launch year comes from news of the January 2025 launch. Whether new applications are open now is unclear.
+- `krishak-unnati-yojana` (active): Paddy top-up to ₹3,100/quintal (KMS 2025-26) and the kharif 2026 rates of ₹15,000/₹10,000 per acre come from DPR. The per-acre paddy purchase limit (widely reported as 21 quintals) is not stated. No `value` is set because the amount depends on quantity or area.
+- `shaheed-veer-narayan-singh-ayushman-swasthya-yojana` (active): ₹5 lakh (BPL) and ₹50,000 (APL) per family come from a DPR district post (Surajpur, July 2026). I couldn't reach dkbssy.cg.nic.in, so the yearly basis and the launch year of the current name (2024) are unconfirmed.
+- `mukhyamantri-vishesh-swasthya-sahayata-yojana` (active): ₹25 lakh, the priority/Antyodaya card rule and the disease list come from DPR (Mohla, July 2026). The 2024 launch year (current name) is unconfirmed.
+- `chhattisgarh-mukhyamantri-kanya-vivah-yojana` (active): ₹50,000 / ₹35,000 DBT come from DPR (May and June 2026). The 2005 launch year and the documents list are not from an official page.
+- `saraswati-cycle-yojana` (active): Class 9 girls in government schools is confirmed (DPR Oct 2026). Any caste or BPL condition is not confirmed, so the text tells girls to ask their school. The 2004 launch year is approximate.
+- `cg-mukhyamantri-naunihal-chhatravritti-yojana` (active): Confirmed for children of registered BOCW workers from Class 1 to higher education. The class-wise amounts were not found on an official page, so none are given. The launch year (2014) and the online application route are not confirmed.
+- `cg-mukhyamantri-noni-sashaktikaran-sahayata-yojana` / `mini-mata-mahtari-jatan-yojana` (active): Amounts and conditions come from DPR (Sept/Oct 2026). Launch years (2018 / 2016) are approximate.
+- `chhattisgarh-mukhyamantri-tirth-darshan-yojana` / `shri-ramlala-darshan-yojana` (active): Eligibility and process come from DPR district notices (Aug/Sept 2026). The Tirth Darshan launch year (2012) is approximate. Ramlala's lead department is assumed to be Tourism and Culture, based on the minister quoted. Some Ramlala trips in Sept/Oct 2026 were postponed or cancelled in a few districts.
+- `mahtari-vandan-yojana` (active): All rules come from the 2 Feb 2024 order on the portal. It is unclear whether new registrations are open now.
+- (not added) Samajik Suraksha Pension (state): Confirmed running, but the eligibility groups and amount couldn't be confirmed on an official page.
+- (not added) Asangathit Mahtari Jatan Yojana (Unorganised Workers Social Security Board, ₹20,000 per birth): The DPR post mixes it up with the BOCW scheme, so the board's rules are unclear.
+- (not added) Krishak Jeevan Jyoti Yojana (free electricity for farm pumps / ₹1 lakh line-extension relief): The only official detail found was from Jan 2025, and the current free-units limit couldn't be confirmed.
+- (not added) Mukhyamantri Khadyann Sahayata Yojana: Funded in Budget 2026-27 (₹5,000 crore), but the entitlement per card couldn't be confirmed.
+- (not added) Berojgari Bhatta (unemployment allowance, 2023): No sign that it is running after 2024. Probably discontinued.
+- (not added) Rajiv Gandhi Kisan Nyay Yojana / Godhan Nyay Yojana: Replaced by Krishak Unnati Yojana or discontinued after the 2023 change of government.
+
+### delhi
+
+Context: BJP government (CM Rekha Gupta) since Feb 2025. WebSearch was unavailable, so facts come from official pages fetched directly: socialwelfare.delhi.gov.in (financial assistance schemes page), scstwelfare.delhi.gov.in (2025-26 scholarship guidelines PDF), wcd.delhi.gov.in (WDM FAQ and 2021 gazette), dbocwwb.delhi.gov.in (board portal), health.delhi.gov.in (Delhi Arogya Kosh note), the e-District services list (edistrict.delhigovt.nic.in, updated 28/09/2026), and the Budget Speeches 2025-26 (English) and 2026-27 (Hindi) on finance.delhi.gov.in. The Higher Education Directorate site, the food & supplies site and tirthyatra.delhi.gov.in did not resolve.
+
+- `delhi-disability-pension`: The department's scheme page still lists ₹2,500 a month (quarterly). Budget 2025-26 announced a rise to ₹3,000 a month for divyangjan; couldn't confirm on an official page whether the higher rate is being paid. `value` uses the published ₹2,500.
+- `delhi-arogya-kosh`: Eligibility (NFS card, 3 years in Delhi) and "up to ₹5 lakh" come from an undated scheme note on the Health Department page; the newest beneficiary report linked there is 2014-15. The page is still live, but couldn't confirm the fund is processing applications in 2026 or whether its role changed after Delhi joined Ayushman Bharat in 2025. `launchedYear` (2011) is approximate. No `value`.
+- `delhi-free-electricity-subsidy`: Budget 2026-27 (Hindi) confirms the electricity subsidy "will continue" (₹3,942 crore Power Department budget), but no official page I could open states the current slabs. "Up to 200 units free since 2019" is general knowledge, not confirmed on an official page today; the opt-in rule is also unconfirmed. No `value`.
+- `delhi-higher-education-loan-guarantee`: The service is live on the e-District list as "Modified Higher Education and Skill Development Guarantee Scheme"; eligibility comes from its application-form template. The maximum loan amount (widely reported as ₹10 lakh) and the guarantee terms couldn't be confirmed because the Higher Education site didn't load. `launchedYear` (2015) is approximate.
+- `delhi-bocw-welfare` (active): Amounts are from the board's current portal (dbocwwb.delhi.gov.in). The portal's own pages disagree on graduation-level education aid (₹1,500–2,000 vs ₹3,000 a month), so only the ₹500–₹10,000 range is given. The pension's minimum membership (portal mentions 3 years) is stated loosely. `launchedYear` (2002) is approximate.
+- `delhi-mukhyamantri-vidyarthi-pratibha-yojana`, `delhi-sc-st-obc-merit-scholarship`, `delhi-sc-st-obc-tuition-fee-reimbursement` (active): All facts from the department's 2025-26 guidelines PDF. `launchedYear` 2025 is the current guidelines version, not the original start year.
+- `delhi-widow-daughter-marriage-assistance` (active): ₹30,000 and the criteria are from the WCD FAQ (2022) and the 2021 gazette amendment (income cap ₹1 lakh). The scheme is still listed on the WCD site and e-District today, but there is no 2025-26 rate confirmation.
+- `delhi-sugamya-sahayak` (active): From the Social Welfare page; `launchedYear` (2025) is approximate.
+- (not added) Jai Bhim Mukhyamantri Pratibha Vikas Yojana (free coaching): not in the SC/ST/OBC department's current list of nine schemes, and not on e-District. Couldn't confirm it is running under the new government.
+- (not added) Mukhyamantri Tirth Yatra Yojana: still appears on the e-District services list, but the Tirth Yatra Vikas Samiti page is empty, the portal didn't resolve, and the only guideline is an image-only PDF. Couldn't confirm trips are running in 2025-26.
+- (not added) Delhi merit-cum-means / "Delhi Higher & Technical Education Support Scheme": listed on e-District, but the only template is a student declaration form. Amounts and income bands couldn't be read because the Higher Education site didn't load.
+- (not added) Free LPG cylinders on Holi and Diwali for women: in Budget 2026-27 (₹260 crore). The eligibility (e.g. whether only Mahila Samriddhi/Lakshmi beneficiaries or ration-card holders qualify) couldn't be confirmed on an official page.
+- (not added) Free bicycles for ~1.3 lakh Class 9 girls in government schools and laptops for meritorious Class 10 students: announced in Budget 2026-27. Implementation not confirmed.
+- (not added) Mukhyamantri Matru Vandana Yojana (up to ₹21,000 plus nutrition kits): announced in Budget 2025-26. It isn't on the WCD site or e-District, so the launch isn't confirmed.
+- (not added) Delhi Family Benefit Scheme (₹20,000 one-time on death of the breadwinner): it's live, but it matches the central National Family Benefit Scheme amount, which is already in the dataset. It wasn't added because I couldn't tell whether it is a separate state-funded scheme.
+- (not added) Financial Assistance for Persons with Benchmark Disabilities having High Support Needs: a new e-District service; no official details of the amount found.
+- (not added) DSFDC loan schemes for SC/ST/OBC/minorities/PwD: the 2025-26 budget speech describes the Dalit development corporation as closed; current lending couldn't be confirmed.
+
+### goa-dnhdd
+
+Context: WebSearch ran out early in this batch. Facts come from official pages fetched directly: the goa.gov.in schemes listing (scheme PDFs and Official Gazette notifications), dip.goa.gov.in press releases (via its WordPress API), edc-goa.com, gedc.goa.gov.in, ddd.gov.in and its S3WaaS document store. The Goa 2026-27 budget speech (goabudget.gov.in) refused connections, so budget changes were taken from the PRS budget analysis and are treated as unconfirmed. wcd.goa.gov.in, socialwelfare.goa.gov.in and ddssy sites did not resolve.
+
+### Goa
+- `dayanand-social-security-scheme`: Running in 2026 (DIP press releases of 10 Mar 2026 and 1 Jun 2026, which says "enhanced assistance" was launched). No official page gives the current monthly amount (the only official scheme page is a 2016 note saying ₹1,000; a 2023 DIP story mentions ₹2,000), so `value` is left out. Residence period, income limit and the exact definition of "single women" also need confirming. Launch year 2001 (scheme launched 2 Oct 2001, in force 1 Jan 2002).
+- `goa-deen-dayal-swasthya-seva-yojana`: Cover of ₹2.5 lakh (≤3 members) / ₹4 lakh (4+) and the ₹200 fee are from the DHS scheme document and enrolment form on goa.gov.in (uploaded 2022). The 2026-27 budget (per PRS) announced new ₹4 lakh and ₹6 lakh slabs; no implementing order found. Confirm the current slabs, the fee for 4+ member families (cut off in the scanned form), and that registration is still through Goa Electronics Ltd.
+- `goa-griha-aadhar` (active): ₹1,500/month and all criteria from the Oct 2020 Gazette amendment; payments confirmed by the 10 Mar 2026 DIP release. The 2026-27 budget says the amount will be increased; no notification with a new figure found as of 6 Oct 2026. Update `value` once notified.
+- `goa-laadli-laxmi` (active): ₹1 lakh and criteria from the Oct 2020 Gazette; still promoted in a May 2025 DIP release. The notification is internally inconsistent on the parental income cap (₹3 lakh in clause II, ₹8 lakh in the Annexure II declaration), so no income rule is encoded and the text tells users to confirm. No 2026 confirmation that new applications are being sanctioned.
+- `goa-chief-ministers-rojgar-yojana` (active): CMRY-2023 terms from the EDC page/PDF; EDC's page (modified Apr 2026) says the scheme is extended to 31 Mar 2029. No `value` because the loan is a mix of share capital and term loan as a % of project cost.
+- `goa-interest-free-education-loan`, `goa-bursary-scheme`, `manohar-parrikar-goa-scholars-scheme` (active): rules from Gazette notifications (Nov 2023, Oct 2024, Mar 2026) on goa.gov.in; GEDC site shows IFEL and Bursary 2025-26 rounds open (Bursary 5 May–19 Jun 2026). No application round for the Goa Scholars scheme has been seen yet.
+- (not added) Mukhyamantri Annapurna Yojana: canteen contracts for women SHGs, not an individual benefit.
+- (not added) Mukhyamantri Swayam Rozgar Yojana (MSRY, EDC, Nov 2025): brochure and notification PDFs are image-only and WebFetch could not read them; terms unverified.
+- (not added) Atal Asra Yojana (tribal housing repair/construction): budget 2026-27 reportedly raised aid to ₹3 lakh/₹5 lakh (news only); official notifications on goa.gov.in are 2015–2020 and outdated.
+- (not added) Dayanand Bandodkar Scheme for Orphans, Kamdhenu (Sudharit), Shetkari Aadhar Nidhi, fishermen welfare schemes: only pre-2022 documents found; couldn't confirm they are current or their present rates.
+- (not added) Goa Gramin Swayampurna Yojana (GGSY guideline PDF, 2026/09): 18-page image PDF not reviewed for lack of time; worth checking in a later pass.
+
+### Dadra & Nagar Haveli and Daman & Diu
+- `dnh-dd-saraswati-vidya-yojana`, `dnh-dd-free-bicycle-girls` (active): both components of Saraswati Vidya Yojana from the revised notification DE/DNHDD/Revised SVY/2025-26/1034 dated 23 Apr 2026 and the 9 Jun 2026 advertisement (applications 15 Jun–15 Jul 2026). Launch year 2026 = revised version (the scheme existed by AY 2019-20).
+- (not added) UT old-age / widow / disability pensions: ddd.gov.in's Social Welfare pages list only central missions and RPwD notifications; no UT pension rates or rules found on any official page.
+- (not added) Suryodaya Awas Yojana (District Panchayat housing, Daman/Diu): only tender and 2023 verification notices found; benefit and eligibility unknown.
+- (not added) Financial assistance for children of construction workers (2013 Daman & Diu circular, ₹100–₹200/month): too old to confirm it is current.
+- ddd.gov.in "Schemes" lists only central schemes (PMAY-G, PMSBY, Mudra, Samagra Shiksha, etc.), and the Sugam services portal is JavaScript-only, so few UT-specific schemes could be discovered.
+
+### gujarat
+- `namo-shree-yojana`: ₹12,000 maternity benefit and eligible groups come only from Vikaspedia (2025). Not found in the 2026-27 budget speech or on the WCD website. Confirm it is still paying and check the instalment schedule. `value` left out.
+- `namo-kaushalya-lakshmi-yojana`: Announced in the 2026-27 budget (₹40 crore, "all girls in ITIs"). The ₹750/month, 80% attendance and ₹7,500/₹9,000 completion amounts come only from Vikaspedia. Vikaspedia says Government ITIs, while the state DBT list has separate entries for Govt, GIA and self-financed ITIs. Confirm with a GR. `value` left out.
+- `pandit-deendayal-upadhyay-awas-yojana-gujarat`: The DCW page lists up to ₹1,20,000. Dr. Ambedkar Awas was raised to ₹1,70,000 from 2025-26, so this amount may be out of date. Confirm the current grant. Launch year (2014) is approximate.
+- `pmjay-ma-gujarat`: The ₹10 lakh cover and the 2.72 crore people covered are confirmed in the 2026-27 budget, and the 2023 GR title confirms the ₹10 lakh limit. The current MA Vatsalya income limit couldn't be read: the 2019 GR is a scanned Gujarati PDF that seems to raise it from ₹3 lakh to ₹4 lakh. Confirm the limit, then add an income rule.
+- `ganga-swaroopa-punah-lagna-sahay-yojana`: ₹50,000 (₹25,000 DBT + ₹25,000 NSC) and the 18–50 age band are from the WCD page, which was posted in 2023. No 2025-26 or 2026-27 budget line or beneficiary figure was found. Launch year (2020) is approximate.
+- `mukhyamantri-pak-sangrah-structure-yojana`: The 2026-27 budget confirms ₹1 lakh each for about 15,436 farmers. The cost-share, structure size and i-Khedut steps aren't confirmed, because the i-Khedut portal is a JS app and couldn't be read. Launch year (2020) is approximate.
+- `namo-lakshmi-yojana`, `namo-saraswati-vigyan-sadhana-yojana` (active): Both schemes and their 2026-27 allocations (₹1,250 crore; ₹250 crore for about 2.5 lakh students) are confirmed in the budget speech. The amounts, income limit and Namo Saraswati's 50% Class 10 condition come from Vikaspedia and IANS (Jan 2026), because the Education Department site (gujarat-education.gov.in) didn't resolve. The Namo Lakshmi rule on schooling up to Class 8 is given only roughly.
+- `gujarat-niradhar-vruddh-pension-yojana`, `sant-surdas-yojana`, `manav-kalyan-yojana`, `shri-vajpayee-bankable-yojana`, `gujarat-saraswati-sadhana-yojana`, `gujarat-divyang-lagna-sahay-yojana`, `gujarat-bocw-construction-workers-welfare` (active): Benefits are confirmed on official pages. The pages don't give a start year, so launchedYear values (1978, 1978, 1995, 1999, 2016, 2016, 2004) are approximate.
+- `gujarat-bocw-construction-workers-welfare` (active): Amounts are from the Sanman portal pop-ups. The rates for the education assistance scheme (GR revised 05/06/2026) couldn't be read because the GR PDFs are scanned, so no rates are given. The registration rule (18–60 years, 90 days of work) is the national BOCW Act rule and isn't taken from a Gujarat page.
+- (not added) Mukhyamantri Kisan Sahay Yojana: not in the 2026-27 budget. Crop-loss help is now given through one-off relief packages (₹11,000+ crore in 2025), so it couldn't be confirmed as a standing scheme.
+- (not added) Other i-Khedut farm subsidies (tractor purchase help, farm machinery, Khedut Akasmat Vima): the 2026-27 budget funds them (₹800 crore tractors, ₹765 crore implements, ₹4 lakh accident cover), but the per-farmer rules are only on the i-Khedut JS app, which couldn't be read.
+- (not added) Digital Gujarat / CMSS (Chief Minister Scholarship Scheme): the portal is live (scholarships.gujarat.gov.in), but the category and amount rules are only in GRs that couldn't be read. MYSY is covered.
+- (not added) Mukhyamantri Mahila Swavalamban (GWEDC loan subsidy) and Free LPG refills (2 a year for Ujjwala and PNG/LPG Sahay beneficiaries): the official pages are old or only a budget line was found. These could be added later.
+- (review) `namo-lakshmi-yojana`, `namo-saraswati-vigyan-sadhana-yojana`: check-status and value removed because the amounts come from Vikaspedia/IANS (the Education Department site did not resolve); the budget confirms the schemes and their funding.
+
+### haryana
+
+Context: WebSearch quota ran out after two searches and WebFetch hit its session limit, so facts come from official pages and PDFs fetched directly: socialjusticehry.gov.in (scheme pages and Haryana Gazette notifications), wcdhry.gov.in, hrylabour.gov.in (BOCW board scheme pages), hartrans.gov.in (transport orders), ekharid.in / hsamb.org.in, fasal.haryana.gov.in, and the Haryana budget speeches 2025-26 and 2026-27 (finhry.gov.in). haryanascbc.gov.in timed out; shagun/Chirayu/SHA hosts didn't resolve; hortharyana.gov.in is a JS app with no readable content.
+
+- `deen-dayal-lado-lakshmi-yojana` (active): all facts from the Gazette notification of 8 Jan 2026 (₹2,100 = ₹1,100 to account + ₹1,000 RD after first month; age 23+; ₹1 lakh income + Gram Sabha endorsement; ₹1.8 lakh route for some mothers; 15-year residence). The 2026-27 budget says the general income limit will be raised to ₹1.8 lakh on 25 Sept 2026 (Deen Dayal's 110th birth anniversary); I couldn't confirm a notification doing so. The eligibility rule uses ₹1.8 lakh (labelled) so qualifying mothers aren't excluded; update the text once the general raise is notified.
+- `haryana-old-age-samman-allowance`, `haryana-widow-destitute-women-pension`, `haryana-divyang-pension`, `haryana-ladli-social-security-allowance` (active): ₹3,200 from 1 Nov 2025 per the department pages; criteria from the pages and Gazette notifications (OASA 2022/2024, widow 2023, Divyang Rules 2025). The Divyang Rules 2025 don't restate the 60% minimum; the 60–100% figure is from the department page. Widow pension launch year (1981) approximated from "1980-81".
+- `haryana-widower-unmarried-persons-allowance` (active): 2023 notification says "same rate as widow pension" (₹2,750 then); ₹3,200 is inferred from the current widow pension rate. Department page now says 15-year residence for widowers (notification said one year); we show 15.
+- `haryana-construction-workers-welfare` (active): amounts from the Board's scheme-detail pages on hrylabour.gov.in, which are live but undated. Some (e.g. e-scooter incentive) may have changed; re-check periodically. Registration age limits weren't on the page, so none are stated. launchedYear 2006 approximate.
+- `mera-pani-meri-virasat` (active): ₹8,000/acre from the 2025-26 budget, confirmed as paid in the 2026-27 budget; the extra ₹2,000/acre is only a 2026-27 proposal. Application steps (registration on Meri Fasal Mera Byora) are standard practice but weren't confirmed on a scheme page (agriharyana.gov.in has no MPMV page). launchedYear 2020 from memory.
+- `haryana-dsr-paddy-straw-incentive` (active): ₹4,500/acre DSR and ₹1,200/acre straw management from the 2026-27 budget; MFMB portal shows DSR registration for 2026. launchedYear 2022 approximate.
+- `haryana-bhavantar-bharpai-yojana`: the ekharid.in scheme page is live but describes only the first phase (4 crops, e.g. potato ₹600/q protected price). The current crop list and protected prices weren't confirmed, so no prices are given. launchedYear 2018 approximate.
+- `chirayu-haryana`: existence confirmed only by a mention of "Ayushman Chirayu" in the 2025-26 budget speech. Income limits, premium for higher-income families and cover amount couldn't be read from any official page (Chirayu/SHA sites didn't resolve), so they are left out. launchedYear 2023 from memory.
+- `haryana-super-100`: confirmed by the 2026-27 budget (400 → 500 seats, results). Eligibility (class, marks cut-off), selection test details and launch year (2021) are not confirmed on an official page.
+- `mukhyamantri-antyodaya-parivar-utthan-yojana`: named in the 2026-27 budget (beneficiaries get priority for Har Hith stores), but there's no official scheme page I could open describing current benefits or the income cut-off. Uses the `bpl` flag as a stand-in for "Antyodaya family". launchedYear 2022 approximate.
+- `haryana-senior-citizen-bus-concession` (active): 50% concession, men 60+ from 1 Apr 2023, out-of-state validity and the pass for men 60–65 from the Transport Dept order of 28 Mar 2023. How others prove eligibility on the bus is general practice, not from the order.
+- `haryana-girl-students-free-bus-pass` (active): free travel up to 150 km from the Transport Dept memo of July 2017. The step-by-step pass process (form attested by the institution, depot) is general practice, not from an official page.
+- `aapki-beti-hamari-beti`, `mukhya-mantri-matritva-sahayta-yojana` (active): from the WCD Haryana scheme pages (undated; ABHB page shows 2023-24 figures).
+- (not added) Mukhya Mantri Vivah Shagun Yojana: run by the SC/BC Welfare Department, whose site (haryanascbc.gov.in) timed out repeatedly. Couldn't confirm current amounts or that it's open. Construction workers' daughter-marriage aid (₹1,01,000) is covered in `haryana-construction-workers-welfare`.
+- (not added) Happy Card / Mukhyamantri Antyodaya Parivar Parivahan Yojana (free Roadways travel for poor families): mentioned in the 2026-27 budget ("Happy Card") but no official page with current limits could be opened.
+- (not added) Free bus travel for all Divyang persons: announced in the 2025-26 budget; couldn't find the implementing order on hartrans.gov.in.
+- (not added) Natural/organic farming grant of ₹10,000/acre and desi cotton incentive raise to ₹4,000/acre: 2026-27 budget proposals only.
+- (not added) Mukhyamantri Apprenticeship Promotion Scheme (₹1,500/month extra for Antyodaya apprentices) and Pink Cab scheme: announced in 2026-27 budget; no launch notice found.
+- (not added) Mukhyamantri Bagwani Bima Yojana: budget proposes higher compensation, but scheme rules/current premium couldn't be read (horticulture site unreadable).
+
+### jammu-kashmir-ladakh
+
+Context: J&K has an elected government (CM Omar Abdullah) since Oct 2024; budgets for 2025-26 (Mar 2025) and 2026-27 (6 Feb 2026). Facts come from socialwelfare.jk.gov.in government orders (GO 156/2022 ISSS Rules, GO 96/2025 pension rates, GO 49/2022 + GO 95/2025 + GO 245/2025 marriage assistance, GO 149/2022 Ladli Beti), the Jan Sugam service catalogue (jansugam.jk.gov.in), DIPR J&K press releases (dipr.jk.gov.in), missionyuva.jk.gov.in, the PRS 2026-27 budget analysis, and ladakh.gov.in / socialwelfare.ladakh.gov.in / highereducation.ladakh.gov.in. WebSearch ran out partway through. Unreachable: jk.gov.in, finance.jk.gov.in (budget speech), sha.jk.gov.in, missionyouth.jk.gov.in (HTTP 500), J&K labour/BOCW sites, health.ladakh.gov.in. Mission YUVA sub-pages return only the menu to scripted fetches.
+
+### Jammu & Kashmir
+- `jk-ladli-beti`: Benefits (₹1,000/month for 14 years, about ₹6.5 lakh at 21), the 8 districts and the ₹75,000 income cap come from the department's citizen charter (data to March 2019). GO 149/2022 and a live Jan Sugam service show it was still being processed online, but I found no 2025/2026 order confirming new enrolments or current amounts. No `value` set. The "young daughter" rule is a proxy: the girl must be born on or after 1 Apr 2015 and the application is normally made soon after birth.
+- `jk-motorised-tricycle-divyang`: Eligibility (18–50, 40%+ lower-limb locomotor disability, UDID, no earlier tricycle) is from the live Jan Sugam service page. Whether it is free or subsidised, and any income condition, isn't stated. `launchedYear` (2023) is a guess.
+- `jk-mission-yuva` (active): Track descriptions (₹10 lakh nano project cost, MSME loans up to ₹2 crore with 6% subvention for 5 years, 6% subvention capped at ₹10 lakh for existing units, ₹250 crore VC fund) are from the portal home page. Age and education limits per track couldn't be read, so the only rule is J&K residence. `launchedYear` 2025 is approximate (CM said ₹1,000 crore was disbursed "within a year" by Mar 2026).
+- `jk-ab-pmjay-sehat` (active): ₹5 lakh family floater for all residents, including employees and pensioners, is from the PIB backgrounder (2022) and the Shopian district page. The current policy term (from 17 Apr 2025) is confirmed by DIPR (Feb 2026). sha.jk.gov.in didn't load.
+- `jk-free-bus-travel-women` (active): Scope from DIPR releases of 1 Apr 2025; the CM confirmed in Feb 2026 that it continues. A field report says coverage is mostly Srinagar/Jammu urban routes. Extension to persons with disabilities was announced in the 2026-27 budget, but I found no launch order.
+- `jk-state-marriage-assistance` (active): The PRS budget analysis says the 2026-27 budget "increased SMAS to ₹75,000". GO 95/2025 gives ₹75,000 for AAY and ₹50,000 for PHH from 1 Apr 2025. If PHH was also raised to ₹75,000 in 2026-27, update the PHH amount and `value`.
+- ISSS pensions (`jk-isss-old-age-pension`, `jk-isss-widow-pension`, `jk-isss-disability-pension`, `jk-isss-transgender-pension`) (active): rates from GO 96/2025 (from 1 Apr 2025), criteria from the ISSS Rules 2022. No pension revision for 2026-27 was found.
+- (not added) Mumkin and Tejaswini (Mission Youth): the newest official info I found is from 2023; missionyouth.jk.gov.in returns HTTP 500. Mission YUVA looks like the current self-employment flagship. Couldn't confirm either scheme is still taking applications.
+- (not added) LG's Super-75 scholarship: launched in 2021 under Mission Youth; nothing found for 2024–2026.
+- (not added) ₹4,000/month for orphans, full fee waiver for AAY students (Classes 9–12 and degree colleges), and 6 free LPG cylinders a year for AAY families: announced in the 2026-27 budget. In late Sept 2026 the LPG scheme had approval but no implementing order, and I found no launch orders for the other two.
+- (not added) 200 units of free electricity for AAY households: to be delivered through rooftop solar (2 kW plants); in Feb 2026 the government told the Assembly it was still at final approval/DPR stage.
+- (not added) Additional 10 kg free ration per person for AAY: cabinet-approved in March 2025, but no implementing order or current status found. It's also an in-kind ration top-up.
+- (not added) J&K BOCW welfare board benefits: board/labour sites didn't load.
+
+### Ladakh
+- `ladakh-rewa-meritorious-students`: Amounts (up to ₹1 lakh / ₹64,000 + ₹36,000 for Class 10/12 toppers; ₹1 lakh + ₹54,000 after UPSC/IFS/IES Prelims) and seat counts come from the undated REWA FAQ on socialwelfare.ladakh.gov.in. The portal (©2026) is live but registration is closed, and I couldn't confirm a recent intake. `launchedYear` 2021 is approximate. Payment mode (reimbursement) isn't confirmed as DBT.
+- `ladakh-universal-healthcare`: The Health Department page says the UT runs a fully funded Universal Healthcare scheme for all citizens on top of PM-JAY. The cover amount, enrolment process, scheme name and launch year aren't on any page I could open, so there's no `value`. `launchedYear` 2021 is a guess.
+- `ladakh-rewa-upsc-coaching` (active): Eligibility (graduate, 21–36, Ladakh domicile, family income ≤ ₹8 lakh, ₹200 fee, screening test) is from the 29 Sep 2026 notification and the Nov 2025 shortlist notice. The coaching assistance amount is in the scheme guidelines, which weren't attached online, so there's no `value`. The 2026 notice calls it both "REWA 2.0" and "REWA 3.0".
+- (not added) Ladakh ISSS pensions (old age / women in distress / disability): socialwelfare.ladakh.gov.in still shows pre-2019 rates (₹200–₹400/month), which are clearly outdated. I couldn't find current rates or rules.
+- (not added) Ladakh Senior Citizen Card: an identity card for residents 60+ that gives access to other schemes, not a benefit in itself.
+- (not added) School Education incentives (girls' attendance scholarship, merit-cum-poverty scholarship, tablets for Classes 6–12): listed on the department page with no amounts, criteria or dates.
+- (not added) Other Ladakh welfare schemes: the ladakh.gov.in scheme listing shows only central schemes, and the notices list loads via AJAX, so I couldn't search it.
+- (review) `jk-state-marriage-assistance`: check-status because the 2026-27 budget may have raised the PHH amount; the value keeps the official ₹50,000 (the lower, conservative figure) until a new order is found.
+
+### jharkhand
+- `abua-awas-yojana`: ₹2 lakh in five instalments is confirmed in the 2026-27 budget speech, but the speech says 2026-27 money is for finishing houses already sanctioned (6.33 lakh of the 6.5 lakh target). No new application round confirmed. The official portal (aay.jharkhand.gov.in) has no eligibility text, so the eligibility, exclusions and documents lists are general. Launch year (2023) is unconfirmed.
+- `mukhyamantri-pashudhan-vikas-yojana`: The 2026-27 budget speech confirms the umbrella scheme, its components and about ₹481 crore. The animal husbandry department site didn't load, so subsidy rates, unit sizes and how to apply could not be checked. Launch year (2021) is approximate.
+- `jharkhand-cycle-vitran-yojana`: The 2026-27 budget speech (₹136 crore) and a June 2026 CMO review confirm Class 8 SC/ST/minority/BC students in government schools get bicycles. Per-student amount, DBT vs bicycle, and the launch year (2008 is a placeholder guess) are unconfirmed.
+- `mukhyamantri-abua-swasthya-suraksha-yojana`: Named in a June 2026 CMO review of health schemes. The only figure is the CM's NITI Aayog statement (May 2025 CMO note) of "up to ₹15 lakh for about 38 lakh families left out of PM-JAY", which may mix this scheme with Mukhyamantri Jan Arogya Yojana. No scheme rules, portal or enrolment process found. Value left out. Launch year (2024) unconfirmed.
+- `jharkhand-mukhyamantri-kanyadan-yojana`: ₹30,000 and the eligibility rules come from the 2019 WCD resolution, which is still published on jharkhand.gov.in (uploaded July 2025). Couldn't confirm the current amount or that applications are open, so `value` is left out.
+- `jharkhand-sarvjan-pension-yojana` (active): ₹1,000 a month comes from a June 2022 CMO press note. The 2026-27 budget confirms the scheme and covered groups but not the amount. Confirm the rate is still ₹1,000. Launch year (2020) is approximate.
+- `jharkhand-200-unit-free-electricity` (active): 200 free units and ₹5,405 crore are from the 2026-27 budget speech. The official scheme name and launch year (2024) weren't confirmed. The JBVNL site has no page for the scheme.
+- `marang-gomke-overseas-scholarship` / `sona-sobran-dhoti-saree-yojana` (active): Confirmed in the 2026-27 budget speech. Launch years (2020 / 2014) are approximate. Marang Gomke's age, income and marks rules and what the funding covers weren't checked.
+- `savitribai-phule-kishori-samridhi-yojana` (active): Amounts are from a July 2024 CMO press note, and the scheme is listed as running in the 2026-27 budget. Family conditions (ration card or income) and the application channel weren't confirmed, so the text points users to the school or district office.
+- `mukhyamantri-gambhir-bimari-upchar-yojana` (active): The ₹5 lakh per case and the ₹8 lakh income rule come from the Feb 2020 cabinet decision. A June 2026 CMO review confirms the scheme is running, but the limits may have changed since 2020.
+- `jharkhand-ekalyan-post-matric-scholarship` (active): The ₹2.5 lakh income limit is from the 2022 SC post-matric rules (Notification 2588). The BC income limit may differ. The budget says amounts were roughly tripled, so no per-course amounts are given.
+- (not added) Birsa Harit Gram Yojana: CMO pages only from 2022. Not mentioned in the 2026-27 budget speech, and the rural development portal didn't load.
+- (not added) Mukhyamantri Shiksha Protsahan Yojana and Eklavya Prashikshan Yojana: listed on the GSCC portal, but no details could be opened.
+- (not added) Mukhyamantri Asangathit Shramik Auzar Sahayata Yojana and BOCW board benefits (cycle, maternity, marriage, death help): named in the 2026-27 budget speech, but the labour/BOCW portals didn't load, so amounts and rules couldn't be checked.
+- (not added) Jharkhand Krishi Rin Mafi Yojana: one-time loan waiver, not open for new applicants.
+- (not added) Mukhyamantri Medha Chhatravriti, Manki Munda scholarship, Fulo Jhano Ashirwad Abhiyan, Mahila Kisan Khushhali Yojana: named in official sources, but no official details could be opened.
+- (not added) Pre-matric scholarship: covered inside `jharkhand-ekalyan-post-matric-scholarship` (₹2,500 for Class 6-8 hostellers per the Dec 2022 resolution, other rates not checked).
+- (review) `jharkhand-sarvjan-pension-yojana`: check-status; the official ₹1,000/month rate is confirmed only in a 2022 press note, so it is kept as the value but needs a current order.
+
+### karnataka
+- `swavalambi-sarathi`: amounts and eligibility confirmed on the ADCL scheme page, but no 2026-27 call for applications was found (WebSearch budget ran out); launchedYear 2023 is approximate.
+- `udyogini-karnataka`: loan/subsidy/income/age figures confirmed on the KSWDC Udyogini page, but the page is undated and no current-year application notice was found; launchedYear 1997 is approximate.
+- `arivu-education-loan`: loan amounts, 2% charge and ₹8 lakh income cap confirmed on the KMDC Arivu page, but the page is undated and no 2026-27 notice was found; launchedYear 2014 is approximate.
+- `karnataka-disability-pension`, `karnataka-farmer-widow-pension`, `karnataka-vidyasiri`, `karnataka-bc-fee-concession`, `karnataka-milk-incentive`, `karnataka-construction-workers-welfare`: benefits confirmed on official pages, but the official pages give no start year; launchedYear values (1984, 2018, 2010, 2010, 2008, 2007) are approximate.
+- `karnataka-construction-workers-welfare`: amounts are from the Board's schemes page; education-assistance rates by class not listed because the page didn't give them.
+- `karnataka-ganga-kalyana`: unit costs quoted are the SC corporation's (ADCL) page; ST, backward class and minority corporations set their own costs and income limits, not confirmed.
+- `raitha-vidya-nidhi`: amounts read from the 2026-27 guideline PDF (Kannada, partly garbled text extraction); the "high school girls ₹2,000" row should be double-checked.
+- (not added) Mukhyamantri Santwana Harish (road-accident first-48-hours treatment): could not confirm it still runs as a separate scheme; the SAST/Arogya Karnataka site would not load and web search was unavailable.
+- (not added) Ksheera Bhagya: this is the school/anganwadi milk programme, not an individual application scheme; added the dairy farmers' ₹5/litre milk incentive instead.
+- (not added) Adarsha Vivaha (inter-caste/simple marriage incentive under DSSP): latest order on the DSSP site is from 2015; amount and current status not confirmed.
+- (not added) Backward Classes post-matric scholarship: amounts on the BCWD page look outdated and could not be confirmed against the 2026-27 notice.
+- (review) `raitha-vidya-nidhi`: moved to check-status and value removed until the ₹2,000 high-school row is confirmed from a cleanly readable copy of the guideline.
+
+### kerala
+
+Context: the UDF government (CM V.D. Satheesan) took office in May 2026 and presented a revised 2026-27 budget on 19 June 2026 (budget.kerala.gov.in, 2026rev). WebSearch was exhausted, so facts come from official pages fetched directly: the two 2026 budget speeches, welfarepension.lsgkerala.gov.in, socialsecuritymission.gov.in, suneethi.sjd.kerala.gov.in, wcd.kerala.gov.in, egrantz.kerala.gov.in, lifemission.kerala.gov.in and kfwfb.kerala.gov.in. sha.kerala.gov.in, sjd.kerala.gov.in and minoritywelfare.kerala.gov.in returned 403 to scripted fetches; the fisheries site is suspended; the BOCW board site didn't resolve.
+
+- `snehapoorvam`: Eligibility and ₹300–₹1,000 rates are from the KSSM scheme page (2024). The revised budget lists it among schemes to "revive", which suggests payments were irregular. Confirm the rates are unchanged and payments resumed. Launch year (2012) is approximate.
+- `ashwasakiranam`: KSSM is collecting life certificates (May 2026) and updating post-2018 applicants (Feb 2026), so it is running, but the monthly amount and income criteria couldn't be read from an official page (application form PDF is image-only). The budget says it will be "revived". Add the amount once confirmed.
+- `karunya-benevolent-fund`: "Up to ₹3 lakh" and the 77,608 families figure are from the Jan 2026 budget speech. The family income limit isn't stated in any page I could open (SHA site 403). The new government says it will "revive" the fund, so rules may change. Launch year (2012) is approximate.
+- `kerala-life-mission`: Clearly existed through Jan 2026 (₹1,497 crore allocation, ~5 lakh houses). The UDF revised budget doesn't mention LIFE by name and announces new SC/ST and fishers' housing schemes. Per-house assistance (widely reported as ₹4 lakh) is not on any page I could open, so no amount is given. Confirm whether LIFE continues and whether new beneficiaries are being added.
+- `margadeepam-scholarship`: Only confirmed by the revised 2026-27 budget (named with an allocation). Class range, amount, income limit and launch year (2024 given) are unconfirmed because minoritywelfare.kerala.gov.in returned 403.
+- `mangalya-widow-remarriage`: ₹25,000 and BPL condition are from the WCD scheme page, which is undated. Confirm it is still open in 2026-27 and whether there is an age limit. Launch year approximate.
+- `abhayakiranam`: ₹1,000/month from the undated WCD scheme page. Confirm it is still paying. Launch year approximate.
+- `kerala-women-headed-family-education-assistance`: Rates (₹3,000–₹10,000/year) from the undated WCD scheme page. Confirm it is current. Launch year approximate.
+- `kerala-karunya-arogya-suraksha-padhathi` (active): ₹5 lakh cover, 42 lakh families and coverage of all disabled/transgender persons are from the Jan 2026 budget; the revised budget commits to clearing arrears. The statement that PM-JAY runs through KASP in Kerala is from general knowledge (SHA site 403). Launch year 2019 not checked on an official page.
+- Welfare pensions (`kerala-old-age-pension`, `kerala-widow-pension`, `kerala-disability-pension`, `kerala-unmarried-women-pension`, `kerala-agricultural-workers-pension`) (active): ₹2,000 and the criteria are from the Sevana portal (FAQs/criteria pages) and the Jan 2026 budget; Onam 2026 payments confirmed in news. `launchedYear` is 2025, the year the current ₹2,000 rate started. The widow criteria text on the portal is garbled about age 50; the portal also says "no age limit", which is what we show. The disability-pension minimum % isn't stated, so the rule only checks "has a disability".
+- `kerala-free-bus-travel-women` (active): Scope (all women and transgender persons, any age, all ordinary KSRTC services, ₹600 crore) from the revised budget speech; June 2026 start from Outlook Money. Whether non-residents also ride free isn't stated.
+- `vidyakiranam`, `mathru-jyothi`, `parinayam` (active): criteria from the Suneethi portal's criteria page. Mathru Jyothi and Parinayam amounts aren't stated there, so no `value`. Launch years (2016) are approximate.
+- `kerala-farmers-welfare-fund` (active): eligibility from kfwfb.kerala.gov.in (board shows the new CM and minister, so it is current). Pension amount, contribution and joining age aren't on the page, so no `value`.
+- (not added) Chief Minister's Sthree Suraksha Scheme (₹1,000/month for women 35–60) and Connect to Work Scholarship: launched by the previous government in Nov 2025 (Jan 2026 budget). The UDF revised budget doesn't mention either, and I couldn't confirm they are still paying.
+- (not added) Oommen Chandy Health Insurance Scheme (₹25 lakh cover for all families): announced in the revised budget with ₹10 crore for initial costs, but not launched yet.
+- (not added) Kerala Building and Other Construction Workers' Welfare Fund Board benefits: the board's site didn't resolve, so current benefits couldn't be checked.
+- (not added) Fishermen welfare schemes (Fishermen Welfare Fund Board, savings-cum-relief, kerosene subsidy raised to ₹75): fisheries.kerala.gov.in is suspended and the welfare board site didn't resolve. The revised budget only lists plans (Fisheries Sub-plan, wage help on warning days, She Scooters).
+- (not added) Kedavilakku pre-matric scholarship (OBC) and other e-Grantz sub-schemes: notices are on e-Grantz but the PDFs are Malayalam with broken text extraction, so amounts couldn't be read. Covered generally by `kerala-egrantz-educational-assistance`.
+- (not added) Sahaya Hastham (self-employment aid for widows under 55): WCD page gives no amount.
+
+### madhya-pradesh
+- `mukhyamantri-udyam-kranti-yojana`: a "MMUKY Revised Book 2026" exists on mpmsme.gov.in but is a scanned 30 MB PDF that could not be read. The 3% interest subsidy and guarantee fee for 7 years come from the 2022 guidelines. Current loan limits (earlier ₹1–50 lakh) and the income cap are unconfirmed, so no value is set.
+- `mp-mukhyamantri-tirth-darshan-yojana`: the official portal (tirthdarshan.mp.gov.in) and the Dharmasva site did not load. Eligibility comes from a district NIC page (panna.nic.in). That 2026 trips are running comes only from secondary reports. Women are reportedly eligible from 58 and people with disabilities have no age limit, but neither is confirmed officially, so the rule uses 60+.
+- `mp-sambal-prasuti-sahayata`: the scheme is listed on sambal.mp.gov.in, but the ₹4,000 + ₹12,000 (₹16,000) split comes from a secondary summary (Drishti). The implementing department (Health with Labour) and the exact eligibility (registered woman worker vs worker's wife) are unconfirmed, so no value is set.
+- `mp-kisan-kalyan-yojana` (active): ₹4,000/yr in two ₹2,000 instalments comes from secondary sources plus the 2026-27 budget line (₹5,501 cr). The SAARA portal confirms the scheme is live but doesn't state the amount.
+- `ladli-behna-yojana` (active): the ₹1,500/month amount, age 21–60 and exclusions are confirmed on cmladlibahna.mp.gov.in. The exact month the amount rose to ₹1,500 (Oct vs Nov 2025) is unclear. New registrations are not open (portal shows only status/objection pages).
+- `mukhyamantri-seekho-kamao-yojana` (active): the portal confirms age 18–29, 12th/ITI+ and the 75% state / 25% company stipend split. The ₹8,000–₹10,000 stipend slabs come from the 2023 launch rules. Revised rules (June 2026) were not read.
+- `mp-pratibhashali-vidyarthi-laptop-yojana` (active): ₹25,000 for 75%+ in MP Board Class 12 is confirmed by AIR (newsonair.gov.in, Sept 2026). The launchedYear 2018 is approximate.
+- `gaon-ki-beti-yojana` / `pratibha-kiran-yojana` (active): the benefit and eligibility come from highereducation.mp.gov.in, and a Gaon ki Beti notice is dated 01-10-2026. The launch years (2005 / 2009) are from memory and unconfirmed. scholarshipportal.mp.nic.in did not resolve.
+- `mp-kanya-vivah-nikah-yojana` (active): the ₹49,000 + ₹6,000 split comes from the April 2025 cabinet revision, as reported by Drishti. vivahportal.mp.gov.in did not load. The groom's minimum age of 21 is the legal age and is not quoted from scheme rules.
+- (not added) Free bicycle scheme (school education): couldn't verify it is current. It isn't listed among the Education Portal 3.0 schemes (free scooty, laptop, uniforms and textbooks are).
+- (not added) Free e-scooty for school toppers: listed on educationportal3.in, but its eligibility and amount couldn't be confirmed (web search budget ran out).
+- (not added) Mukhyamantri Awas / Ladli Behna Awas: couldn't confirm that it's currently open.
+- (review) `mp-kisan-kalyan-yojana`, `mp-kanya-vivah-nikah-yojana`, `mukhyamantri-seekho-kamao-yojana`: moved to check-status and `value` removed because the amounts above come from secondary sources or pre-revision rules.
+
+### manipur-nagaland
+
+### Manipur
+- `manipur-cmflss` (check-status): Facts from the Planning Department OM of 14.03.2024 (guidelines) and the amendment OM of 25.09.2024 on manipur.gov.in. No 2025 or 2026 notice, portal or budget mention was found, so it is not confirmed that registrations are open now. The ₹20,000 / ₹40,000 limits are in the text only, not in `value`. The CMFLSS portal URL named in the guidelines was not found.
+- `manipur-cm-shotharabasingi-tengbang` (check-status): Existence and components (caregiver allowance with 7,573+ beneficiaries, scholarships, skill training, running since 2017-18) come from the Social Welfare Department's RPwD Act compliance report on socialwelfare.mn.gov.in (undated, about 2023). No current amounts, guideline or application route were found; the department site's scheme pages are outdated.
+- `cm-hakshelgi-tengbang` (active): Cover, travel allowances, eligible groups and documents confirmed on cmhtmanipur.gov.in (dashboard dated 30 Nov 2025). The OPD/hospitalisation-only exclusion and the government-service declaration come from the same site. No 2026-specific notice was found, but the site is live and the dashboard is recent.
+- `manipur-state-competitive-scholarship` (active): The 2025-26 form (exam on 22 Feb 2026) is on manipureducation.gov.in. The scholarship amount and the number of awards are not published, so there is no `value`. launchedYear 2025 is the current cycle, not the year the scheme first started (an older State Talent Search existed in 2008).
+- (not added) Manipur Old Age Pension (state-sponsored): socialwelfare.mn.gov.in still lists it, but the rules page gives an obviously outdated ₹200/month. No current rate or status was found.
+- (not added) State disability pension (launched 2022-23, on top of IGNDPS) and unemployment allowance for persons with disabilities: mentioned only in the RPwD compliance report; no rates, name or application process found.
+- (not added) Women SHG economic empowerment scheme (2026-27 budget: ~3.5 lakh women, ₹10,000 in year 1 by DBT, ₹350 crore): announced on 9 March 2026 as "will be launched this year"; no scheme name, guideline or launch notice found.
+- (not added) Manipur Merit Scholarship Scheme: named in the 2026-27 budget annexure, but no guideline or amount found (the education site's scholarship page dates from 2009).
+- (not added) Financial Assistance for Non-Institutional Care of Dependent Children (1992 rules): only old rules found; current status unknown.
+
+### Nagaland
+- `nagaland-cmhis` (active): ₹5 lakh (General) and ₹20 lakh (Employees & Pensioners) per family per year, eligibility, documents and registration centres confirmed on cmhis.nagaland.gov.in (card data as on 05-10-2026). The site does not say whether General Category members pay a premium. The online steps are written generally because the registration form sits behind a login. launchedYear 2022 is based on CMHIS (EP) reimbursements starting 1 Nov 2022.
+- `nagaland-cmmfi` (active): 10/60/30 funding pattern, 6-month moratorium, CGTMSE fee, 4% extra interest subvention and eligibility confirmed on credit.nagaland.gov.in and the Finance Department directive of 29.03.2025 (DIPR). Awareness camps ran in Aug 2025 and the portal is live. There is no single loan cap for individuals (project costs listed go up to ₹15 lakh), so there is no `value`. The documents list is partly general.
+- `nagaland-state-merit-scholarship` (active): Eligibility from the Directorate of Higher Education guideline on scholarship.nagaland.gov.in; open 1 Aug to 31 Oct 2026. The guideline gives no amount, so there is no `value`. launchedYear (2024) is the portal era, not the original start year.
+- `nagaland-state-technical-scholarship` (active): DTE guideline dated 10.07.2024; open 1 Oct to 31 Dec 2026. No amount stated.
+- `nagaland-disability-scholarship` (active): Social Welfare guideline for 2026 (open 1 Aug to 30 Nov 2026). No amount stated. launchedYear 2025 is a guess from the 2025-26 renewals mentioned.
+- (not added) Nagaland social pensions (state old age, widow and disability pensions): socialwelfare.nagaland.gov.in does not resolve, and no official page with state rates was found.
+- (not added) State Medical Scholarship: open 16 Sep to 15 Oct 2026, but the only guideline on the portal is for 2024-25 and gives no amount or eligibility beyond ST/indigenous with a NEET or other nomination.
+- (not added) Research Scholarship, State Agriculture and Horticulture Scholarships: the research guideline PDF could not be read; agriculture and horticulture are closed (last cycle Jan 2025).
+
+### mh-mahadbt-scholarships
+- `pandit-deendayal-upadhyay-swayam-yojana`: Tribal Development Dept runs a live Swayam application/status system (mahatribal.gov.in), but no official page giving the current per-city amounts, marks or income conditions could be read (only secondary sites). Amounts and conditions left out of `value`/rules; confirm against the latest GR.
+- `panjabrao-deshmukh-vasatigruh-nirvah-bhatta` (active, amount note): MahaDBT pages for DHE/DTE/Art/MCAER/MAFSU show a ₹60,000/₹51,000/₹43,000/₹38,000 city table, while the DMER page shows ₹30,000/₹20,000 (labourer/small-farmer children) and much lower for others. Older secondary sources quote ₹30,000/₹20,000 for all. No `value` set; confirm the GR behind the higher table.
+- `dnyanjyoti-savitribai-phule-aadhar-yojana` (active): facts from the Washim district official site (GR 11 March 2024); the exact online portal for applications was not confirmed.
+- `swadhar-yojana` (active): amounts, 50% marks and ₹2.5 lakh income from sjsa.maharashtra.gov.in; hmas.mahait.org now redirects to hmasnew.mahait.org (JS app, not readable).
+- (not added) Government of India Post-Matric Scholarship for SC / ST (on MahaDBT): central schemes already in `central/post-matric-scholarship-sc` and `central/post-matric-scholarship-st`.
+- (not added) Jawaharlal Nehru University Scholarship (DHE): one seat a year chosen by JNU; not useful for discovery.
+- (not added) Government Vidyaniketan Scholarship, State Government Daxshina Adhichatra, Government Research Adhichatra, Scholarship for meritorious Mathematics/Physics students (DHE): tiny fixed quotas (14 to 100 seats) tied to specific government institutions; listed on MahaDBT but left out as too narrow.
+- (not added) Award of scholarship to backward class students in high schools (SJSA): no application by students (headmaster sends list); old rates of ₹50–₹100/month.
+- (not added) Lokshahir Anna Bhau Sathe Scholarship: one-time corporation award funded from fund interest; applied via the corporation, could not confirm current cycle.
+- (not added) Stipends to SC trainees in ITIs (old ₹40–₹100 rates, SJSA page): superseded by the ₹500/month Govt ITI stipend (`maharashtra-govt-iti-stipend`).
+
+### mh-other
+- `ahilyadevi-holkar-shetkari-karjmukti-yojana`: 2026 farm loan waiver (approved June 2026, criteria revised July 2026). The ₹2 lakh cap, loan cut-off dates, exclusions and implementing department (assumed Cooperation) come from news reports only; the GR was not found. No value encoded.
+- `shabari-adivasi-gharkul-yojana`: Official sources give inconsistent income limits (₹10,000/month rural vs ₹1/1.5/2 lakh by area) and grant amounts (₹1.32–2 lakh). No value or income rule encoded. launchedYear (2013) unconfirmed.
+- `modi-awas-gharkul-yojana`: Target period was FY 2023-24 to 2025-26; couldn't confirm whether new sanctions continue in 2026-27. Department page not reachable during check.
+- `mahatma-phule-mahamandal-direct-loan-yojana`: Loan terms (₹1 lakh direct loan at 4%, margin money up to ₹5 lakh) come from secondary listings that point to mpbcdc.maharashtra.gov.in (site too large to fetch). Age and income limits unconfirmed. launchedYear 1978 is the corporation's founding year (unconfirmed).
+- `mukhyamantri-tirth-darshan-yojana-maharashtra`: 2024 GR terms (60+, ₹2.5 lakh income, ₹30,000 cap, lottery) come from news. Trips are still running per news reports, but I couldn't confirm a current application round or the exact online process.
+- `mukhyamantri-vayoshri-yojana`: 65+ and ₹3,000 one-time confirmed on Nashik/Jalgaon district sites. The ₹2 lakh income limit and the current application process come from secondary sources only, so income is not encoded.
+- Uncertain launchedYear values (not used for eligibility): shravanbal-seva-rajya-nivruttivetan-yojana (2008), ramai-awas-yojana (2008), dr-babasaheb-ambedkar-krishi-swavalamban-yojana (2016), birsa-munda-krishi-kranti-yojana (2017), maharashtra-bandhkam-kamgar-kalyan-yojana (2011), annasaheb-patil-vyaj-partava-yojana (2018).
+- `sanjay-gandhi-niradhar-anudan-yojana`: ₹1,500/month confirmed on district sites. Couldn't confirm reports of a higher rate for disabled beneficiaries.
+- (not added) Majhi Kanya Bhagyashree: replaced by Lek Ladki Yojana for girls born on or after 1 April 2023 (already in the dataset).
+- (not added) Mukhyamantri Shashwat Krishi Sinchan Yojana (state top-up for drip/sprinkler): listed on MahaDBT but I couldn't confirm the current top-up percentages from an official source.
+- (not added) State Agriculture Mechanisation Scheme (MahaDBT): listed on MahaDBT but no current official subsidy rates were found.
+- (not added) Punyashlok Ahilyadevi Holkar Gharkul Yojana (Dhangar NT-C housing): verified on the Satara ZP site, but the profile can't tell Dhangar/NT-C from other OBCs, so it would wrongly match every OBC user.
+- (not added) Free higher education fees for girls: left to the scholarship batch.
+
+### odisha
+- `gopabandhu-jan-arogya-yojana`: Running (2026-27 budget: GJAY integrated with AB PM-JAY, 1.03 crore families, 29,000+ hospitals, ₹4,279 crore). The GJAY portal is a JS app that blocks scripted access, and no official page could be opened confirming the per-family cover amount, the extra cover for women (₹10 lakh total, widely reported) or the exact eligible-family list (NFSA + SFSS assumed). Value set to ₹5 lakh (PM-JAY base). launchedYear 2025 (integrated card rollout) not confirmed on an official page.
+- `godabarish-vidyarthi-protsahan-yojana`: 2026-27 budget confirms 15,000 +2 pass-outs × ₹30,000 for a laptop. Selection rule (merit/rank cut-off by stream) and the exact 2026 application route not confirmed; latest guideline on dhe.odisha.gov.in is the 2023 (previous government) Laptop DBT guideline. Scholarship-portal code has a laptop scheme module, so the portal route is assumed.
+- `kalinga-shiksha-sathi-yojana`: Facts from the Higher Education Dept notification of 23.11.2023 (100% interest subvention, loans up to ₹15 lakh, income up to ₹8 lakh, loans from 01.04.2023). Still listed on dhe.odisha.gov.in and has a module on the State Scholarship Portal, but not mentioned in the 2024-25 or 2026-27 budget speeches; continuation on the same terms under the current government not confirmed.
+- `madhu-babu-pension-yojana`, `madhu-babu-widow-pension`, `madhu-babu-disability-pension` (active): ₹3,500/month for 80+ and 80%+ disability confirmed (SSEPD notification 9.1.2025). The standard monthly rate for others (60–79, widows, 40–79% disability) could not be confirmed on an official page, so no `value` is set. Income ceiling ₹60,000 or BPL (2021 amendment) used for old age; no ceiling for widows/deserted/divorced women and PwDs if no taxpayer/govt servant in family. Saturation-mode coverage per 2026-27 budget. isDBT left false because the current payment mode wasn't confirmed.
+- `vyasakabi-fakir-mohan-bhasabruti` (active): amounts from the 2026-27 budget speech (₹20,000 UG Odia Honours, ₹30,000 Odia PG); the 2023 guideline said a one-time ₹20,000 for both. Whether the amount is one-time or yearly isn't stated; treated as one-time.
+- `odisha-e-medhabruti` (active): UG ₹10,000 / PG ₹15,000 confirmed by the 2026-27 budget; Technical & Professional ₹20,000 and all eligibility rules from the 2023-24 guideline.
+- `samrudha-krushaka-yojana` (active): ₹3,100/quintal and DBT within 48 hours from the 2024-25 and 2026-27 budget speeches. Registration route (PACS/LAMPCS, paddy procurement portal) written generically because the procurement portal (pposodisha.nic.in) did not load.
+- `odisha-free-laptop-visually-impaired` (active): guideline dated 2018 but listed on the SSEPD site in 2026 with an online application link; launchedYear set to 2017 (revised guideline effective 1.4.2017).
+- (not added) KALIA: replaced by CM-KISAN in September 2024 (CM-KISAN guideline).
+- (not added) Mukhyamantri Kanya Sumangal Yojana (₹20,000 savings instrument at birth, ₹1,00,001 on graduation): announced in the 2026-27 budget; no guideline, notification or application process found on wcd.odisha.gov.in.
+- (not added) Mukhyamantri Kanya Bibaha Yojana (state-funded mass weddings, ₹12 crore): in 2026-27 budget, but no eligibility rules found.
+- (not added) Antyodaya Gruha Yojana (rural housing, ₹2,000 crore in 2026-27): Panchayati Raj / rural housing sites (rhodisha.gov.in, odishapanchayat.gov.in) unreachable; no official eligibility or unit cost found. Mo Ghara not mentioned in recent budgets; assumed superseded, not verified.
+- (not added) Odisha Building and Other Construction Workers Welfare Board benefits: board website unreachable (bocw/bocboard domains not resolving); labour.odisha.gov.in has no benefit details.
+- (not added) Nua-O scholarship: still appears in State Scholarship Portal code but not mentioned in the 2024-25 or 2026-27 budget speeches; current status unconfirmed.
+- (not added) Mission Shakti interest-free loans: loans go to women's SHGs, not individuals; current terms not verified.
+- (not added) Bhima Bhoi Bhinnakshyama Samarthya Abhiyan (aids, self-employment, scholarships for children of PwDs): only a 2018 guideline found; too many components to encode without current amounts.
+- (not added) Free bicycles: the 2024-25 budget mentioned bicycles under Gangadhar Meher Sikhya Manaka Brudhi Yojana, but the 2026-27 budget mentions only uniforms; current bicycle distribution not confirmed.
+- (not added) Mukhyamantri Medhabi Chhatra Protsahan Yojana for ST/SC/OBC/EBC (pre/post-matric, ₹1,600–1,700/month for boarders): budget gives boarder rates only; full rates and eligibility not found.
+
+### punjab
+- `bebe-nanki-laadli-beti`: benefit table and ₹30,000/blue-card income rule are from the undated SSWCD "State Schemes" page; the 2025-26 Economic Survey says the scheme is "being implemented", but no 2026-27 allocation, enrolment notice or LIC payment confirmation was found. Value left out; the ₹30,000 income cap looks very old.
+- `punjab-meri-rasoi-yojana`: announced by the CM (IPR) and budgeted at ₹900 crore in 2026-27, with kits due from April 2026, but no official confirmation that distribution has actually started was found. "Through ration depots" is our assumption about the delivery channel (official text only says Markfed is nodal and Food & Civil Supplies supplies the kits).
+- `punjab-ashirwad-scheme`: ₹51,000 confirmed in the 2026-27 Gender Budget and Sewa-Kendra-only applications confirmed on the Ashirwad portal; the ₹32,790 income cap is from an older department guideline (w.e.f. 2014) and may have been revised. Not check-status.
+- `punjab-old-age-pension`: the 2026-27 Gender Budget brief says "male above 60", while the department page and a 2026-27 IPR release say men 65+. We used 65 (the department's own scheme page).
+- `punjab-construction-workers-welfare`: pension, maternity, Shagun and Balri amounts are on the Board's undated schemes page and repeated in the 2025-26 Economic Survey; stipend, funeral and other amounts were left out because they appear only on the undated page.
+- `punjab-mukh-mantri-tirath-yatra`: eligibility (50+, voter card, booth-wise draw) confirmed in IPR releases; no official page describes how to register, so the application steps are kept generic.
+- `punjab-free-bus-travel-women`, `punjab-free-electricity-300-units`, `punjab-free-farm-power`: launchedYear (2021, 2022, 1997) is approximate; official pages confirm the benefit is current but not the start year.
+- (not added) Post-Matric Scholarship for SC students: it is the central GoI-PMS-SC scheme with a state share (already in `central/post-matric-scholarship-sc`); no separate state-funded version was found.
+- (not added) Mai Bhago Vidya (free bicycles for girls in Classes 9–12): the 2025-26 Economic Survey shows a token ₹1 lakh budget, so it is not clear that bicycles are still being given.
+- (not added) Navi Disha / Udaan free sanitary pads: in-kind distribution through Anganwadis with no individual application.
+- (not added) Scholarships to students with disabilities (₹200/₹300 a month): rates are on the SSWCD page but could not be confirmed as current, and there is a similar central scheme.
+
+### rajasthan
+
+Note: the session's web-search budget ran out partway through, so several schemes could only be checked against secondary sources. Official guideline PDFs read (scanned) for Lado Protsahan, Palanhar (amount order 2023) and Kanyadan (revised rules 2020); the SJE website was usable but RajSSP's eligibility page was down.
+
+- `rajasthan-vriddhjan-samman-pension`, `rajasthan-ekal-nari-samman-pension`, `rajasthan-vishesh-yogyajan-samman-pension` (status active): the ₹1,350/month minimum from July 2026 (₹1,450 announced from Jan 2027) comes from a Dainik Navajyoti report and the 2026-27 budget coverage; no official finance/SJE order seen. Income limits (₹48,000; ₹60,000) are from older rules and secondary listings. Re-check amounts on ssp.rajasthan.gov.in.
+- `palanhar-yojana` (active): monthly rates confirmed by SJE orders (2022, 2023); the ₹1.2 lakh income limit and the category list are from secondary sources.
+- `mukhyamantri-ayushman-arogya-yojana` (active): ₹25 lakh cover and free categories from secondary sources; premium (~₹850) not confirmed on the official portal (portal is a JS app).
+- `rajasthan-mukhyamantri-kisan-samman-nidhi` (active): ₹3,000/year confirmed via CMO Rajasthan post (Oct 2025) and Patrika; no official order seen.
+- `rajasthan-mukhyamantri-kanyadan-yojana` (active): amounts from the 2020 revised rules on sje.rajasthan.gov.in; not confirmed whether amounts were revised after 2020.
+- `mukhyamantri-anuprati-coaching-yojana`: check-status. Eligibility from the 2021 SJE procedure order; not confirmed that a 2026-27 round has been notified or whether rules were revised after 2023.
+- `kali-bai-bheel-medhavi-chhatra-scooty-yojana`: check-status. Current marks cut-off, income limit (₹2.5 lakh), and the cash-in-lieu option/amount were only seen on secondary sites; HTE site shows 2026 scooty procurement notices, so the scheme is running.
+- `mukhyamantri-yuva-sambal-yojana`: check-status. Allowance amounts (₹4,000 / ₹4,500 reported), family income limit and age limits only seen on secondary sites; value omitted.
+- `rajasthan-mukhyamantri-yuva-swarozgar-yojana`: check-status. ₹10 lakh loan with 100% interest subsidy confirmed by the 2026-27 budget (PRS); age limit, education-wise loan caps and margin money not confirmed on an official page.
+- `rajasthan-gopal-credit-card-yojana`: check-status. Launched 2024; ₹1 lakh interest-free loan from news/secondary; not confirmed that it is still being sanctioned in 2026-27, and official cooperative department page not reached.
+- `rajasthan-150-unit-nishulk-bijli-yojana` (active): state subsidy amount (reported ₹17,000 on a 1.1 kW plant) not confirmed officially, so not stated.
+- (not added) Krishak Vriddhjan Samman Pension (small/marginal farmer old age pension): listed on RajSSP, but eligibility details could not be confirmed.
+- (not added) Indira Gandhi Shahri Rozgar Guarantee Yojana: current status under the new government could not be verified.
+- (not added) Shubh Shakti Yojana and other BOCW welfare board schemes: status not verified (board schemes were reported paused/revised).
+- (not added) Gargi Puraskar / Balika Protsahan Puraskar, Mukhyamantri Sarvjan Uchch Shiksha Chhatravriti: could not verify current amounts before search budget ran out.
+- (not added) Annapurna food packet scheme: believed discontinued after Dec 2023; Shri Annapurna Rasoi (subsidised meals) not verified.
+- (not added) Devnarayan scooty and Vishwakarma yuva udyami schemes: mentioned only in the scooty text / superseded by Yuva Swarozgar; not verified separately.
+- `rajasthan-vriddhjan-samman-pension`, `rajasthan-ekal-nari-samman-pension`, `rajasthan-vishesh-yogyajan-samman-pension`: (review) the ₹1,350 (July 2026) / ₹1,450 (Jan 2027) minimum pension comes from news coverage only; text now says so, value removed, status check-status until the official order is found.
+- (security) sje.rajasthan.gov.in pages carry injected spam links; official links now point to sso.rajasthan.gov.in, and only the department's official PDF orders are kept as sources.
+
+### sikkim-puducherry
+
+### Sikkim
+- `sikkim-widow-pension`: the state lowered the IGNWPS minimum age from 40 to 21 (department NSAP page, IPR Key Achievements) and IPR (Aug and Oct 2026) mentions an "enhanced widow pension", but no official page gives the current monthly amount or any BPL condition. Value left out. launchedYear 2019 is approximate (the age cut is listed among the post-2019 government's achievements).
+- `sikkim-aama-sashaktikaran-yojana`: ₹40,000/year in two instalments, ages 18–59, and the "non-working, unmarried, widowed, divorced or separated mothers" wording come from IPR (Aug 2025, Aug/Oct 2026). The department's NSAP page still says ₹20,000 (older text). We could not find the 2023 notification or any guideline, so no documents, income or exclusion rules are encoded. It is kept compact for that reason, though it is the state's flagship. Not check-status.
+- `sikkim-aama-sahayog-yojana`: ₹4,500/year for four LPG refills to rural mothers, from IPR (Aug 2025, Aug 2026). The selection criteria beyond "rural mothers" are not published. launchedYear 2025 = first payout.
+- `sikkim-cm-state-disability-pension`: ₹1,500/month for 40–80% disability, any age, from the department's Disability/NSAP division pages. The Rules 2020 PDF is a scanned image and could not be read. A July 2026 DAC Gangtok release confirms the scheme is running.
+- `sikkim-pwd-marriage-award`: ₹2,00,000 confirmed in a July 2026 DAC Gangtok press release. launchedYear 2017 is approximate (no official start date found; by 2022-23, 151 couples had benefited).
+- `sikkim-vatsalya-yojana`: "up to ₹3 lakh for IVF" from the CM's Aug 2026 speech (IPR). No official page gives the application process, the implementing department or the eligibility details, so the steps are generic. launchedYear 2023 is approximate.
+- `sikkim-garib-awas-yojana`: the house specification is from the scheme launch note on sikkim.gov.in, and the ~₹17.5 lakh cost is from IPR Key Achievements. Key handovers are confirmed in June 2026 (IPR). The selection criteria are not published.
+- (not added) Mukhya Mantri Matri Shishu Poshan Yojana: no official page or IPR item found under this name. The older "Mukhya Mantri Sishu Suraksha Yojana Avam Sutkeri Sahayog Yojana" (₹3,000 for BPL mothers + ₹500/month) appears only on a 2011-era scheme page and could not be confirmed as current.
+- (not added) Sikkim Unmarried Women Pension (₹2,000/month, 45+): listed only on the department's undated NSAP page; we could not confirm that it is current.
+- (not added) Mukhya Mantri Jeevan Raksha Kosh / SSIAF (treatment up to ₹2 lakh / ₹1.5 lakh): only a pre-2019 scheme page was found. IPR now mentions a "Chief Minister's Medical Assistance Scheme" but gives no details.
+- (not added) Old age pension: IPR says it was "enhanced" but gives no amount or rules. The base is the central NSAP pension.
+- (not added) Sikkim Shishu Samriddhi Yojana (linked to Mero Rukh Mero Santati): passbooks were distributed in Aug 2026, but no official benefit amount or eligibility was found.
+- (not added) Bahini Yojana (free sanitary pads in schools): an in-kind school programme with no individual application.
+- (not added) CM Merit Scholarship, CM Free Scholarship Scheme and Comprehensive Educational Loan Scheme: only old one-paragraph descriptions on sikkim.gov.in, with no amounts or proof that they are current.
+- (not added) CM-SAATHI free JEE/NEET coaching (July 2026): delivered through schools under the central SATHEE platform, with no individual benefit to apply for.
+
+### Puducherry
+- `puducherry-old-age-destitute-pension`: the WCD page (last updated Nov 2023) lists ₹2,000/₹2,500/₹3,500. The 2026-27 budget speech says all beneficiaries got a further ₹500/month, but the new rate chart is not published, so value is left out. launchedYear 2023 refers to the rate page and is approximate.
+- `puducherry-poor-bride-marriage-assistance`: the WCD page lists ₹25,000 and the May 2026 payout list shows ₹25,000. The Aug 2026 budget says the grant is ₹35,000 and will rise to ₹75,000 this year. Value left out until the revised order is visible.
+- `puducherry-widow-daughter-marriage-assistance`: the WCD page lists ₹30,000 and the May 2026 list shows ₹30,000. The budget says ₹40,000, rising to ₹1,00,000. Value left out.
+- `puducherry-girl-child-family-planning-incentive`: the WCD page (2020) says ₹30,000 (one girl) or ₹15,000 each (two girls), while the May 2026 list shows ₹50,000 against each girl. Value left out.
+- `puducherry-fishermen-old-age-pension`: the scheme is confirmed in the 2025-26 and 2026-27 budgets. The only official rate (₹1,150/month, age 50+) is in an old Fisheries scheme note and is clearly outdated, so value is left out. The age 50 rule comes from that same note.
+- `puducherry-sc-st-full-tuition-fee-assistance`: confirmed only in the 2026-27 budget speech (₹80 crore for ~12,000 students, Class 1 to PG). The ADW department website returned an error, so income limits and the application process are unconfirmed.
+- `puducherry-women-head-of-family-assistance`: ₹2,500 is from the 2025-26 and 2026-27 budget speeches (the WCD page still says ₹1,000). The age 21–55 and BPL-head rules are from the WCD page (last updated 2023). Not check-status.
+- `puducherry-one-girl-child-assistance`: the WCD page (2020) says ₹25,000 NSC. We used ₹40,000 from the official May 2026 beneficiary list. The ₹75,000 income cap is from the 2020 page. Not check-status.
+- `puducherry-perunthalaivar-kamaraj-financial-assistance`: running (Feb 2026 award list; 2026-27 budget). Per-student amounts appear only in an undated py.gov.in note and the GOs are scanned, so no value is given.
+- `puducherry-disability-financial-assistance`, `puducherry-disabled-student-scholarship`, `puducherry-disability-marriage-incentive`: amounts are from Social Welfare pages updated Nov 2024, Dec 2025 and Nov 2025. The documents list is limited to the certificates the eligibility rules require. launchedYear is the page's update year (approximate).
+- (not added) Incentive for widow remarriage (budget: ₹75,000 → ₹1,00,000): the WCD scheme page returns 404, so the eligibility rules could not be checked.
+- (not added) Marriage assistance for poor SC/ST brides (budget: ₹1,00,000 → ₹1,25,000): the ADW website is down, so the rules could not be checked.
+- (not added) LPG cylinder subsidy and free rice / PMGKAY cash: the budget names them but gives no amounts. Free rice is largely a central entitlement.
+- (not added) Free laptops and Class 9–10 tablets: in-kind school distribution with no individual application.
+- (not added) Chief Minister's Pudhumai Penn electric two-wheeler subsidy (SC/ST women): mentioned in the budget only, with no subsidy amount or eligibility found.
+- (review) `sikkim-aama-sashaktikaran-yojana`: the press office says ₹40,000 a year but the department page still says ₹20,000; value set to the lower ₹20,000 and status check-status until an order settles it.
+
+### tamil-nadu
+- `annan-seer-thittam`: Government order issued 5 Oct 2026 (₹812 crore, 8 g 22-carat gold coin + silk saree, family income ≤ ₹2.5 lakh, weddings from GO date). Application website not launched yet; detailed eligibility, documents and time limit to apply still awaited. GO text itself not seen (facts from budget speech + Tamil press reports of the GO). Documents list is provisional.
+- `muthulakshmi-reddy-inter-caste-marriage-assistance`: Amounts confirmed on tnsocialwelfare.tn.gov.in (page updated 03-10-2026), but unclear whether it continues alongside Annan Seer or is merged into it. launchedYear (2016, the 8 g gold version) approximate.
+- `evr-maniammaiyar-marriage-assistance`: same as above (continuation vs merger into Annan Seer unconfirmed). launchedYear approximate.
+- `annai-therasa-marriage-assistance`: same as above. launchedYear approximate.
+- `dharmambal-widow-remarriage-assistance`: same as above. launchedYear approximate.
+- `muthulakshmi-reddy-maternity-benefit`: Could not open an official page with current amounts (PICME site has a TLS error; tnhealth/NHM pages don't describe it). ₹18,000 (₹14,000 cash + 2 kits) taken from Vikaspedia and widely reported; value omitted. Not mentioned in the 2026-27 budget speech (which adds "Thai Care" centres), so continuation under the new government is assumed, not confirmed.
+- `tamil-nadu-fishing-lean-period-relief`: Fisheries site still shows ₹6,000; 2026-27 revised budget announced ₹7,000. value kept at ₹6,000 until a G.O./payment at the new rate is confirmed.
+- `vetri-veedu-thittam`: Announced in the 2026-27 revised budget (₹5 lakh/house, 70,000 houses, ₹3,500 crore); door-to-door survey still to be done, no G.O. or guidelines seen. Relationship to Kalaignar Kanavu Illam (replacement vs rename) inferred.
+- Pensions (`tamil-nadu-old-age-pension` etc.) are active at ₹1,200 / ₹1,500 per the Revenue Administration site; TVK's promised ₹3,000 pension had no order as of the 2026-27 budget. Watch for a hike. launchedYear set to 2023 (current amounts) because original start years were not confirmed.
+- `tamil-nadu-free-bicycle-scheme`: active per 2026-27 budget (5.32 lakh Class 11 students, ₹277 crore); the reported brand name "Puthiya Payanam Puthiya Vegam" was not found in the budget speech, so not used.
+- `tnskill-naan-mudhalvan`: Naan Mudhalvan portal now branded "TNSkill" (no "Naan Mudhalvan" text on the site); official renaming order not seen.
+- (not added) Moovalur Ramamirtham Ammaiyar marriage assistance: converted in 2022-23 into the higher-education scheme (already in dataset as `pudhumai-penn`).
+- (not added) Vetri Laptop Scheme: ₹2,000 crore announced for college students in the 2026-27 budget; no eligibility or distribution details yet.
+- (not added) Thai Maaman Thanga Mothiram Thittam (1 g gold ring for babies born in government hospitals, ₹560 crore): announced in budget; no G.O./start date found.
+- (not added) Vetri Skill Training Scheme (internship stipend), Vetri Entrepreneur Scheme (SC/ST), Vetri Magalir goat scheme, free milch cows: announced in the 2026-27 budget without amounts/rules; mentioned in `tnskill-naan-mudhalvan` only where relevant.
+- (not added) Free LPG cylinders / ₹2,500 women's assistance / ₹3,000 pension (TVK promises): no implementing order found.
+- Note for existing file `cm-breakfast-scheme` (not edited, outside this batch): the 2026-27 budget renamed it "Perunthalaivar Kamarajar Breakfast Scheme" and extended it to Classes 6-8 from 17 Sep 2026.
+
+### telangana
+- `cheyutha-pension`: Clearly running (₹14,861 crore in the 2026-27 budget, ~43 lakh pensioners per the CM's 17 Sept 2026 speech), but the current monthly amounts per category and the old-age entry age (57) could not be confirmed on an official page: the GOs on the Cheyutha portal are behind ASP.NET postbacks that wouldn't download. `value` is left out. Confirm the amounts (the ₹4,000 guarantee vs. the older Aasara rates), the age limit, and the "one pension per person / no service pension" exclusions.
+- `rajiv-yuva-vikasam`: ₹5,800 crore in the 2026-27 budget, but no official guideline page found (not listed on tgobmms.cgg.gov.in). Age limits, income limits, subsidy slabs and whether a 2026-27 application round is open are unconfirmed, so they are described only generally.
+- `indiramma-kutumba-jivitha-bima`: Announced in the 2026-27 budget (₹5 lakh family life cover, ₹4,000 crore, due June 2026, per PRS and Budget-in-Brief). Couldn't confirm it has launched, who in the family is insured, age limits or enrolment process. `value` left out.
+- `telangana-mahalakshmi-free-bus` (active): Exclusion of premium/AC services and the out-of-state fare rule are from public reports, not an official TGSRTC page (the TGSRTC site has no Mahalakshmi page).
+- `telangana-mahalakshmi-lpg-subsidy` / `telangana-gruha-jyothi` (active): White ration card + Praja Palana application are confirmed for Gruha Jyothi (Feb 2024 press release). For the LPG scheme, the "active domestic LPG connection" and white-ration-card criteria follow G.O.Ms.No.2 as summarised in news; the G.O. itself wasn't read.
+- `indiramma-atmeeya-bharosa` (active): ₹12,000/year confirmed (AIR, Jan 2025) and funded in 2026-27 (₹600 crore). The exact job-card work-days criterion (reported as 20 days in 2023-24) is from news only, so the text says "minimum days set by the government".
+- `kalyana-lakshmi` (active): The MRO/Tahsildar verification step is the usual process but wasn't on the ePASS page. The tola-of-gold promise: no order found.
+- `telangana-overseas-vidya-nidhi` (active): Launch year 2013 is approximate.
+- `rajiv-aarogyasri` (active): The white ration card as the eligibility marker is standard practice; the official site only says "BPL families".
+- (not added) Rythu Bima (farmer group life insurance, ₹5 lakh): it was in use until 2025-26, but the 2026-27 budget gives "Insurance to Farmers" no money (₹1,168 crore in 2025-26 RE). It seems to be folded into the new Indiramma Kutumba Jivitha Bima. Couldn't confirm it is still running.
+- (not added) MCH Kit / KCR Kit successor (₹12,000/₹13,000 maternity cash): the "MCH Kit" budget heads get no money in 2026-27 (BE shows nil). Couldn't confirm cash is still being paid.
+- (not added) Mahalakshmi ₹2,500 a month for women: promised, but still not started. The 2026-27 budget funds only the RTC free travel and the LPG subsidy under Mahalakshmi.
+- (not added) Financial help of ₹2 lakh for couples where both partners have a disability (CM, Jan 2026 Bala Bharosa launch): no guidelines found.
+- (not added) Crop insurance with the state paying the farmer's PMFBY premium (2024-25 budget speech; ₹1,886 crore in 2026-27): couldn't confirm the current season's rules. PMFBY itself is covered at central level.
+- (not added) Telangana BOCW welfare board benefits: the board site (tgbocwwb.cgg.gov.in) didn't load.
+
+### tripura-meghalaya
+
+Context: WebSearch ran out partway through this batch. The facts come from official pages fetched directly: Tripura gazette notifications on socialwelfare.tripura.gov.in and tripura.gov.in, the Tripura Higher Education Department, abpmjay.tripura.gov.in, the Meghalaya 2026-27 budget speech (megfinance.gov.in), mhis.org.in, the Meghalaya Education Department and meghousing.gov.in. The CM-ELEVATE subdomain does not resolve, so the PRIME Meghalaya site (primemeghalaya.com, which carries Government of Meghalaya branding and routes applications to MeghalayaOne) was used for it.
+
+### Tripura
+- `mukhyamantri-matrupushti-uphar`: ₹500 per ANC check-up, up to 4 times, comes from the 2021 gazette notification, and an ICA press note from January 2022 shows payments. No notice from 2023 or later confirms that the scheme still pays at this rate.
+- `tripura-cm-scholarship-blind-students`: the ₹5,000 and ₹4,000 a month rates come from the Higher Education "State schemes" PDF dated 23.12.2025. The application steps, the launch year (2020 is a placeholder) and whether the ≥40% rule means blindness specifically (it is encoded as disabilityPct ≥ 40) are not confirmed. overlapGroup "scholarship" was set as the cautious choice.
+- Follow-ups on active schemes:
+  - `tripura-old-age-pension`, `tripura-widow-pension`, `tripura-disability-pension`: the rules and the ₹2,000 rate come from the 2022 MSSP notification (tripura.gov.in/sites/default/files/Notification_M.pdf) and the 19.09.2022 rate revision. No later rate change was found (the PRS 2026-27 budget summary has none). MSSP was capped at 30,000 beneficiaries at launch, so new intake can be limited. Income-tax-payer exclusion is individual-level, so it is in the text only.
+  - `tripura-cm-jay`: online steps ("Create Your Card" on abpmjay.tripura.gov.in plus Aadhaar verification) are inferred from the portal layout.
+  - `mukhyamantri-konya-atmonirbhor-yojana`: the 2025 guideline. A 2026 round wasn't seen on an official page, but the scheme is a standing annual one.
+  - `mukhyamantri-antyodaya-shradhanjali-yojana`: started at ₹2,000 in 2021 and was raised to ₹10,000 by the 30.08.2025 gazette.
+- (not added) Mukhyamantri Balika Samriddhi Yojana (₹50,000 bond for BPL girls at birth): announced in March 2025 (All India Radio). No official guideline or notification was found, and the "₹10 lakh at 18" maturity figure in news reports is not credible without one.
+- (not added) Lakshya – CM's Special Scholarship for UPSC aspirants: listed in the Higher Education PDF, but the amounts were garbled in the text extraction ("Rs.5 lakh" for clearing prelims looks wrong). Needs a manual check.
+- (not added) Tripura State Scheme for Incentive to Girl Child, Greha Sahayika Bhata, unemployment allowance for 100% blind, and occupational pensions (cobbler, rickshaw puller, fishermen, etc.): these older schemes are paid at ₹2,000 since September 2022, but their eligibility notifications were not reviewed. MSSP's unorganised-worker category also covers most of these trades.
+- (not added) Mukhyamantri Antarjatik Kormosangsthan Prakalpa (overseas placement) and SUPRAJA: new in the 2026-27 budget with no guidelines yet.
+
+### Meghalaya
+- `focus-plus-meghalaya`: the ₹5,000 untied benefit, ₹175 crore allocation, the backlog payment to ~93,000 people and the new Family ID registration come from the 2026-27 budget speech. How often the ₹5,000 is paid, who can enrol, the department and launchedYear (2023) are not confirmed. The occupation rule (farmer, fisher, livestock) is an inference from "producers". No `value`.
+- `meghalaya-cm-care-pension`: the budget confirms CM CARE pensions for senior citizens, single mothers and differently abled people (1,23,000 beneficiaries, ₹102 crore). The amount, age and income rules, application route and launchedYear (2018, from "eight years ago") are not confirmed. No rules beyond residence are encoded and no overlapGroup is set.
+- `meghalaya-cm-safe-motherhood-scheme`: the budget confirms CM-SMS (₹140 crore) but not its benefits. No official CM-SMS page was found on meghealth.gov.in or nhmmeghalaya.nic.in. launchedYear 2021 is approximate. The "MOTHER programme" is listed as an aka, but its link to CM-SMS is assumed.
+- `meghalaya-cm-housing-assistance`: the budget confirms ₹70 crore for 2026-27. The benefit (three bundles of roofing for EWS, houses for LIG) comes from meghousing.gov.in, whose text dates from 2016-17. The 13-page guideline PDF is scanned and couldn't be read. The income limits and the application route are not confirmed.
+- Follow-ups on active schemes:
+  - `megha-health-insurance-scheme`: ₹5,30,000 floater cover and the exclusion of government employees come from the mhis.org.in FAQ. The site's news items are from 2023; the budget confirms 6.6 lakh families in 2026-27.
+  - `cm-elevate-meghalaya`: 35–75% subsidy from primemeghalaya.com. The 50–75% subsidies on the six new schemes and the ₹50,000 small-business subsidy come from the budget speech. launchedYear 2023 is approximate, and there's no official list of required documents (kept compact for that reason).
+  - `meghalaya-cm-scholarship`: the August 2025 guideline gives ₹6,000 a year and no income cap. The October 2026 advertisement confirms the 2026-27 round.
+- (not added) CM Digital Learning Aid Scheme (tablets, 35,000 students in 2026-27): no eligibility rules found.
+- (not added) CM ASSURE (distress relief for broom grass and areca nut farmers), CM FARM+, Chief Minister's Youth Exchange Programme, 1,000-day stunting mission: no official benefit or eligibility rules found.
+
+### uttar-pradesh
+- `up-kushth-pension`: ₹3,000/month is worked out from the official SSPY portal's 2024-25 Q1 payout (12,400 pensioners, ₹111.60 crore in the quarter); the portal's own eligibility table still shows an old ₹2,500 figure. Confirm the current monthly rate from a G.O. launchedYear (2016) not confirmed.
+- `mukhyamantri-bal-seva-yojana`: ₹2,500/month and the 18–23 higher-education extension confirmed by an Aug 2026 report; category list, max-two-children rule and application route (District Probation Officer) come from 2021 descriptions. The official mbsy.up.gov.in portal did not resolve, so the current guidelines and any income limit were not checked.
+- `up-nirashrit-govansh-sahbhagita-yojana`: ₹50 per animal per day confirmed for cow shelters (Sept 2023); its use for the Sahbhagita (home adoption) part and the per-person animal cap (reported as 4) are from secondary sources only. Not checked on an official page.
+- `up-ujjwala-free-lpg-refill`: two free refills confirmed for 2025-26 (Oct–Dec 2025 and Jan–Mar 2026 rounds). Whether the state has funded rounds for 2026-27 (Diwali 2026) is not confirmed. launchedYear 2023 not confirmed.
+- `up-free-tubewell-electricity`: 100% waiver from 1 April 2023 and the conditions (meter, dues cleared) confirmed from 2024 reports; no 2026-27 budget or UPPCL page confirming it continues was found (web search budget ran out).
+- `up-divyang-pension` (active): ₹1,000/month confirmed from the SSPY portal's quarterly payout table and 2025-26 reports; launchedYear (1995) is approximate.
+- `swami-vivekananda-yuva-sashaktikaran-yojana` (active): the nodal department (IT & Electronics) is not confirmed from an official page.
+- `mukhyamantri-jan-arogya-abhiyan` (active): SACHIS page confirms the scheme and the ₹5 lakh cover; the full list of added groups (Antyodaya, construction workers, ASHA/Anganwadi, etc.) was not seen on an official page, so only Antyodaya is named.
+- `up-shadi-anudan-yojana` (active): the official portal gives the urban limit ₹56,460 and prints the rural limit as "₹46,460" (likely a typo for ₹46,080), so the rural figure is left out. launchedYear (2017) approximate.
+- BOCW schemes (`up-bocw-*`, active): launchedYear 2009 is the year the board was set up, not each scheme's start year.
+- (not added) Mukhyamantri Awas Yojana (Gramin): exists and is current (new priority groups added in 2025), but the assistance amount and full eligible-group list could not be confirmed from an official source.
+- (not added) UP pre-matric scholarship (class 9–10, General/OBC): reports from April 2026 say income limits are being doubled; current limits and amounts not confirmed.
+- (not added) Mukhyamantri Yuva Swarozgar Yojana: it appears to have been replaced by CM-YUVA (Mukhyamantri Yuva Udyami Vikas Abhiyan, already in the dataset); couldn't confirm it is still taking applications.
+- (not added) Mission Shakti-linked benefits and solar pump / PM-KUSUM state top-up: couldn't find an individual benefit with confirmed current amounts before the web search budget ran out.
+
+### uttarakhand-himachal
+
+### Uttarakhand
+- `uttarakhand-kisan-pension`: ₹1,200/month comes from a Dec 2021 GO (raised from ₹1,000). The old age, widow and disability rates went up to ₹1,500 in April 2022, but we found no later order for Kisan Pension, so the current rate is unconfirmed. `value` left out. Launch year (2014) is approximate.
+- `uttarakhand-parityakta-pension`: eligibility and documents are from the Social Welfare scheme page. The page doesn't give the monthly amount and we found no GO for it, so `value` is left out. Launch year (2001) is a placeholder.
+- `mukhyamantri-ekal-mahila-swarozgar-yojana`: the 3 July 2026 WECD notice confirms the scheme and the 2026-27 round (registered-post applications until 14 Aug 2026). The guidelines/form PDF (wecd.uk.gov.in, uploads/2026/07/20260704491757982.pdf) returned 504 every time, so the assistance amount, subsidy share, age and income limits are unconfirmed. Launch year (2024) is approximate.
+- `deendayal-upadhyay-sahkarita-kisan-kalyan-yojana`: the ₹3 lakh (individual) and ₹5 lakh (SHG) interest-free loan limits are from the Cooperative Department scheme page. The scheme isn't named in the 2026-27 budget speech, so we couldn't confirm it is still lending. `value` left out.
+- `atal-ayushman-uttarakhand` (active): the SHA page says AAUY uses the same cover amount, packages and hospitals as PM-JAY (₹5 lakh). The 2026-27 budget gives ₹600 crore. The SHA page doesn't list enrolment documents or steps, so the CSC/Arogya Mitra steps follow the shared PM-JAY process.
+- `uttarakhand-old-age-pension`, `uttarakhand-widow-pension`, `uttarakhand-divyang-pension` (active): ₹1,500 is confirmed by the April 2022 GO, and the Feb 2026 old-age page also gives ₹1,500. The 2001 launch year is a placeholder (the state was formed in 2000).
+- `teelu-rauteli-pension` (active): ₹1,200 is from the Oct 2021 directorate letter. The Bauna pension, raised by the same order, still shows ₹1,200 on its Feb 2026 page. The 2014 launch year is when men were added; the scheme for women is older.
+- `nanda-gaura-yojana` (active): amounts and income limit (₹6,000/month) are from the GO of 07.08.2023, and the portal shows 2026-27 applications are open. The 2023 GO also mentions old girl-child schemes of the Social Welfare Department; launch year 2017 is from the GO's reference to the 15.06.2017 order.
+- `mukhyamantri-mahalakshmi-kit-yojana` (active): the WECD page and the ₹30 crore line in the 2026-27 budget confirm it. The full kit contents aren't listed officially; the page names only nutrition supplements. Launch year (2021) is from the page date.
+- (not added) Mukhyamantri Vatsalya Yojana: the 2026-27 budget gives ₹15 crore, but the only WECD page is an event stub ("Vatsalya Yojana II"). We found no official page for the monthly amount, age limit or eligibility.
+- (not added) Mukhyamantri Ghasyari Kalyan Yojana: the Cooperative Department page (2019) describes silage at ₹2.75/kg with a 75% subsidy. The scheme isn't in the 2026-27 budget speech and we found no recent order, so we couldn't confirm it is still running.
+- (not added) Veer Chandra Singh Garhwali Paryatan Swarozgar Yojana, Deen Dayal Upadhyay Home Stay: listed as "active" on msy.uk.gov.in, but the pages were last updated in 2021 and their details weren't reachable.
+- (not added) Mukhyamantri Saur Swarozgar Yojana: msy.uk.gov.in marks it "inactive", though the budget speech mentions installed capacity. Free bus travel (₹42 crore in the budget): the eligible categories aren't stated.
+
+### Himachal Pradesh
+- `mukhya-mantri-sukh-ashray-yojana`: the WCD scheme API confirms eligibility (orphan, abandoned or surrendered children and ekal nari; family income ≤ ₹5 lakh; not in a government job) and the benefit types. The official benefit field is blank. ₹4,000/month and the ₹2 lakh marriage grant appear only in beneficiary testimonials on wcd.hp.gov.in, so they stay out of `value`. Launch year (2023) is approximate.
+- `rajiv-gandhi-prakritik-kheti-khushhal-kisan-yojana`: the MSP rates (wheat ₹80, maize ₹50, Pangi barley ₹80, turmeric ₹150, ginger ₹30 per kg) are 2026-27 budget announcements. We couldn't reach an Agriculture Department notification confirming they apply or giving the per-farmer quantity caps (spnfhp.in was down). Procurement steps are generic. Launch year (2018) is approximate.
+- `hp-mukhya-mantri-kanyadaan-yojana`: the WCD API shows ₹51,000, with an income limit of ₹50,000 in the scheme record but ₹35,000 in the site's description text. The 2026-27 budget announces a merger with Shagun into "Shubh Vivah Yojana" (₹51,000, age 21+). We couldn't confirm whether the merger has been notified. Launch year is approximate.
+- `hp-disability-pension`: the 2026-27 budget confirms ₹1,700/month for about 7,000 people with 100% disability, raised to ₹3,000. Rates for other disability levels, the income limit and the current SSP rules couldn't be read: esomsa.hp.gov.in only serves over http, and its pension-rules links point to saved web pages, not the rules.
+- `mukhyamantri-vidhwa-evam-ekal-naari-awas-yojana`: ₹1,50,000, the ₹3 lakh income cap, 2 biswa of land and the once-in-10-years rule are from the Feb 2024 scheme notification (scanned PDF on esomsa.hp.gov.in, http only). The scheme isn't in the 2026-27 budget speech, so we couldn't confirm it is still sanctioning grants. `value` left out.
+- `rajiv-gandhi-swarozgar-start-up-yojana`: the 50% e-taxi subsidy, ₹50 crore for 500 youths, the +₹5,000 monthly payment and the 50% e-rickshaw subsidy are from the 2026-27 budget speech. The eligibility rules (age, licence, income) and the application portal weren't found. The Transport Department as implementing department isn't confirmed.
+- `indira-gandhi-pyari-behna-sukh-samman-nidhi` (active): rules are from the 13.03.2024 notification and the 15.03.2024 corrigendum (http://esomsa.hp.gov.in/sites/default/files/Notification_u.pdf). Payment is being rolled out in phases: the 2026-27 budget says it will next reach the 1 lakh "Apna Sukhi Parivar" families, then all eligible women. Many eligible women are not paid yet, as the FAQ explains. `officialUrl` points to e-District because the ESOMSA site doesn't load over https.
+- `indira-gandhi-sukh-suraksha-yojana` (active): notified 30.03.2026, effective 01.04.2026, replacing Beti Hai Anmol. ₹25,000 LIC deposit and ₹2 lakh life cover per parent are from the WCD scheme API. Documents are taken from the Beti Hai Anmol e-District listing.
+- `himcare` (active): cover, premiums and categories are from hpsbys.in. We didn't check whether there have been 2025-26 changes to which private hospitals are empanelled.
+- `hp-mukhya-mantri-sahara-yojana` (active): ₹3,000/month and the disease list are from sahara.hpsbys.in. The scheme has moved to ESOMSA and the income limit isn't stated, so no income rule is used. Launch year (2019) is approximate.
+- (not added) Beti Hai Anmol Yojana: replaced by Indira Gandhi Sukh Suraksha Yojana from 1 April 2026.
+- (not added) Mukhya Mantri Shagun Yojana (₹31,000 for BPL girls): still listed on e-District, but it is being merged into Shubh Vivah Yojana. It is covered in the Kanyadaan entry.
+- (not added) HP old age and widow pensions (Social Security Pension): we couldn't confirm the current rates or income limits from an official page. The ESOMSA SSP page links only to the rules, which weren't readable. The Economic Survey site returned 500.
+- (not added) Mukhya Mantri Swavalamban Yojana: the Industries Department portal (emerginghimachal.hp.gov.in) is a JS app and the scheme page couldn't be read. It isn't in the 2026-27 budget speech.
+- (not added) Mukhya Mantri Mahila Sashaktikaran Yojana (loans up to ₹3 lakh at 4% interest subvention for rural women with income ≤ ₹1 lakh): announced in the 2026-27 budget, but we found no notification.
+- (not added) Mother Teresa Asahay Matri Sambal Yojana, Self-Employment to Women (₹5,000), Widow Re-Marriage: listed on wcd.hp.gov.in, but the official records give no amounts (only Self-Employment to Women states ₹5,000, from an older record). Could be added later.
+- (review) esomsa.hp.gov.in only serves plain http (https fails), so its links were removed from `sources`; schemes keep their other official sources.
+- (not added) Mukhyamantri Vidhwa evam Ekal Naari Awas Yojana: removed in review; its only source (a 2024 notification on esomsa.hp.gov.in) is reachable only over http and it couldn't be confirmed as currently running.
+
+### west-bengal
+
+Context: the BJP won the May 2026 assembly election and formed West Bengal's new government on 9 May 2026. Its first full budget (22 June 2026) says all existing social protection schemes will continue "appropriately modified", and announced several new ones. Many old portals (wbkanyashree.gov.in, wbsaboojsathi.gov.in, jaibangla.wb.gov.in, taruner swapna, bhabishyat credit card, svmcm) did not load during checking, so several facts rest on the June 2026 budget speech and the wb.gov.in scheme pages (last updated 26 June 2026).
+
+- `krishak-bandhu-natun`: a July 2026 circular (No. 617-AG, 03/07/2026) ordered re-verification of every KB(N) beneficiary against PM-KISAN, land records, income tax and government jobs. The amount after this exercise is not announced. The ₹10,000/acre (min ₹4,000) figure is from the February 2026 interim budget, so it is not in `value`. The June budget also announced a separate ₹3,000/year top-up for farmer families on PM-KISAN; whether that replaces or adds to KB(N) is unclear.
+- `west-bengal-mukhya-mantri-swasthya-bima-yojana`: MMSBY replaces Swasthya Sathi for families outside AB-PMJAY (FAQ booklet on swasthyasathi.gov.in, Aug 2026). The state's eligibility criteria and how to enrol were not published on any page I could reach. The ₹5 lakh cover is from the FAQ.
+- `bhorsha-karmasuchi`: announced in the 22 June 2026 budget to start "from October 2026" (₹3,000 graduates / ₹2,000 others, age 21–45, family income below ₹1 lakh, not on another social protection scheme). No launch notice, portal or implementing department found. The department field is generic.
+- `west-bengal-old-age-pension`: the budget confirms pensions for elderly people continue and proposes +₹500/month. The current amount, income rule and nodal department (written as WCD&SW) are not confirmed. launchedYear 2020 is the Jai Bangla umbrella year, not the original scheme year.
+- `west-bengal-widow-pension`: same as old age pension. The age 18+ rule and the WCD&SW department come from earlier practice and were not re-confirmed.
+- `manabik-pension`: same as above. The 40% disability threshold and launchedYear 2018 were not re-confirmed on an official page.
+- `west-bengal-sabooj-sathi`: no 2026-27 distribution notice found. The eligible class (written as "usually Class IX") is not confirmed for 2026-27.
+- Facts in active schemes that need a follow-up check:
+  - `taposili-bandhu` is ₹1,000 per wb.gov.in (26 June 2026). The budget's proposed +₹500 is not shown as implemented.
+  - `jai-johar-pension` has no value because the official page gives no amount.
+  - `kanyashree-prakalpa`: the family income cap is left out of the rules because the official FAQ (₹1.2 lakh) and the 2016 guidelines may be outdated. The new ₹50,000 one-time grant for unmarried girls entering UG in government colleges (budget) may change K2.
+  - `west-bengal-migrant-worker-welfare-scheme`: launchedYear 2023 is approximate.
+  - `west-bengal-medhashree`: launchedYear 2017 is approximate.
+  - `west-bengal-minority-scholarship`: the wb.gov.in page does not name it "Aikyashree". The aka is from the February 2026 speech and the NSP WB portal.
+- (not added) Lakshmir Bhandar: replaced by Annapurna Yojana from 1 June 2026 (`west-bengal-annapurna-yojana`).
+- (not added) Swasthya Sathi: being migrated to AB-PMJAY (central) and MMSBY. The state card is being hotlisted.
+- (not added) Yuvashree / Banglar Yuva-Sathi: the TMC-era unemployment allowances appear superseded by Bhorsha Karmasuchi. Their status is unconfirmed.
+- (not added) Taruner Swapna (tablet/phone money), Bhabishyat Credit Card, Aikyashree under its own name, Swami Vivekananda Merit-cum-Means scholarship, Banglar Bari: I could not confirm they are currently running under the new government (portals unreachable, not on the wb.gov.in scheme list, no 2026-27 notice).
+- (not added) New schemes announced in the 22 June 2026 budget with no launch or guidelines found:
+  - ₹50,000 one-time grant for unmarried girls at UG admission
+  - ₹21,000 maternity assistance (including PMMVY)
+  - ₹30,000 one-time aid for competitive-exam students in government colleges
+  - Swami Vivekananda Merit Scholarship (for admission to the world's top 100 universities)
+  - Banglar Udyam Credit Card (up to ₹10 lakh: ₹5 lakh grant + ₹5 lakh interest-free loan)
+  - ₹3,000/year PM-KISAN top-up for farmer families
+  - ₹1 lakh Goshala subsidy
+  - ₹5,000/month pension for retired journalists

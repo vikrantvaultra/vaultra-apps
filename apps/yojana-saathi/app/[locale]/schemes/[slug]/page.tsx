@@ -309,10 +309,6 @@ export default async function SchemePage({ params }: PageProps<"/[locale]/scheme
                 <dd className="font-semibold">{s.isDBT ? t("scheme.dbtYes") : t("scheme.dbtNo")}</dd>
               </div>
               <div>
-                <dt className="text-muted-foreground">{t("scheme.since")}</dt>
-                <dd className="font-semibold">{s.launchedYear}</dd>
-              </div>
-              <div>
                 <dt className="text-muted-foreground">{t("scheme.officialSite")}</dt>
                 <dd className="font-semibold break-all">{new URL(s.officialUrl).hostname.replace(/^www\./, "")}</dd>
               </div>

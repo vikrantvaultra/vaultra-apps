@@ -14,12 +14,15 @@ test("old names still find renamed schemes", async ({ page }) => {
 
 test("filters live in the URL, show as chips and can be removed", async ({ page }) => {
   await page.goto("/search?state=karnataka&level=state");
-  await expect(page.getByText("6 schemes")).toBeVisible();
+  const count = page.getByText(/^\d+ schemes?$/);
+  await expect(page.getByRole("heading", { name: "Gruha Lakshmi" })).toBeVisible();
+  const filtered = Number((await count.textContent())!.match(/\d+/)![0]);
   const chip = page.getByRole("button", { name: /Remove filter: Level: State/ });
   await expect(chip).toBeVisible();
   await chip.click();
   await expect(page).not.toHaveURL(/level=state/);
-  await expect(page.getByText(/^\d+ schemes$/)).not.toHaveText("6 schemes");
+  // Without the level filter, central schemes join the Karnataka ones
+  await expect.poll(async () => Number((await count.textContent())!.match(/\d+/)![0])).toBeGreaterThan(filtered);
 });
 
 test("person filters hide schemes that can't apply", async ({ page }) => {
@@ -43,6 +46,6 @@ test("browse pages show their schemes", async ({ page }) => {
   await page.goto("/category/education");
   await expect(page.getByRole("heading", { level: 1, name: "Education & Scholarships" })).toBeVisible();
   await expect(page.locator("article").first()).toBeVisible();
-  await page.goto("/state/tamil-nadu?level=state");
+  await page.goto("/state/tamil-nadu?q=pudhumai");
   await expect(page.getByRole("heading", { name: "Pudhumai Penn" })).toBeVisible();
 });

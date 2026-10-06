@@ -35,7 +35,7 @@ No environment variables are needed. Without Supabase, answers, bookmarks and th
 | Path | What |
 |---|---|
 | `app/[locale]/` | Every page, under the `en`/`hi` root segment (read with `next/root-params`) |
-| `data/schemes/central/*.ts`, `data/schemes/state/<state>/*.ts` | **The dataset**: one file per scheme (94 today) |
+| `data/schemes/central/*.ts`, `data/schemes/state/<state>/*.ts` | **The dataset**: one file per scheme (578 today: 64 central, 514 across 35 states and UTs) |
 | `data/schemes/AUTHORING.md` | How to write a scheme file (rules, sources, Hindi, eligibility) |
 | `data/NEEDS_VERIFICATION.md` | Schemes marked `check-status` and facts a human should re-check |
 | `data/taxonomy.ts` | Categories, states/UTs, ministries, Kundli houses, income bands, occupations (en + hi) |
@@ -49,6 +49,21 @@ No environment variables are needed. Without Supabase, answers, bookmarks and th
 | `messages/en.json`, `messages/hi.json` | UI copy |
 | `supabase/schema.sql` | Tables + row-level security for optional sync |
 | `e2e/` | Playwright flows and an axe accessibility scan |
+
+## Coverage
+
+Every state and UT has a browse page that lists its own schemes plus the 64 central ones. State schemes researched so far (2026-10-06):
+
+| Schemes | States and UTs |
+|---|---|
+| 60+ | Maharashtra (64, including the MahaDBT scholarships) |
+| 20–27 | Tamil Nadu, Uttar Pradesh, Karnataka, Gujarat, West Bengal, Madhya Pradesh, Kerala, Bihar |
+| 14–18 | Odisha, Punjab, Haryana, Andhra Pradesh, Telangana, Delhi, Rajasthan, Jharkhand, Chhattisgarh |
+| 7–12 | Uttarakhand, Puducherry, Assam, Tripura, Jammu & Kashmir, Himachal Pradesh, Mizoram, Goa, Arunachal Pradesh, Sikkim, Meghalaya |
+| 2–6 | Chandigarh, Nagaland, Manipur, Lakshadweep, Ladakh, Dadra & Nagar Haveli and Daman & Diu |
+| 0 | Andaman & Nicobar Islands (official sites unreachable during research) |
+
+Flagship state schemes use the full eight-section page; the long tail (341 schemes) uses the compact page (summary, benefits, eligibility, how to apply, official link, sources). Coverage favours schemes that could be confirmed on official sources; smaller schemes and states with thin official web presence have fewer entries. `data/NEEDS_VERIFICATION.md` lists what was left out and why.
 
 ## How eligibility works
 
@@ -70,7 +85,7 @@ Pages, search, filters, the dashboard, sitemaps and the Kundli pick new schemes 
 
 ### Moving the dataset to Postgres later
 
-Everything reads schemes through `lib/schemes.ts` (`SCHEMES`, `getScheme`, `allCards`, counts, related). To load the full dataset from a database, store each `Scheme` object (it's plain JSON) in a table and re-implement those functions to query it, for example at build time or with cached server functions. Nothing else needs to change.
+Everything reads schemes through `lib/schemes.ts` (and the browser reads the static card index at `/api/cards/{all,central,<state>}`) (`SCHEMES`, `getScheme`, `allCards`, counts, related). To load the full dataset from a database, store each `Scheme` object (it's plain JSON) in a table and re-implement those functions to query it, for example at build time or with cached server functions. Nothing else needs to change.
 
 ## Optional: Supabase (sign-in and sync)
 
@@ -86,15 +101,15 @@ Signed-in users sync their answers and Kundli (last write wins) and bookmarks (m
 2. Environment variables:
    - `NEXT_PUBLIC_SITE_URL`: your production URL (canonical links, sitemap, hreflang). Lighthouse flags the canonical on preview URLs because it points to this domain; that's expected.
    - Optional: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_CONTACT_EMAIL`.
-3. Deploy. All ~360 pages are prerendered. Only `/api/feedback` and the locale proxy run as functions.
+3. Deploy. All ~1,350 pages are prerendered. Only `/api/feedback` and the locale proxy run as functions.
 
 ## Quality notes
 
-- **Tests:** 700+ Vitest tests (engine, Kundli, every scheme file) and 51 Playwright tests across mobile and desktop: search and filters, questionnaire → results, scheme eligibility check, section tabs, Kundli → share image, and axe WCAG 2.2 AA scans of 12 pages.
+- **Tests:** 4,000+ Vitest tests (engine, Kundli, every scheme file) and 51 Playwright tests across mobile and desktop: search and filters, questionnaire → results, scheme eligibility check, section tabs, Kundli → share image, and axe WCAG 2.2 AA scans of 12 pages.
 - **Performance (Lighthouse mobile, local `next start`):** performance 91–93 on the main pages, with accessibility, best practices and SEO at 100 (SEO 92 on scheme pages only because the canonical points to the production domain). Key choices:
   - the Kundli, charts, Supabase, the mobile menu and the account menu are code-split;
   - fonts are Latin-only, with 1 KB ₹-only subsets and the device's Devanagari font;
   - CSS is inlined, and above-the-fold links prefetch on intent rather than on sight.
 - **Share images** are rendered in the browser (correct Hindi). Open Graph images for scheme pages are English-only, because Satori can't shape Devanagari.
 - **Hindi copy** was written for this project; a native-speaker review before launch is recommended.
-- **Data:** 23 schemes are marked "Check status" with reasons in `data/NEEDS_VERIFICATION.md`.
+- **Data:** 166 of 578 schemes are marked "Check status" (unconfirmed amounts, conflicting official figures, or schemes announced but not yet running), each with a reason in `data/NEEDS_VERIFICATION.md`. Unverified amounts never count toward the Kundli estimate.

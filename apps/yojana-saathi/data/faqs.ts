@@ -82,10 +82,10 @@ export const FAQS: SiteFAQ[] = [
   },
   {
     id: "state",
-    q: { en: "Why don't I see schemes for my state?", hi: "मुझे अपने राज्य की योजनाएँ क्यों नहीं दिख रहीं?" },
+    q: { en: "Which states do you cover?", hi: "आप किन राज्यों की योजनाएँ दिखाते हैं?" },
     a: {
-      en: "We currently cover state schemes from Maharashtra, Uttar Pradesh, Karnataka, Tamil Nadu and Delhi, plus central schemes that apply everywhere. More states are on the way.",
-      hi: "अभी हम महाराष्ट्र, उत्तर प्रदेश, कर्नाटक, तमिलनाडु और दिल्ली की राज्य योजनाएँ और पूरे देश में लागू केंद्रीय योजनाएँ दिखाते हैं। और राज्य जल्द जुड़ेंगे।",
+      en: "Every state and union territory, plus central schemes that apply everywhere. For each state we list its major schemes that we could confirm on official sources; some smaller schemes aren't listed yet. Pick your state on the States tab or in the search filters.",
+      hi: "हर राज्य और केंद्रशासित प्रदेश, और पूरे देश में लागू केंद्रीय योजनाएँ। हर राज्य की वे मुख्य योजनाएँ दी गई हैं जिन्हें हम आधिकारिक स्रोतों पर पक्का कर पाए; कुछ छोटी योजनाएँ अभी नहीं जुड़ी हैं। 'राज्य' टैब या खोज के फ़िल्टर में अपना राज्य चुनें।",
     },
   },
   {
