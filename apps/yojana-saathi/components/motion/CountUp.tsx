@@ -26,7 +26,7 @@ export function CountUp({ value, duration = 1.2, format }: { value: number; dura
   }, [inView, value, duration, reduce]);
 
   return (
-    <span ref={ref} className="tabular-nums">
+    <span ref={ref}>
       {fmt(value)}
     </span>
   );

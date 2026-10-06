@@ -1,5 +1,6 @@
 import { Search, Sparkles } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
+import { AccountButton } from "@/components/account/AccountButton";
 import { LogoMark } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/button";
 import { getPathname, Link } from "@/i18n/navigation";
@@ -62,9 +63,9 @@ export async function Header() {
             <ThemeToggle />
             <TextSizePopover />
           </div>
-          <Button asChild variant="ghost" className="hidden px-4 lg:inline-flex">
-            <Link href="/profile">{t("nav.signIn")}</Link>
-          </Button>
+          <div className="hidden lg:block">
+            <AccountButton />
+          </div>
           <Button asChild variant="brand" className="hidden lg:inline-flex">
             <Link href="/find">{t("nav.find")}</Link>
           </Button>

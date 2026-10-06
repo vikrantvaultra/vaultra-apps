@@ -31,7 +31,7 @@ Batch notes from the original research pass are kept below as written.
 - `vidiyal-payanam`
 
 Also worth a look:
-- **MGNREGA** was not added: it was replaced by the VB-G RAM G Act from 1 July 2026 (see batch E notes).
+- **MGNREGA** was replaced by the VB-G RAM G Act from 1 July 2026; it is covered by `vb-g-ram-g` (searchable as MGNREGA/NREGA). Its portal (vbgramg.dord.gov.in) needs JavaScript, so only offline steps are listed; a reported ₹300/day minimum wage and a 31 Dec 2026 card-transition deadline are unconfirmed and left out.
 - The guidelines for several scholarships (SC, ST, OBC) ran 2021-22 to 2025-26; recheck once the 2026-31 versions are notified.
 - `pm-internship-scheme` is a pilot; its terms were revised in 2026.
 

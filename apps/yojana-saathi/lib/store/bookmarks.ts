@@ -17,3 +17,5 @@ export function toggleBookmark(slug: string): boolean {
   store.write(on ? [slug, ...current] : current.filter((s) => s !== slug));
   return on;
 }
+
+export const subscribeBookmarks = store.subscribe;

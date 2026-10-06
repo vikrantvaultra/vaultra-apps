@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Link } from "@/i18n/navigation";
+import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { TextSizeControl } from "./TextSizeControl";
 import { ThemeSegmented } from "./ThemeToggle";
@@ -15,7 +16,7 @@ export function MobileMenu() {
   const links = [
     { href: "/search", label: t("nav.search"), icon: Search },
     { href: "/dashboard", label: t("nav.dashboard"), icon: BarChart3 },
-    { href: "/profile", label: t("nav.signIn"), icon: UserRound },
+    { href: "/profile", label: isSupabaseConfigured() ? t("nav.signIn") : t("account.myProfile"), icon: UserRound },
   ] as const;
 
   return (

@@ -23,3 +23,5 @@ export function clearProfile() {
 
 /** A profile counts as "set" once the core questions are answered */
 export const hasProfile = (p: Profile | null): p is Profile => !!p && p.age !== undefined && p.state !== undefined;
+
+export const subscribeProfile = store.subscribe;
