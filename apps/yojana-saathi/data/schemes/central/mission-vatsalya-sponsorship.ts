@@ -1,4 +1,4 @@
-import { everyone } from "@/lib/engine/build";
+import { all, labelled, maxAge } from "@/lib/engine/build";
 import type { Scheme } from "@/lib/types";
 
 const scheme: Scheme = {
@@ -17,7 +17,9 @@ const scheme: Scheme = {
   isDBT: true,
   value: { amount: 4000, period: "monthly", kind: "cash" },
   kundliHouse: "daughter",
-  eligibility: everyone(),
+  ageRange: { max: 17 },
+  // The beneficiary is the child; a parent or guardian applies on their behalf
+  eligibility: all(labelled(maxAge(17), { en: "The child is under 18", hi: "बच्चे की उम्र 18 साल से कम हो" })),
 
   details: {
     en: [

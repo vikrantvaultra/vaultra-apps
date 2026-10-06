@@ -15,7 +15,7 @@ const scheme: Scheme = {
   tags: ["internship", "stipend", "youth", "job", "graduate", "pmis"],
   benefitType: "cash",
   isDBT: true,
-  value: { amount: 9000, period: "monthly", kind: "cash" },
+  value: { amount: 9000, period: "monthly", kind: "cash", maxMonths: 6 },
   ageRange: { min: 18, max: 25 },
   kundliHouse: "career",
   eligibility: all(

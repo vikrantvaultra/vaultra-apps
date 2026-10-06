@@ -19,7 +19,7 @@ const scheme: Scheme = {
   tags: ["unemployment allowance", "graduates", "diploma", "youth", "guarantee scheme", "jobs"],
   benefitType: "cash",
   isDBT: true,
-  value: { amount: 1500, period: "monthly", kind: "cash" },
+  value: { amount: 1500, period: "monthly", kind: "cash", maxMonths: 24 },
   kundliHouse: "career",
   eligibility: all(
     residentOf("karnataka"),

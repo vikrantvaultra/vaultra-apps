@@ -81,6 +81,8 @@ export interface SchemeValue {
   period: "one-time" | "monthly" | "yearly";
   /** cash and pension count toward the Kundli cash total; cover and loan are shown separately */
   kind: "cash" | "cover" | "loan" | "pension";
+  /** For fixed-length benefits (stipends, allowances): the most months it is paid in total */
+  maxMonths?: number;
 }
 
 export interface FAQ {

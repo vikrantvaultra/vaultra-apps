@@ -19,7 +19,7 @@ const scheme: Scheme = {
   tags: ["internship", "stipend", "job training", "youth", "unemployed", "maharashtra"],
   benefitType: "cash",
   isDBT: true,
-  value: { amount: 6000, period: "monthly", kind: "cash" },
+  value: { amount: 6000, period: "monthly", kind: "cash", maxMonths: 6 },
   ageRange: { min: 18, max: 35 },
   kundliHouse: "career",
   eligibility: all(residentOf("maharashtra"), ...ageBetween(18, 35)),

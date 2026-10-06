@@ -123,6 +123,10 @@ describe("scheme dataset", () => {
       if (!s.value) return;
       expect(s.value.amount).toBeGreaterThan(0);
       expect(Number.isInteger(s.value.amount)).toBe(true);
+      if (s.value.maxMonths !== undefined) {
+        expect(s.value.period, "maxMonths only makes sense for monthly benefits").toBe("monthly");
+        expect(Number.isInteger(s.value.maxMonths) && s.value.maxMonths > 0).toBe(true);
+      }
     });
 
     it("lists check-status schemes for verification", () => {
