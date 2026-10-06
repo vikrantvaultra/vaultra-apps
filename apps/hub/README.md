@@ -16,5 +16,6 @@ the same through the hub and on its own `*.vercel.app` domain, and apps still de
 
 1. Build the app under `/<slug>` (`basePath: "/<slug>"` for Next.js, and prefix any hard-coded `/…` URLs).
 2. Create its own Vercel project with Root Directory `apps/<slug>`.
-3. Add a rewrite to `vercel.json`: `/<slug>/:path*` → `https://<project>.vercel.app/<slug>/:path*`.
+3. Add two rewrites to `vercel.json`: `/<slug>` → `https://<project>.vercel.app/<slug>` (exact root, no trailing slash,
+   or Next.js redirects it back in a loop) and `/<slug>/:path*` → `https://<project>.vercel.app/<slug>/:path*`.
 4. Add a card to `public/index.html` (and its sitemap/disallows to `public/robots.txt`).
