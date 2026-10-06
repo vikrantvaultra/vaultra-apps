@@ -7,7 +7,7 @@ app under its own path from its own Vercel project:
 |---|---|
 | `/yojana-saathi` | `vaultra-yojana-saathi` (`apps/yojana-saathi`) |
 | `/loot-liye-ya-lut-gaye` | `vaultra-loot-liye` (`apps/loot-liye-ya-lut-gaye`) |
-| `/sale-sniper` | `sale-sniper` (`apps/sale-sniper`) |
+| `/sale-sniper` | `vaultra-sale-sniper` (`apps/sale-sniper`) |
 
 Each app is built to live under its path (Next.js `basePath`, or `/sale-sniper/` in the static build), so it works
 the same through the hub and on its own `*.vercel.app` domain, and apps still deploy independently.

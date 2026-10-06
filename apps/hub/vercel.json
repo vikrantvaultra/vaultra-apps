@@ -8,7 +8,7 @@
   "rewrites": [
     { "source": "/yojana-saathi/:path*", "destination": "https://vaultra-yojana-saathi.vercel.app/yojana-saathi/:path*" },
     { "source": "/loot-liye-ya-lut-gaye/:path*", "destination": "https://vaultra-loot-liye.vercel.app/loot-liye-ya-lut-gaye/:path*" },
-    { "source": "/sale-sniper/:path*", "destination": "https://sale-sniper.vercel.app/sale-sniper/:path*" }
+    { "source": "/sale-sniper/:path*", "destination": "https://vaultra-sale-sniper.vercel.app/sale-sniper/:path*" }
   ],
   "headers": [
     {
