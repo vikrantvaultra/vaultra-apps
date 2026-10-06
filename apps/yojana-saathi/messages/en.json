@@ -1,0 +1,69 @@
+{
+  "brand": {
+    "name": "Yojana Saathi",
+    "tagline": "Your companion for every scheme you deserve.",
+    "disclaimer": "Yojana Saathi is an independent project, not affiliated with the Government of India. Verify details on official portals."
+  },
+  "meta": {
+    "title": "Yojana Saathi: find government schemes you're eligible for",
+    "description": "Discover central and state government schemes in plain language, check your eligibility in minutes, and see your Sarkari Kundli."
+  },
+  "nav": {
+    "skip": "Skip to main content",
+    "home": "Home",
+    "search": "Search schemes",
+    "searchPlaceholder": "Search schemes, e.g. scholarship, pension",
+    "find": "Find schemes for you",
+    "findShort": "Find schemes",
+    "kundli": "Sarkari Kundli",
+    "dashboard": "Dashboard",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "signIn": "Sign in",
+    "profile": "My profile",
+    "explore": "Explore",
+    "settings": "Display & language"
+  },
+  "a11y": {
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toggleTheme": "Switch to {mode} mode",
+    "textSize": "Text size",
+    "decrease": "Decrease text size",
+    "reset": "Reset text size",
+    "increase": "Increase text size",
+    "language": "Language",
+    "switchTo": "Switch language to {lang}"
+  },
+  "footer": {
+    "explore": "Explore",
+    "about": "About",
+    "legal": "Policies",
+    "useful": "Useful links",
+    "aboutUs": "About us",
+    "contact": "Contact",
+    "faqs": "FAQs",
+    "disclaimerLink": "Disclaimer",
+    "terms": "Terms of use",
+    "privacy": "Privacy",
+    "accessibility": "Accessibility",
+    "external": "opens an external site",
+    "rights": "Made in India for everyone who deserves their benefits.",
+    "builtWith": "Scheme facts are drawn from official sources and reviewed regularly."
+  },
+  "common": {
+    "comingSoon": "This section is being built.",
+    "backHome": "Back to home",
+    "notFoundTitle": "We couldn't find that page",
+    "notFoundBody": "The link may be old, or the page may have moved. Try searching instead."
+  },
+  "home": {
+    "eyebrow": "Free · No login needed · English & हिन्दी",
+    "title": "Find every government scheme <hl>you deserve</hl>",
+    "subtitle": "Answer a few simple questions. We'll match you with central and state schemes, explain them in plain language, and show you how to apply.",
+    "ctaFind": "Find schemes for you",
+    "ctaKundli": "Get my Sarkari Kundli"
+  }
+}
