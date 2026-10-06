@@ -1,0 +1,13 @@
+## karnataka
+- `swavalambi-sarathi`: amounts and eligibility confirmed on the ADCL scheme page, but no 2026-27 call for applications was found (WebSearch budget ran out); launchedYear 2023 is approximate.
+- `udyogini-karnataka`: loan/subsidy/income/age figures confirmed on the KSWDC Udyogini page, but the page is undated and no current-year application notice was found; launchedYear 1997 is approximate.
+- `arivu-education-loan`: loan amounts, 2% charge and ₹8 lakh income cap confirmed on the KMDC Arivu page, but the page is undated and no 2026-27 notice was found; launchedYear 2014 is approximate.
+- `karnataka-disability-pension`, `karnataka-farmer-widow-pension`, `karnataka-vidyasiri`, `karnataka-bc-fee-concession`, `karnataka-milk-incentive`, `karnataka-construction-workers-welfare`: benefits confirmed on official pages, but the official pages give no start year; launchedYear values (1984, 2018, 2010, 2010, 2008, 2007) are approximate.
+- `karnataka-construction-workers-welfare`: amounts are from the Board's schemes page; education-assistance rates by class not listed because the page didn't give them.
+- `karnataka-ganga-kalyana`: unit costs quoted are the SC corporation's (ADCL) page; ST, backward class and minority corporations set their own costs and income limits, not confirmed.
+- `raitha-vidya-nidhi`: amounts read from the 2026-27 guideline PDF (Kannada, partly garbled text extraction); the "high school girls ₹2,000" row should be double-checked.
+- (not added) Mukhyamantri Santwana Harish (road-accident first-48-hours treatment): could not confirm it still runs as a separate scheme; the SAST/Arogya Karnataka site would not load and web search was unavailable.
+- (not added) Ksheera Bhagya: this is the school/anganwadi milk programme, not an individual application scheme; added the dairy farmers' ₹5/litre milk incentive instead.
+- (not added) Adarsha Vivaha (inter-caste/simple marriage incentive under DSSP): latest order on the DSSP site is from 2015; amount and current status not confirmed.
+- (not added) Backward Classes post-matric scholarship: amounts on the BCWD page look outdated and could not be confirmed against the 2026-27 notice.
+- (review) `raitha-vidya-nidhi`: moved to check-status and value removed until the ₹2,000 high-school row is confirmed from a cleanly readable copy of the guideline.
